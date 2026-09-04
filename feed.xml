@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>FreeKit | عدّتك المجانية — أدوات Premium ببلاش كل أسبوع</title>
+    <link>https://freekit.me/</link>
+    <description>أداة مجانية بديلة للأدوات المدفوعة كل أسبوع — مختبرة عملياً ومشروحة بخطوات جاهزة. بدون تسجيل، بدون دفع.</description>
+    <language>ar</language>
+    <lastBuildDate>Fri, 04 Sep 2026 05:55:41 GMT</lastBuildDate>
+    <atom:link href="https://freekit.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>Google Opal — ابنِ تطبيقات AI بالكلام بدون كود</title>
+      <link>https://freekit.me/opal.html</link>
+      <guid isPermaLink="true">https://freekit.me/opal.html</guid>
+      <pubDate>Fri, 04 Sep 2026 02:00:41 GMT</pubDate>
+      <description>من Google Labs: توصف شنو تريد بالكلام الطبيعي ويركبلك تطبيق AI بـ workflow قابل للتعديل وhosting جاهز — مع برومبتات جاهزة تنسخها فوراً.</description>
+    </item>
+    <item>
+      <title>Photopea — فوتوشوب كامل من المتصفح</title>
+      <link>https://freekit.me/photopea.html</link>
+      <guid isPermaLink="true">https://freekit.me/photopea.html</guid>
+      <pubDate>Mon, 31 Aug 2026 19:41:06 GMT</pubDate>
+      <description>يفتح PSD وSketch وXD من المتصفح، يعمل محلياً 100% — بديل مجاني كامل لاشتراك الفوتوشوب.</description>
+    </item>
+  </channel>
+</rss>
