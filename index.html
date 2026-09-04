@@ -805,6 +805,97 @@
             transform: none
         }
 
+        .typing .tl {
+            opacity: 0
+        }
+
+        .typing .tl.on {
+            opacity: 1;
+            transition: opacity .18s ease
+        }
+
+        .tcursor {
+            display: inline-block;
+            width: 9px;
+            height: 1.05em;
+            background: var(--lime);
+            margin-inline-start: 7px;
+            vertical-align: text-bottom;
+            border-radius: 2px
+        }
+
+        @keyframes heroIn {
+            from {
+                opacity: 0;
+                transform: translateY(26px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        @keyframes drift1 {
+            from {
+                transform: translate(0, 0) scale(1)
+            }
+
+            to {
+                transform: translate(60px, 40px) scale(1.08)
+            }
+        }
+
+        @keyframes drift2 {
+            from {
+                transform: translate(0, 0) scale(1)
+            }
+
+            to {
+                transform: translate(-50px, -30px) scale(1.06)
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0
+            }
+        }
+
+        @media(prefers-reduced-motion:no-preference) {
+            .glow.g1 {
+                animation: drift1 26s ease-in-out infinite alternate
+            }
+
+            .glow.g2 {
+                animation: drift2 32s ease-in-out infinite alternate
+            }
+
+            .hero .pill {
+                animation: heroIn .6s ease both
+            }
+
+            .hero h1 {
+                animation: heroIn .6s ease .08s both
+            }
+
+            .hero .sub {
+                animation: heroIn .6s ease .16s both
+            }
+
+            .hero .cta-row {
+                animation: heroIn .6s ease .24s both
+            }
+
+            .hero .term {
+                animation: heroIn .7s ease .34s both
+            }
+
+            .tcursor {
+                animation: blink 1.1s steps(1) infinite
+            }
+        }
+
         @media(prefers-reduced-motion:reduce) {
             .reveal {
                 transition: none;
@@ -821,6 +912,10 @@
             .reveal {
                 opacity: 1 !important;
                 transform: none !important
+            }
+
+            .typing .tl {
+                opacity: 1 !important
             }
         }
 
@@ -918,16 +1013,11 @@
                     <span class="t mono">freekit — zsh</span>
                     <button class="copy" id="copyCmd" type="button">COPY</button>
                 </div>
-                <div class="term-body mono" id="termBody"><span class="c-gray">$ freekit --list --week 05</span>
-                    <span class="c-cyan">&gt; MODULE 01 · PHOTOPEA</span> <span class="c-gray">............</span> <span
-                        class="c-lime">DELIVERED</span>
-                    <span class="c-cyan">&gt; MODULE 02 · GOOGLE OPAL</span> <span class="c-gray">........</span> <span
-                        class="c-lime">DELIVERED</span>
-                    <span class="c-cyan">&gt; MODULE 03 · [LOCKED]</span> <span class="c-gray">...........</span> <span
-                        class="c-red">SCHEDULED</span>
-                    <span class="c-gray">$ status:</span> <span class="c-lime">weekly drops</span> <span
-                        class="c-gray">· cost:</span> <span class="c-lime">$0</span> <span class="c-gray">·
-                        signup:</span> <span class="c-lime">none</span>
+                <div class="term-body mono" id="termBody"><span class="tl"><span class="c-gray">$ freekit --list --week 05</span></span>
+                    <span class="tl"><span class="c-cyan">&gt; MODULE 01 · PHOTOPEA</span> <span class="c-gray">............</span> <span class="c-lime">DELIVERED</span></span>
+                    <span class="tl"><span class="c-cyan">&gt; MODULE 02 · GOOGLE OPAL</span> <span class="c-gray">........</span> <span class="c-lime">DELIVERED</span></span>
+                    <span class="tl"><span class="c-cyan">&gt; MODULE 03 · [LOCKED]</span> <span class="c-gray">...........</span> <span class="c-red">SCHEDULED</span></span>
+                    <span class="tl"><span class="c-gray">$ status:</span> <span class="c-lime">weekly drops</span> <span class="c-gray">· cost:</span> <span class="c-lime">$0</span> <span class="c-gray">· signup:</span> <span class="c-lime">none</span><span class="tcursor" aria-hidden="true"></span></span>
                 </div>
             </div>
         </section>
@@ -1104,6 +1194,45 @@
                 setTimeout(showAll, 2000);
             } else {showAll();}
             window.addEventListener('beforeprint', showAll);
+
+            var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            var termBody = document.getElementById('termBody');
+            if (termBody && !reduceMotion) {
+                var lines = termBody.querySelectorAll('.tl');
+                if (lines.length) {
+                    termBody.classList.add('typing');
+                    var li = 0;
+                    var typeStep = function () {
+                        if (li < lines.length) {lines[li].classList.add('on'); li++; setTimeout(typeStep, 300);}
+                    };
+                    setTimeout(typeStep, 600);
+                    setTimeout(function () {termBody.classList.remove('typing');}, 600 + lines.length * 300 + 1200);
+                }
+            }
+
+            if (!reduceMotion) {
+                document.querySelectorAll('.grid, .flow, .pillars').forEach(function (container) {
+                    Array.prototype.forEach.call(container.children, function (child, i) {
+                        child.style.transitionDelay = (i * 110) + 'ms';
+                        child.addEventListener('transitionend', function () {child.style.transitionDelay = '0ms';}, {once: true});
+                    });
+                });
+            }
+
+            if (!reduceMotion && window.matchMedia && window.matchMedia('(hover: hover)').matches) {
+                document.querySelectorAll('.module').forEach(function (card) {
+                    var rect = null;
+                    card.addEventListener('mouseenter', function () {rect = card.getBoundingClientRect();});
+                    card.addEventListener('mousemove', function (e) {
+                        if (!rect) rect = card.getBoundingClientRect();
+                        var x = (e.clientX - rect.left) / rect.width - .5;
+                        var y = (e.clientY - rect.top) / rect.height - .5;
+                        card.style.transform = 'perspective(700px) rotateX(' + (-y * 7).toFixed(2) + 'deg) rotateY(' + (x * 7).toFixed(2) + 'deg) translateY(-5px)';
+                    });
+                    card.addEventListener('mouseleave', function () {rect = null; card.style.transform = '';});
+                });
+            }
 
             var toast = document.getElementById('toast'), toastTimer = null;
             function showToast(msg) {
