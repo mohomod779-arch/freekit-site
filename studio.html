@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FreeKit | Google AI Studio — استعمل جمناي بحدود سخية ومجاناً بدلاً من التطبيق</title>
+    <meta name="description"
+        content="Google AI Studio هو مختبر غوغل المجاني للمطورين وصناع المحتوى: حصة مجانية سخية تتجدد يومياً، تحكم دقيق بالحرارة والفلاتر، بحث RAG حي، ومنفذ كود Python بدون اشتراكات.">
+    <link rel="canonical" href="https://freekit.me/studio.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://freekit.me/studio.html">
+    <meta property="og:title" content="Google AI Studio — مختبر غوغل المجاني بدلاً من الاشتراكات">
+    <meta property="og:description" content="حصة يومية سخية تدفع بيها 0$ · تحكم بالفلاتر والحرارة · RAG ومنفذ كود Python">
+    <meta property="og:image" content="https://freekit.me/og-cover-home.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google AI Studio — مختبر غوغل المجاني">
+    <meta name="twitter:description" content="حصة يومية سخية · RAG · إلغاء الفلاتر المزعجة · مجاناً">
+    <meta name="twitter:image" content="https://freekit.me/og-cover-home.png">
+
+    <link rel="icon"
+        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%230B0F1C"/><text x="50" y="68" font-size="52" font-family="Arial" font-weight="bold" fill="%23B4F461" text-anchor="middle">F</text></svg>'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root{--bg:#0B0F1C;--card:#121A2E;--panel:#0D1420;--fg:#F4F7FA;--muted:#A6B1C5;--lime:#B4F461;--cyan:#38BDF8;--red:#F87171;--line:rgba(180,244,97,.25);--border:#334155;--lime-rgb:180,244,97}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{background:var(--bg);color:var(--fg);font-family:'Tajawal',sans-serif;line-height:1.7;overflow-x:hidden}
+        .mono{font-family:'JetBrains Mono',monospace}
+        .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+        body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(circle,#1E293B 1.5px,transparent 1.5px);background-size:46px 46px;opacity:.5}
+        section{position:relative;z-index:1}
+        #progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;background:linear-gradient(90deg,var(--lime),var(--cyan));z-index:60;box-shadow:0 0 12px rgba(var(--lime-rgb),.5)}
+        header{position:sticky;top:0;z-index:50;background:rgba(11,15,28,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+        .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto}
+        .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--fg);text-decoration:none}
+        .logo .f{width:38px;height:38px;border-radius:10px;background:var(--bg);border:2px solid var(--lime);display:grid;place-items:center;color:var(--lime);font-size:20px;font-weight:800}
+        .logo span{color:var(--lime)}
+        .nav-links{display:flex;gap:24px;align-items:center}
+        .nav-links a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
+        .nav-links a:hover{color:var(--lime)}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none;font-family:inherit}
+        .btn-lime{background:var(--lime);color:#0B0F1C;box-shadow:0 4px 20px rgba(var(--lime-rgb),.2)}
+        .btn-lime:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(var(--lime-rgb),.3)}
+        .btn-ghost{border:1.5px solid var(--line);color:var(--lime);background:transparent}
+        .btn-ghost:hover{background:rgba(var(--lime-rgb),.08)}
+        .hero{padding:100px 24px 70px;text-align:center}
+        .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(var(--lime-rgb),.1);border:1px solid var(--line);color:var(--lime);font-size:14px;font-weight:700;padding:8px 18px;border-radius:999px;margin-bottom:24px}
+        .pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pulse 2.2s ease-in-out infinite}
+        .hero h1{font-size:clamp(34px,5.5vw,58px);font-weight:800;line-height:1.25;margin-bottom:20px}
+        .hero h1 .hl{background:linear-gradient(120deg,var(--lime) 20%,#E8FFC4 40%,var(--lime) 60%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
+        .hero p{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:700px;margin:0 auto 36px}
+        .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+        .sec{padding:76px 24px}
+        .sec-title{font-size:clamp(28px,4vw,40px);font-weight:800;text-align:center;margin-bottom:12px}
+        .sec-sub{text-align:center;color:var(--muted);font-size:17px;max-width:640px;margin:0 auto 48px}
+        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+        .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .2s,border-color .2s}
+        .card:hover{transform:translateY(-4px);border-color:var(--lime)}
+        .card .icon{width:48px;height:48px;border-radius:12px;background:rgba(var(--lime-rgb),.1);display:grid;place-items:center;margin-bottom:16px;font-size:22px}
+        .card h3{font-size:20px;font-weight:700;margin-bottom:8px}
+        .card p{color:var(--muted);font-size:15px}
+        .cmp-wrap{overflow-x:auto;max-width:920px;margin:0 auto;border:1px solid var(--border);border-radius:18px}
+        .cmp{width:100%;border-collapse:collapse;background:var(--card);min-width:640px}
+        .cmp th,.cmp td{padding:16px 18px;text-align:start;border-bottom:1px solid var(--border);font-size:15px}
+        .cmp thead th{background:rgba(var(--lime-rgb),.08);color:var(--lime);font-size:14px;letter-spacing:.5px}
+        .cmp tbody tr:last-child td{border-bottom:none}
+        .cmp td:first-child{color:var(--fg);font-weight:700;white-space:nowrap}
+        .cmp td{color:var(--muted)}
+        .cmp td:nth-child(2){color:var(--lime);font-weight:700}
+        .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:22px}
+        .pcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px}
+        .pcard h3{font-size:18px;font-weight:800}
+        .pcard .pdesc{color:var(--muted);font-size:14px}
+        .pbox{background:var(--panel);border:1px solid var(--border);border-inline-start:3px solid var(--lime);border-radius:12px;padding:16px 18px;font-size:14px;line-height:1.9;color:var(--fg);white-space:pre-wrap;flex:1}
+        .copy-btn{align-self:flex-start;background:transparent;border:1px solid var(--border);color:var(--lime);font-size:13px;font-weight:700;padding:8px 16px;border-radius:9px;cursor:pointer;font-family:'JetBrains Mono',monospace;transition:color .15s,border-color .15s}
+        .copy-btn:hover{color:var(--lime);border-color:var(--lime)}
+        .steps{display:grid;gap:16px;max-width:760px;margin:0 auto}
+        .step{display:flex;align-items:flex-start;gap:20px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px}
+        .step .num{min-width:44px;height:44px;border-radius:50%;background:var(--lime);color:#0B0F1C;display:grid;place-items:center;font-weight:800;font-size:18px}
+        .step h4{font-size:18px;font-weight:700;margin-bottom:4px}
+        .step p{color:var(--muted);font-size:15px}
+        .cta-box{background:linear-gradient(135deg,rgba(var(--lime-rgb),.08),rgba(var(--lime-rgb),.02));border:1px solid var(--line);border-radius:24px;padding:56px 32px;text-align:center;max-width:800px;margin:0 auto}
+        .cta-box h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:16px}
+        .cta-box p{color:var(--muted);font-size:17px;margin-bottom:30px}
+        footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;color:var(--muted);font-size:14px;margin-top:80px}
+        footer .brand{color:var(--lime);font-weight:700}
+        .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+        .reveal.on{opacity:1;transform:none}
+        @keyframes pulse{0%,100%{box-shadow:0 0 6px var(--lime)}50%{box-shadow:0 0 16px var(--lime)}}
+        @keyframes shine{to{background-position:200% center}}
+        @media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}.hero h1 .hl,.pill::before{animation:none}html{scroll-behavior:auto}}
+        @media(max-width:640px){.nav-links{display:none}.hero{padding:60px 20px 50px}.sec{padding:60px 20px}.pgrid{grid-template-columns:1fr}}
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Google AI Studio — مختبر غوغل المجاني بدلاً من الاشتراكات","description":"استعمل نماذج جمناي المتطورة بحصة مجانية سخية تتجدد يومياً تدفع بيها 0$ مع فلاتر أمان قابلة للإلغاء وبحث RAG حي ومنفذ كود محلي.","image":"https://freekit.me/og-cover-home.png","datePublished":"2026-09-04T06:00:00Z","dateModified":"2026-09-04T06:00:00Z","inLanguage":"ar","mainEntityOfPage":"https://freekit.me/studio.html","author":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"},"publisher":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"}}
+    </script>
+</head>
+
+<body>
+    <div id="progress" aria-hidden="true"></div>
+
+    <header>
+        <nav class="nav">
+            <a class="logo" href="index.html"><span class="f">F</span>Free<span>Kit</span></a>
+            <div class="nav-links">
+                <a href="#features">المميزات</a>
+                <a href="#compare">المقارنة</a>
+                <a href="#prompts">برومبتات النظام</a>
+                <a href="#steps">كيف تبدأ</a>
+            </div>
+            <a class="btn btn-lime" href="https://aistudio.google.com" target="_blank" rel="noopener">افتح AI Studio</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="pill">أداة مختبر غوغل · مجانية بالكامل · تدفع $0</div>
+        <h1>تعرف إنك تكدر تستعمل جمناي ببلاش…<br><span class="hl">بحدود سخية وبدون قيود؟</span></h1>
+        <p>Google AI Studio هو المختبر المجاني من غوغل بدلاً من دفع اشتراكات ذكاء اصطناعي شهرية: كلاهما ملك غوغل لكن المختبر مصمم للمطورين وصناع التطبيقات بدون حواجز التطبيق التجاري.</p>
+        <div class="cta-row">
+            <a class="btn btn-lime" href="https://aistudio.google.com" target="_blank" rel="noopener">افتح المختبر الآن مجاناً</a>
+            <a class="btn btn-ghost" href="#prompts">تعليمات النظام الجاهزة ↓</a>
+        </div>
+    </section>
+
+    <section class="sec" id="features">
+        <h2 class="sec-title reveal">ميزات المختبر التي لا يعطيها التطبيق</h2>
+        <p class="sec-sub reveal">حرية كاملة وسيطرة على الموديل مع إمكانيات برمجية تفوق تطبيق الشات العادي</p>
+        <div class="grid">
+            <div class="card reveal">
+                <div class="icon">⚡</div>
+                <h3>حصة مجانية سخية</h3>
+                <p>تتجدد يومياً وتدفع بها 0$ — سواء استخدمت الواجهة الرسومية مباشرة أو استخرجت مفتاح API مجاني لتطبيقاتك.</p>
+            </div>
+            <div class="card reveal">
+                <div class="icon">🔓</div>
+                <h3>إلغاء الفلاتر المزعجة</h3>
+                <p>تحكم كامل بإعدادات الأمان (Safety Settings): الغِ أو قلل الحجب لتمنع رفض النموذج للإجابة على المحتوى الجاد.</p>
+            </div>
+            <div class="card reveal">
+                <div class="icon">🌐</div>
+                <h3>بحث غوغل المباشر (RAG)</h3>
+                <p>تفعيل ميزة Google Search Grounding بنقرة واحدة ليجلب النموذج معلومات حية ومحدثة من الإنترنت بدون هلوسة.</p>
+            </div>
+            <div class="card reveal">
+                <div class="icon">💻</div>
+                <h3>منفذ كود محلي (Code Execution)</h3>
+                <p>النموذج يكتب كود Python ويشغله فعلياً بالخلفية لحل المسائل الرياضية المعقدة ومعالجة البيانات بدقة 100%.</p>
+            </div>
+            <div class="card reveal">
+                <div class="icon">🎛️</div>
+                <h3>التحكم بدرجة الحرارة (Temp)</h3>
+                <p>اضبط الإبداع أو الدقة: صفر (0.0) للمنطق الصارم والبرمجة، أو رفعه لأقصى حد للكتابة الإبداعية وتوليد الأفكار.</p>
+            </div>
+            <div class="card reveal">
+                <div class="icon">📦</div>
+                <h3>مساحة سياق هائلة</h3>
+                <p>ارفع كتباً كاملة، ملفات PDF ضخمة، أو ساعات من الفيديو والصوت وحللها مباشرة داخل جلسة عمل واحدة.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec" id="compare">
+        <h2 class="sec-title reveal">قارن بنفسك: المختبر مقابل التطبيق</h2>
+        <p class="sec-sub reveal">ليش تستمر تدفع اشتراك شهري والمختبر مفتوح مجاناً؟</p>
+        <div class="cmp-wrap reveal">
+            <table class="cmp">
+                <thead>
+                    <tr>
+                        <th>المعيار</th>
+                        <th>Google AI Studio</th>
+                        <th>تطبيق Gemini العادي</th>
+                        <th>الاشتراكات المدفوعة ($20)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>التكلفة الشهرية</td>
+                        <td>0$ مجاناً بحصة سخية</td>
+                        <td>مجاني محدود / $20 للبلس</td>
+                        <td>20$ شهرياً (~26,200 د.ع)</td>
+                    </tr>
+                    <tr>
+                        <td>فلاتر الأمان والرفض</td>
+                        <td>قابلة للإلغاء والتعديل</td>
+                        <td>صارمة ولا يمكن تجاوزها</td>
+                        <td>حسب المنصة وغالباً مقيدة</td>
+                    </tr>
+                    <tr>
+                        <td>تعديل الحرارة (Temp)</td>
+                        <td>تحكم يدوي دقيق (0.0 - 2.0)</td>
+                        <td>غير متاح</td>
+                        <td>غير متاح بالواجهات العادية</td>
+                    </tr>
+                    <tr>
+                        <td>Grounding & Code</td>
+                        <td>بحث غوغل + تشغيل بايثون</td>
+                        <td>متاح بحدود للمستهلك</td>
+                        <td>إضافات محدودة</td>
+                    </tr>
+                    <tr>
+                        <td>استخراج مفاتيح API</td>
+                        <td>مفتاح API مجاني فوري</td>
+                        <td>غير متاح</td>
+                        <td>بفواتير منفصلة لكل طلب</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section class="sec" id="prompts">
+        <h2 class="sec-title reveal">4 برومبتات نظام (System Instructions) جاهزة</h2>
+        <p class="sec-sub reveal">انسخ والصق في خانة System Instructions بالمختبر لتوجيه النموذج بدقة عالية</p>
+        <div class="pgrid">
+            <div class="pcard reveal">
+                <h3>🛠️ المبرمج ومحلل الكود الخالي من الهلوسة</h3>
+                <p class="pdesc">يجبر النموذج على تفعيل Code Execution والتفكير المنطقي قبل إعطاء الحل.</p>
+                <div class="pbox" id="pr1">أنت مهندس برمجيات ومستشار تقني صارم. لا تعتمد على التخمين. عند إعطاء حلول كودية، اكتب شفرة برمجية نظيفة مع شرح موجز ومباشر، واستخدم Python Code Execution للتحقق من سلامة الحسابات والأرقام دائماً قبل الرد. أجب بالعربية التقنية الصريحة.</div>
+                <button class="copy-btn" type="button" data-target="pr1">نسخ التعليمات</button>
+            </div>
+            <div class="pcard reveal">
+                <h3>📚 باحث المستندات والملفات الضخمة</h3>
+                <p class="pdesc">لاستخراج الحقائق من ملفات PDF المرفوعة بدون أي إسهاب أو تحريف.</p>
+                <div class="pbox" id="pr2">أنت باحث أكاديمي دقيق ومحلل بيانات. مهمتك هي قراءة الملفات والمستندات المرفقة فقط، واستخراج الإجابات بناءً على النصوص الموجودة نصاً. إذا كانت المعلومة غير موجودة في المستند، قل بوضوح: "غير متوفرة في الملف". استخرج الأرقام والتواريخ بنقاط مرتبة.</div>
+                <button class="copy-btn" type="button" data-target="pr2">نسخ التعليمات</button>
+            </div>
+            <div class="pcard reveal">
+                <h3>✍️ الكاتب الإبداعي غير المقيد</h3>
+                <p class="pdesc">استغل حرية الفلاتر لكتابة سيناريوهات ونصوص قوية ومميزة.</p>
+                <div class="pbox" id="pr3">أنت كاتب محتوى إبداعي متقدم. اكتب بأسلوب جذاب، بدون مقدمات إنشائية ركيكة أو كليشيهات متكررة. ركز على تقديم قيمة فورية في السطر الأول، واجعل الجمل قصيرة ومكثفة مع أمثلة عملية من واقع بيئة العمل.</div>
+                <button class="copy-btn" type="button" data-target="pr3">نسخ التعليمات</button>
+            </div>
+            <div class="pcard reveal">
+                <h3>⚡ مهندس البرومبت وبناء التطبيقات</h3>
+                <p class="pdesc">لتحويل أي فكرة تطبيق إلى Prompt مهيكل ومجهز لمفتاح API.</p>
+                <div class="pbox" id="pr4">أنت مهندس استنطاق ومصمم بروتوكولات ذكاء اصطناعي. عندما أعطيك فكرة أداة أو تطبيق، صمم لي بنية Prompt كاملة تشمل: (1) الدور والهدف، (2) القيود الصارمة، (3) صيغة الإدخال، (4) صيغة الإخراج المهيكلة بتنسيق JSON نظيف وجاهز للربط عبر API.</div>
+                <button class="copy-btn" type="button" data-target="pr4">نسخ التعليمات</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec" id="steps">
+        <h2 class="sec-title reveal">كيف تبدأ بـ 3 خطوات</h2>
+        <p class="sec-sub reveal">من الدخول إلى تشغيل أول جلسة عمل متطورة مجاناً</p>
+        <div class="steps">
+            <div class="step reveal">
+                <div class="num">1</div>
+                <div>
+                    <h4>افتح aistudio.google.com</h4>
+                    <p>ادخل من متصفح اللابتوب أو متصفح الموبايل وسجل دخول بحساب غوغل العادي بدون أي بطاقة بنكية.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="num">2</div>
+                <div>
+                    <h4>اختر Chat Prompt واضبط الإعدادات</h4>
+                    <p>من القائمة الجانبية: قلل فلاتر الأمان من Safety Settings، واضبط الـ Temperature، وفعل Google Search إذا أردت معلومات حية.</p>
+                </div>
+            </div>
+            <div class="step reveal">
+                <div class="num">3</div>
+                <div>
+                    <h4>ابدأ الدردشة أو احصل على Get API key</h4>
+                    <p>استمتع بحصة مجانية سخية تتجدد يومياً، أو اضغط زر Get API Key واستخدم المفتاح في برامجك ومشاريعك الخاصة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec" id="cta">
+        <div class="cta-box reveal">
+            <h2>احصل على رابط الدخول والبرومبتات</h2>
+            <p>اكتب <b>«ستوديو»</b> بالتعليقات على حسابنا في إنستغرام <span class="handle">@freekit2</span> ويوصلك الرابط المباشر مع ملف التعليمات كاملاً بالخاص.</p>
+            <div class="cta-row">
+                <a class="btn btn-lime" href="https://aistudio.google.com" target="_blank" rel="noopener">فتح Google AI Studio</a>
+                <a class="btn btn-ghost" href="https://www.instagram.com/freekit2?igsi=MTd0MGFwcDRiYTl2cQ==" target="_blank" rel="noopener">تابعنا على إنستغرام</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="brand">FreeKit — عدّتك المجانية</p>
+        <p>بدائل مجانية كاملة للأدوات والاشتراكات المدفوعة · بدون دفع وبدون تسجيل</p>
+    </footer>
+
+    <script>
+        const prog = document.getElementById('progress');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement.scrollHeight - window.innerHeight;
+            if (h > 0) prog.style.width = (window.scrollY / h * 100) + '%';
+        }, {passive:true});
+
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('on');
+                    obs.unobserve(e.target);
+                }
+            });
+        }, {threshold: 0.15});
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        document.querySelectorAll('.copy-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const targetId = btn.getAttribute('data-target');
+                const text = document.getElementById(targetId)?.innerText;
+                if (!text) return;
+                navigator.clipboard.writeText(text).then(() => {
+                    const original = btn.innerText;
+                    btn.innerText = 'تم النسخ ✓';
+                    btn.style.color = '#B4F461';
+                    setTimeout(() => {
+                        btn.innerText = original;
+                        btn.style.color = '';
+                    }, 2000);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
