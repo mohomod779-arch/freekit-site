@@ -145,6 +145,17 @@
             inset-inline-start: 0
         }
 
+        #progress {
+            position: fixed;
+            top: 0;
+            inset-inline-start: 0;
+            height: 3px;
+            width: 0;
+            background: linear-gradient(90deg, var(--lime), var(--cyan));
+            z-index: 60;
+            box-shadow: 0 0 12px rgba(var(--lime-rgb), .5)
+        }
+
         header {
             position: sticky;
             top: 0;
@@ -187,7 +198,7 @@
             font-weight: 800
         }
 
-        .logo b {
+        .logo bdi b {
             color: var(--lime);
             font-weight: 800
         }
@@ -796,6 +807,16 @@
             opacity: .8
         }
 
+        footer a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color .2s
+        }
+
+        footer a:hover {
+            color: var(--lime)
+        }
+
         .reveal {
             opacity: 0;
             transform: translateY(24px);
@@ -972,21 +993,21 @@
     {"@context":"https://schema.org","@type":"WebSite","name":"FreeKit","alternateName":"FreeKit | عدّتك المجانية — أدوات Premium ببلاش كل أسبوع","url":"https://freekit.me/","description":"FreeKit يجيبلك بدائل مجانية كاملة للأدوات المدفوعة: Photopea وGoogle Opal وأكثر — يختبرها عملياً ويسلّمها بشرح مباشر. بدون تسجيل، بدون دفع، أداة جديدة كل أسبوع.","inLanguage":"ar","publisher":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"}}
     </script>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"ItemList","name":"FreeKit — أرشيف المواضيع","itemListElement":[{"@type":"ListItem","position":1,"name":"Photopea — فوتوشوب كامل من المتصفح","url":"https://freekit.me/photopea.html"},{"@type":"ListItem","position":2,"name":"Google Opal — ابنِ تطبيقات AI بالكلام","url":"https://freekit.me/opal.html"},{"@type":"ListItem","position":3,"name":"Google AI Studio — مختبر غوغل المجاني","url":"https://freekit.me/studio.html"},{"@type":"ListItem","position":4,"name":"مكتبة الأدوات المجانية المختبرة","url":"https://freekit.me/tools.html"}]}
+    {"@context":"https://schema.org","@type":"ItemList","name":"FreeKit — أرشيف المواضيع","itemListElement":[{"@type":"ListItem","position":1,"name":"Photopea — فوتوشوب كامل من المتصفح","url":"https://freekit.me/photopea.html"},{"@type":"ListItem","position":2,"name":"Google Opal — ابنِ تطبيقات AI بالكلام","url":"https://freekit.me/opal.html"},{"@type":"ListItem","position":3,"name":"Google AI Studio — مختبر غوغل المجاني","url":"https://freekit.me/studio.html"},{"@type":"ListItem","position":4,"name":"اشتراك جمناي Pro مجاني لطلاب الجامعات بالعراق","url":"https://freekit.me/students.html"},{"@type":"ListItem","position":5,"name":"مكتبة الأدوات المجانية المختبرة","url":"https://freekit.me/tools.html"}]}
     </script>
 </head>
 
 <body>
     <a class="skip" href="#topics">تخطى للمواضيع</a>
+    <div id="progress" aria-hidden="true"></div>
     <div class="glow g1" aria-hidden="true"></div>
     <div class="glow g2" aria-hidden="true"></div>
 
     <header>
         <nav class="nav" aria-label="التنقل الرئيسي">
-            <a class="logo" href="#"><span class="f" aria-hidden="true">F</span>Free<b>Kit</b></a>
+            <a class="logo" href="#"><span class="f" aria-hidden="true">F</span><bdi>Free<b>Kit</b></bdi></a>
             <div class="nav-links">
                 <a href="#topics">المواضيع</a>
-                <a href="tools.html">مكتبة الأدوات</a>
                 <a href="#protocol">البروتوكول</a>
                 <a href="#why">لماذا FreeKit</a>
             </div>
@@ -1022,11 +1043,12 @@
                     <span class="t mono">freekit — zsh</span>
                     <button class="copy" id="copyCmd" type="button">COPY</button>
                 </div>
-                <div class="term-body mono" id="termBody"><span class="tl"><span class="c-gray">$ freekit --list --week 05</span></span>
+                <div class="term-body mono" id="termBody"><span class="tl"><span class="c-gray">$ freekit --list --week 06</span></span>
                     <span class="tl"><span class="c-cyan">&gt; MODULE 01 · PHOTOPEA</span> <span class="c-gray">............</span> <span class="c-lime">DELIVERED</span></span>
                     <span class="tl"><span class="c-cyan">&gt; MODULE 02 · GOOGLE OPAL</span> <span class="c-gray">........</span> <span class="c-lime">DELIVERED</span></span>
                     <span class="tl"><span class="c-cyan">&gt; MODULE 03 · GOOGLE AI STUDIO</span> <span class="c-gray">...</span> <span class="c-lime">DELIVERED</span></span>
-                    <span class="tl"><span class="c-cyan">&gt; MODULE 04 · [LOCKED]</span> <span class="c-gray">...........</span> <span class="c-red">SCHEDULED</span></span>
+                    <span class="tl"><span class="c-cyan">&gt; MODULE 04 · GEMINI STUDENTS</span> <span class="c-gray">......</span> <span class="c-lime">DELIVERED</span></span>
+                    <span class="tl"><span class="c-cyan">&gt; MODULE 05 · [LOCKED]</span> <span class="c-gray">...........</span> <span class="c-red">SCHEDULED</span></span>
                     <span class="tl"><span class="c-gray">$ status:</span> <span class="c-lime">weekly drops</span> <span class="c-gray">· cost:</span> <span class="c-lime">$0</span> <span class="c-gray">· signup:</span> <span class="c-lime">none</span><span class="tcursor" aria-hidden="true"></span></span>
                 </div>
             </div>
@@ -1045,33 +1067,6 @@
             </div>
             <div class="grid" id="moduleGrid">
 
-                <article class="module reveal" data-cat="prod"
-                    style="grid-column: 1 / -1; border-color: var(--line); background: linear-gradient(135deg, rgba(var(--lime-rgb), .08), rgba(var(--lime-rgb), .02));">
-                    <div class="m-top">
-                        <span class="m-tag mono">TOOLS LIBRARY</span>
-                        <span class="badge delivered mono">NEW</span>
-                    </div>
-                    <div class="m-icon" aria-hidden="true">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                        </svg>
-                    </div>
-                    <h3>مكتبة الأدوات — 36 أداة مجانية مختبرة</h3>
-                    <p class="desc">كل الأدوات اللي مرّت بالكاروسيلات مجمّعة بمكان واحد: ذكاء اصطناعي، خصوصية وأمان،
-                        سيرفرات وتطوير، إنتاجية وبيانات، وقسم خاص بكنوز GitHub — بروابط رسمية مباشرة.</p>
-                    <div class="m-foot">
-                        <span class="m-meta mono">36 TOOLS · UPDATED WEEKLY</span>
-                        <a class="m-link" href="tools.html">افتح المكتبة
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M15 18l-6-6 6-6" />
-                            </svg>
-                        </a>
-                    </div>
-                </article>
-
                 <article class="module reveal" data-cat="design">
                     <div class="m-top">
                         <span class="m-tag mono">MODULE 01</span>
@@ -1089,7 +1084,7 @@
                     <p class="desc">يفتح PSD وSketch وXD، يعمل محلياً 100% وصورك ما تترك جهازك أبداً. بدون تسجيل وبدون
                         تحميل — بديل مجاني كامل لاشتراك الـ 240$.</p>
                     <div class="m-foot">
-                        <span class="m-meta mono">7 SLIDES · WEEK 04</span>
+                        <span class="m-meta mono">8 SLIDES · WEEK 04</span>
                         <a class="m-link" href="photopea.html">افتح الموضوع
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1149,9 +1144,36 @@
                     </div>
                 </article>
 
-                <article class="module soon reveal" data-cat="prod">
+                <article class="module reveal" data-cat="ai">
                     <div class="m-top">
                         <span class="m-tag mono">MODULE 04</span>
+                        <span class="badge delivered mono">DELIVERED</span>
+                    </div>
+                    <div class="m-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 10L12 5 2 10l10 5 10-5z" />
+                            <path d="M6 12.5V17c0 1.66 2.69 3 6 3s6-1.34 6-3v-4.5" />
+                            <path d="M22 10v6" />
+                        </svg>
+                    </div>
+                    <h3>اشتراك جمناي Pro مجاني للطلاب — سنة كاملة</h3>
+                    <p class="desc">عرض غوغل الرسمي لطلاب الجامعات بالعراق: 12 شهر Google AI Pro ببلاش بدل 26,200 دينار
+                        شهرياً — بإيميل الجامعة أو تأييد القيد، قبل 31 كانون الأول 2026.</p>
+                    <div class="m-foot">
+                        <span class="m-meta mono">6 SLIDES · WEEK 06</span>
+                        <a class="m-link" href="students.html">افتح الموضوع
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M15 18l-6-6 6-6" />
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="module soon reveal" data-cat="prod">
+                    <div class="m-top">
+                        <span class="m-tag mono">MODULE 05</span>
                         <span class="badge scheduled mono">SCHEDULED</span>
                     </div>
                     <div class="m-icon" aria-hidden="true">
@@ -1236,6 +1258,7 @@
 
     <footer>
         <p><span class="brand">FreeKit</span> — عدّتك المجانية · أداة مجانية كل أسبوع</p>
+        <p style="margin-top:10px"><a href="tools.html">مكتبة الأدوات — 36 أداة مجانية مختبرة</a></p>
         <p class="mono">@freekit2 · freekit.me · DARK CYBER SYSTEM v3.0</p>
     </footer>
 
@@ -1256,6 +1279,15 @@
             window.addEventListener('beforeprint', showAll);
 
             var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            var bar = document.getElementById('progress');
+            function onScroll() {
+                var h = document.documentElement;
+                var max = h.scrollHeight - h.clientHeight;
+                if (bar) {bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';}
+            }
+            window.addEventListener('scroll', onScroll, {passive: true});
+            onScroll();
 
             var termBody = document.getElementById('termBody');
             if (termBody && !reduceMotion) {
@@ -1312,7 +1344,7 @@
                 } else {fallback();}
             }
             var cc = document.getElementById('copyCmd');
-            if (cc) cc.addEventListener('click', function () {copyText('freekit --list --week 05', 'تم نسخ الأمر');});
+            if (cc) cc.addEventListener('click', function () {copyText('freekit --list --week 06', 'تم نسخ الأمر');});
             var ch = document.getElementById('copyHandle');
             if (ch) ch.addEventListener('click', function () {copyText('@freekit2', 'تم نسخ @freekit2');});
 
