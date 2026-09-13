@@ -5,8 +5,15 @@
     <link>https://freekit.me/</link>
     <description>أداة مجانية بديلة للأدوات المدفوعة كل أسبوع — مختبرة عملياً ومشروحة بخطوات جاهزة. بدون تسجيل، بدون دفع.</description>
     <language>ar</language>
-    <lastBuildDate>Fri, 04 Sep 2026 06:10:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 13 Sep 2026 03:30:00 GMT</lastBuildDate>
     <atom:link href="https://freekit.me/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>مكتبة الأدوات — 36 أداة مجانية مختبرة عملياً</title>
+      <link>https://freekit.me/tools.html</link>
+      <guid isPermaLink="true">https://freekit.me/tools.html</guid>
+      <pubDate>Sun, 13 Sep 2026 03:30:00 GMT</pubDate>
+      <description>كل أداة مرّت بالكاروسيلات مجمّعة بمكان واحد: ذكاء اصطناعي، خصوصية وأمان، سيرفرات وتطوير، إنتاجية — مع قسم خاص بكنوز GitHub وروابط رسمية مباشرة.</description>
+    </item>
     <item>
       <title>Google AI Studio — مختبر غوغل المجاني بدلاً من الاشتراكات</title>
       <link>https://freekit.me/studio.html</link>
