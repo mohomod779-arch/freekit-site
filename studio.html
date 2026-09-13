@@ -40,7 +40,7 @@
         .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto}
         .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--fg);text-decoration:none}
         .logo .f{width:38px;height:38px;border-radius:10px;background:var(--bg);border:2px solid var(--lime);display:grid;place-items:center;color:var(--lime);font-size:20px;font-weight:800}
-        .logo span{color:var(--lime)}
+        .logo bdi span{color:var(--lime)}
         .nav-links{display:flex;gap:24px;align-items:center}
         .nav-links a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
         .nav-links a:hover{color:var(--lime)}
@@ -62,6 +62,8 @@
         .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
         .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .2s,border-color .2s}
         .card:hover{transform:translateY(-4px);border-color:var(--lime)}
+        .card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(var(--lime-rgb),.12),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
+        .card:hover::after{opacity:1}
         .card .icon{width:48px;height:48px;border-radius:12px;background:rgba(var(--lime-rgb),.1);display:grid;place-items:center;margin-bottom:16px;font-size:22px}
         .card h3{font-size:20px;font-weight:700;margin-bottom:8px}
         .card p{color:var(--muted);font-size:15px}
@@ -98,7 +100,7 @@
         @media(max-width:640px){.nav-links{display:none}.hero{padding:60px 20px 50px}.sec{padding:60px 20px}.pgrid{grid-template-columns:1fr}}
     </style>
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"Google AI Studio — مختبر غوغل المجاني بدلاً من الاشتراكات","description":"استعمل نماذج جمناي المتطورة بحصة مجانية سخية تتجدد يومياً تدفع بيها 0$ مع فلاتر أمان قابلة للإلغاء وبحث RAG حي ومنفذ كود محلي.","image":"https://freekit.me/og-cover-home.png","datePublished":"2026-09-04T06:00:00Z","dateModified":"2026-09-04T06:00:00Z","inLanguage":"ar","mainEntityOfPage":"https://freekit.me/studio.html","author":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"},"publisher":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"}}
+    {"@context":"https://schema.org","@type":"Article","headline":"Google AI Studio — مختبر غوغل المجاني بدلاً من الاشتراكات","description":"استعمل نماذج جمناي المتطورة بحصة مجانية سخية تتجدد يومياً تدفع بيها 0$ مع فلاتر أمان قابلة للإلغاء وبحث RAG حي ومنفذ كود محلي.","image":"https://freekit.me/og-cover-home.png","datePublished":"2026-09-04T06:00:00Z","dateModified":"2026-09-13T03:00:00Z","inLanguage":"ar","mainEntityOfPage":"https://freekit.me/studio.html","author":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"},"publisher":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"}}
     </script>
 </head>
 
@@ -107,7 +109,7 @@
 
     <header>
         <nav class="nav">
-            <a class="logo" href="index.html"><span class="f">F</span>Free<span>Kit</span></a>
+            <a class="logo" href="index.html"><span class="f">F</span><bdi>Free<span>Kit</span></bdi></a>
             <div class="nav-links">
                 <a href="#features">المميزات</a>
                 <a href="#compare">المقارنة</a>
@@ -305,6 +307,20 @@
             });
         }, {threshold: 0.15});
         document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        document.querySelectorAll('.grid,.pgrid,.steps').forEach(g => {
+            Array.prototype.forEach.call(g.children, (c, i) => {
+                if (c.classList && c.classList.contains('reveal')) {c.style.transitionDelay = (i * 70) + 'ms';}
+            });
+        });
+
+        document.querySelectorAll('.card,.pcard').forEach(el => {
+            el.addEventListener('pointermove', (e) => {
+                const r = el.getBoundingClientRect();
+                el.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+                el.style.setProperty('--my', (e.clientY - r.top) + 'px');
+            });
+        });
 
         document.querySelectorAll('.copy-btn').forEach(btn => {
             btn.addEventListener('click', () => {
