@@ -46,7 +46,8 @@
         }
 
         html {
-            scroll-behavior: smooth
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%
         }
 
         body {
@@ -122,7 +123,7 @@
             align-items: baseline;
             justify-content: space-between;
             gap: 24px;
-            padding-block: 20px;
+            padding-block: 16px;
             flex-wrap: wrap
         }
 
@@ -162,7 +163,7 @@
 
         /* ── Hero ── */
         .hero {
-            padding-block: 52px 40px
+            padding-block: 40px 30px
         }
 
         .kicker {
@@ -197,12 +198,12 @@
         .sub {
             color: var(--muted);
             max-width: 56ch;
-            margin-top: 20px;
+            margin-top: 16px;
             font-size: clamp(16px, 2vw, 19px)
         }
 
         .hero-cta {
-            margin-top: 28px
+            margin-top: 22px
         }
 
         .arrow-link {
@@ -236,13 +237,13 @@
         .figure figcaption {
             font-size: 12.5px;
             color: var(--muted);
-            padding: 10px 0 12px;
+            padding: 8px 0 10px;
             border-bottom: var(--hair)
         }
 
         /* ── Sections ── */
         .sec {
-            padding-block: 60px
+            padding-block: 48px
         }
 
         h2 {
@@ -259,7 +260,7 @@
         }
 
         .sec-head {
-            margin-bottom: 32px
+            margin-bottom: 24px
         }
 
         /* ── Index list ── */
@@ -278,7 +279,7 @@
             grid-template-columns: 56px 1fr auto 32px;
             gap: 18px;
             align-items: center;
-            padding-block: 20px;
+            padding-block: 16px;
             text-decoration: none
         }
 
@@ -355,7 +356,7 @@
             display: grid;
             grid-template-columns: 84px 1fr;
             gap: 16px;
-            padding-block: 20px;
+            padding-block: 16px;
             border-bottom: var(--hair);
             align-items: start
         }
@@ -392,7 +393,7 @@
         }
 
         .stats>div {
-            padding: 26px 24px
+            padding: 20px 22px
         }
 
         .stats>div+div {
@@ -407,7 +408,7 @@
 
         .stats h3 {
             font-size: 16px;
-            margin-top: 12px
+            margin-top: 10px
         }
 
         .stats p {
@@ -437,7 +438,7 @@
         }
 
         .gift-actions {
-            margin-top: 24px;
+            margin-top: 20px;
             display: flex;
             gap: 26px;
             align-items: center;
@@ -462,7 +463,7 @@
         .gift-meta {
             font-size: 12px;
             color: var(--muted);
-            margin-top: 12px
+            margin-top: 10px
         }
 
         /* ── Follow ── */
@@ -486,7 +487,7 @@
         }
 
         .follow-actions {
-            margin-top: 22px;
+            margin-top: 18px;
             display: flex;
             gap: 22px;
             align-items: center;
@@ -524,7 +525,7 @@
             gap: 26px;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding-block: 18px;
+            padding-block: 14px;
             font-size: 12.5px;
             color: var(--muted)
         }
