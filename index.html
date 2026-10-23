@@ -13,15 +13,15 @@
     <meta property="og:url" content="https://freekit.me/">
     <meta property="og:title" content="FreeKit | عدّتك المجانية — Premium ببلاش">
     <meta property="og:description" content="أدوات Premium تشتغل ببلاش — أداة جديدة كل أسبوع · بدون تسجيل · بدون دفع">
-    <meta property="og:image" content="https://freekit.me/og-cover-home-v2.png">
+    <meta property="og:image" content="https://freekit.me/og-cover-home-v3.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FreeKit | عدّتك المجانية — Premium ببلاش">
     <meta name="twitter:description" content="أدوات Premium تشتغل ببلاش — أداة جديدة كل أسبوع · بدون تسجيل · بدون دفع">
-    <meta name="twitter:image" content="https://freekit.me/og-cover-home-v2.png">
+    <meta name="twitter:image" content="https://freekit.me/og-cover-home-v3.png">
 
     <link rel="icon"
-        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%2316130E"/><text x="50" y="70" font-size="56" font-family="Arial" font-weight="bold" fill="%239BC53D" text-anchor="middle">F</text></svg>'>
+        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230A0F1C"/><text x="50" y="70" font-size="56" font-family="Arial" font-weight="bold" fill="%2367E8F9" text-anchor="middle">F</text></svg>'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -31,11 +31,15 @@
         href="https://freekit.me/feed.xml">
     <style>
         :root {
-            --paper: #F7F3EA;
-            --ink: #16130E;
-            --lime: #9BC53D;
-            --muted: #6B6455;
-            --hair: 1px solid rgba(22, 19, 14, .16);
+            --bg: #0A0F1C;
+            --bg-soft: #101828;
+            --bg-lift: #141E33;
+            --text: #EAF0FA;
+            --muted: #8B96AD;
+            --accent: #67E8F9;
+            --accent-strong: #22D3EE;
+            --accent-ink: #06202A;
+            --hair: 1px solid rgba(234, 240, 250, .09);
             --max-w: 1100px;
         }
 
@@ -51,15 +55,18 @@
         }
 
         body {
-            background: var(--paper);
-            color: var(--ink);
+            background: var(--bg);
+            color: var(--text);
             font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
             font-size: 17px;
             line-height: 1.85;
             -webkit-font-smoothing: antialiased
         }
 
-        /* mono للاتيني والأرقام فقط — العربي ما يدخل mono أبداً */
+        ::selection {
+            background: rgba(103, 232, 249, .25)
+        }
+
         .mono {
             font-family: 'JetBrains Mono', ui-monospace, monospace
         }
@@ -76,11 +83,12 @@
         }
 
         a {
-            color: inherit
+            color: inherit;
+            transition: color .15s, border-color .15s, background .18s
         }
 
         :focus-visible {
-            outline: 2px solid var(--ink);
+            outline: 2px solid var(--accent);
             outline-offset: 3px
         }
 
@@ -88,8 +96,8 @@
             position: absolute;
             inset-inline-start: -9999px;
             top: 0;
-            background: var(--ink);
-            color: var(--paper);
+            background: var(--accent-strong);
+            color: var(--accent-ink);
             padding: 10px 18px;
             z-index: 100;
             font-weight: 700
@@ -112,10 +120,14 @@
         }
 
         .topline a {
-            color: var(--ink);
+            color: var(--text);
             text-decoration: none;
-            border-bottom: 2px solid var(--lime);
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 2px
+        }
+
+        .topline a:hover {
+            color: var(--accent)
         }
 
         .brandrow {
@@ -140,7 +152,7 @@
         .wordmark .sq {
             width: .18em;
             height: .18em;
-            background: var(--lime);
+            background: var(--accent);
             display: inline-block
         }
 
@@ -149,6 +161,7 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 15px;
+            color: var(--muted);
             border-bottom: 2px solid transparent;
             padding-bottom: 2px
         }
@@ -158,18 +171,66 @@
         }
 
         .brandrow nav a:hover {
-            border-bottom-color: var(--lime)
+            color: var(--text);
+            border-bottom-color: var(--accent)
         }
 
         /* ── Hero ── */
         .hero {
-            padding-block: 40px 30px
+            padding-block: 60px 44px;
+            text-align: center;
+            position: relative
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset-inline: 0;
+            top: -120px;
+            height: 480px;
+            background: radial-gradient(560px 280px at 50% 30%, rgba(34, 211, 238, .10), transparent 70%);
+            pointer-events: none
+        }
+
+        .hero>* {
+            position: relative
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(14px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .hero .kicker,
+        .hero h1,
+        .hero .sub,
+        .hero .hero-cta {
+            animation: rise .6s cubic-bezier(.2, .7, .2, 1) both
+        }
+
+        .hero h1 {
+            animation-delay: .07s
+        }
+
+        .hero .sub {
+            animation-delay: .14s
+        }
+
+        .hero .hero-cta {
+            animation-delay: .21s
         }
 
         .kicker {
             font-size: 13px;
             font-weight: 500;
-            color: var(--muted);
+            color: var(--accent);
             margin-bottom: 18px
         }
 
@@ -178,44 +239,49 @@
             display: inline-block;
             width: 10px;
             height: 10px;
-            background: var(--lime);
+            background: var(--accent);
             margin-inline-end: 10px
         }
 
         h1 {
-            font-size: clamp(40px, 7vw, 76px);
+            font-size: clamp(40px, 7vw, 74px);
             font-weight: 700;
-            line-height: 1.18;
-            max-width: 20ch;
+            line-height: 1.2;
+            max-width: 22ch;
+            margin-inline: auto;
             text-wrap: balance
         }
 
         h1 em {
             font-style: normal;
-            box-shadow: inset 0 -.16em var(--lime)
+            background: linear-gradient(120deg, #67E8F9, #5EEAD4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
         }
 
         .sub {
             color: var(--muted);
             max-width: 56ch;
-            margin-top: 16px;
+            margin: 16px auto 0;
             font-size: clamp(16px, 2vw, 19px)
         }
 
         .hero-cta {
-            margin-top: 22px
+            margin-top: 24px
         }
 
         .arrow-link {
             font-weight: 700;
             font-size: 18px;
             text-decoration: none;
-            border-bottom: 3px solid var(--lime);
+            color: var(--text);
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 4px
         }
 
         .arrow-link:hover {
-            background: var(--lime)
+            color: var(--accent)
         }
 
         .arr {
@@ -231,14 +297,14 @@
         .figure img {
             width: 100%;
             display: block;
-            border: var(--hair)
+            border: var(--hair);
+            border-radius: 16px
         }
 
         .figure figcaption {
             font-size: 12.5px;
             color: var(--muted);
-            padding: 8px 0 10px;
-            border-bottom: var(--hair)
+            padding: 10px 4px 0
         }
 
         /* ── Sections ── */
@@ -260,17 +326,20 @@
         }
 
         .sec-head {
-            margin-bottom: 24px
+            margin-bottom: 26px
         }
 
         /* ── Index list ── */
         .index {
-            list-style: none;
-            border-top: var(--hair)
+            list-style: none
         }
 
         .index li {
             border-bottom: var(--hair)
+        }
+
+        .index li:last-child {
+            border-bottom: none
         }
 
         .index a,
@@ -279,13 +348,16 @@
             grid-template-columns: 56px 1fr auto 32px;
             gap: 18px;
             align-items: center;
-            padding-block: 16px;
+            padding: 16px 14px;
+            margin-inline: -14px;
+            border-radius: 14px;
             text-decoration: none
         }
 
         .index .num {
             font-size: 13px;
-            color: var(--muted)
+            color: var(--accent);
+            opacity: .85
         }
 
         .ttl {
@@ -311,18 +383,17 @@
 
         .a-arr {
             font-size: 22px;
-            color: var(--muted)
+            color: var(--muted);
+            transition: transform .18s, color .18s
         }
 
-        .index a:hover .ttl {
-            text-decoration: underline;
-            text-decoration-color: var(--lime);
-            text-decoration-thickness: 3px;
-            text-underline-offset: 7px
+        .index a:hover {
+            background: var(--bg-soft)
         }
 
         .index a:hover .a-arr {
-            color: var(--ink)
+            color: var(--accent);
+            transform: translateX(-4px)
         }
 
         .index li.soon .ttl {
@@ -348,7 +419,6 @@
         /* ── Protocol ── */
         .steps {
             list-style: none;
-            border-top: var(--hair);
             max-width: 880px
         }
 
@@ -361,10 +431,15 @@
             align-items: start
         }
 
+        .steps li:last-child {
+            border-bottom: none
+        }
+
         .snum {
             font-size: clamp(24px, 3vw, 34px);
             font-weight: 700;
-            color: var(--muted);
+            color: var(--accent);
+            opacity: .8;
             line-height: 1.2
         }
 
@@ -388,12 +463,14 @@
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            border-top: var(--hair);
-            border-bottom: var(--hair)
+            border: var(--hair);
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(16, 24, 40, .55)
         }
 
         .stats>div {
-            padding: 20px 22px
+            padding: 22px
         }
 
         .stats>div+div {
@@ -401,9 +478,10 @@
         }
 
         .stat {
-            font-size: clamp(38px, 5vw, 58px);
+            font-size: clamp(38px, 5vw, 56px);
             font-weight: 700;
-            line-height: 1
+            line-height: 1;
+            color: var(--accent)
         }
 
         .stats h3 {
@@ -429,18 +507,21 @@
         }
 
         /* ── Gift ── */
-        .gift {
-            border-top: 2px solid var(--ink)
+        .gift-panel {
+            background: var(--bg-soft);
+            border: var(--hair);
+            border-radius: 18px;
+            padding: 32px
         }
 
-        .gift .sub {
-            margin-top: 14px
+        .gift-panel .sub {
+            margin-inline: 0
         }
 
         .gift-actions {
             margin-top: 20px;
             display: flex;
-            gap: 26px;
+            gap: 22px;
             align-items: center;
             flex-wrap: wrap
         }
@@ -448,22 +529,24 @@
         .dl {
             display: inline-block;
             font-weight: 700;
-            font-size: 18px;
+            font-size: 17px;
             text-decoration: none;
-            background: var(--ink);
-            color: var(--paper);
-            padding: 13px 28px
+            background: var(--accent-strong);
+            color: var(--accent-ink);
+            padding: 12px 26px;
+            border-radius: 10px;
+            transition: background .15s, transform .15s
         }
 
         .dl:hover {
-            background: var(--lime);
-            color: var(--ink)
+            background: var(--accent);
+            transform: translateY(-1px)
         }
 
         .gift-meta {
             font-size: 12px;
             color: var(--muted);
-            margin-top: 10px
+            margin-top: 12px
         }
 
         /* ── Follow ── */
@@ -481,15 +564,15 @@
         .qr {
             width: 180px;
             height: auto;
-            border: var(--hair);
-            padding: 8px;
+            border-radius: 14px;
+            padding: 10px;
             background: #fff
         }
 
         .follow-actions {
             margin-top: 18px;
             display: flex;
-            gap: 22px;
+            gap: 20px;
             align-items: center;
             flex-wrap: wrap
         }
@@ -501,11 +584,14 @@
             font-size: 14px;
             font-family: inherit;
             cursor: pointer;
-            color: var(--ink)
+            color: var(--muted);
+            border-radius: 10px;
+            transition: color .15s, border-color .15s
         }
 
         .copybtn:hover {
-            border-color: var(--ink)
+            color: var(--text);
+            border-color: var(--accent)
         }
 
         @media(max-width:720px) {
@@ -516,7 +602,7 @@
 
         /* ── Footer ── */
         footer {
-            border-top: 3px solid var(--ink);
+            border-top: var(--hair);
             margin-top: 16px
         }
 
@@ -531,24 +617,30 @@
         }
 
         .foot-lib {
-            padding-bottom: 30px;
+            padding-bottom: 28px;
             font-size: 15px
         }
 
         .foot-lib a {
             text-decoration: none;
-            border-bottom: 2px solid var(--lime);
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 2px
+        }
+
+        .foot-lib a:hover {
+            color: var(--accent)
         }
 
         .toast {
             position: fixed;
             bottom: 24px;
             inset-inline-end: 24px;
-            background: var(--ink);
-            color: var(--paper);
+            background: var(--bg-lift);
+            border: var(--hair);
+            color: var(--text);
             padding: 10px 20px;
             font-size: 13px;
+            border-radius: 10px;
             opacity: 0;
             pointer-events: none;
             transition: opacity .25s
@@ -559,8 +651,16 @@
         }
 
         @media(prefers-reduced-motion:reduce) {
+
             html {
                 scroll-behavior: auto
+            }
+
+            .hero .kicker,
+            .hero h1,
+            .hero .sub,
+            .hero .hero-cta {
+                animation: none
             }
         }
     </style>
@@ -716,8 +816,8 @@
             </div>
         </section>
 
-        <section id="gift" class="gift">
-            <div class="wrap sec">
+        <section id="gift" class="wrap sec">
+            <div class="gift-panel">
                 <p class="kicker">هدية</p>
                 <h2>حزمة برومبتات FreeKit</h2>
                 <p class="sub">أول هدية مننا: ملف PDF فيه برومبتات جاهزة تنسخها وتستخدمها فوراً مع أدوات الذكاء
@@ -735,8 +835,8 @@
                 <div class="follow-grid">
                     <div>
                         <h2>خلي الأدوات توصلك قبل الكل</h2>
-                        <p class="sub">تابع <bdi class="mono">@freekit2</bdi> على إنستغرام — كل أسبوع أداة جديدة + كلمة
-                            سر بالخاص تجيبلك الدليل الكامل.</p>
+                        <p class="sub" style="margin-inline:0">تابع <bdi class="mono">@freekit2</bdi> على إنستغرام — كل
+                            أسبوع أداة جديدة + كلمة سر بالخاص تجيبلك الدليل الكامل.</p>
                         <div class="follow-actions">
                             <a class="arrow-link"
                                 href="https://www.instagram.com/freekit2?igsi=MTd0MGFwcDRiYTl2cQ==" target="_blank"

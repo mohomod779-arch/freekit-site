@@ -13,15 +13,15 @@
     <meta property="og:url" content="https://freekit.me/gift.html">
     <meta property="og:title" content="هدية FreeKit — حزمة البرومبتات الجاهزة">
     <meta property="og:description" content="برومبتات جاهزة للنسخ — PDF مجاني · بدون تسجيل · بدون دفع">
-    <meta property="og:image" content="https://freekit.me/og-cover-home-v2.png">
+    <meta property="og:image" content="https://freekit.me/og-cover-home-v3.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="هدية FreeKit — حزمة البرومبتات الجاهزة">
     <meta name="twitter:description" content="برومبتات جاهزة للنسخ — PDF مجاني · بدون تسجيل · بدون دفع">
-    <meta name="twitter:image" content="https://freekit.me/og-cover-home-v2.png">
+    <meta name="twitter:image" content="https://freekit.me/og-cover-home-v3.png">
 
     <link rel="icon"
-        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%2316130E"/><text x="50" y="70" font-size="56" font-family="Arial" font-weight="bold" fill="%239BC53D" text-anchor="middle">F</text></svg>'>
+        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230A0F1C"/><text x="50" y="70" font-size="56" font-family="Arial" font-weight="bold" fill="%2367E8F9" text-anchor="middle">F</text></svg>'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -29,11 +29,15 @@
         rel="stylesheet">
     <style>
         :root {
-            --paper: #F7F3EA;
-            --ink: #16130E;
-            --lime: #9BC53D;
-            --muted: #6B6455;
-            --hair: 1px solid rgba(22, 19, 14, .16);
+            --bg: #0A0F1C;
+            --bg-soft: #101828;
+            --bg-lift: #141E33;
+            --text: #EAF0FA;
+            --muted: #8B96AD;
+            --accent: #67E8F9;
+            --accent-strong: #22D3EE;
+            --accent-ink: #06202A;
+            --hair: 1px solid rgba(234, 240, 250, .09);
             --max-w: 1100px;
         }
 
@@ -43,13 +47,22 @@
             box-sizing: border-box
         }
 
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%
+        }
+
         body {
-            background: var(--paper);
-            color: var(--ink);
+            background: var(--bg);
+            color: var(--text);
             font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
             font-size: 17px;
             line-height: 1.85;
             -webkit-font-smoothing: antialiased
+        }
+
+        ::selection {
+            background: rgba(103, 232, 249, .25)
         }
 
         .mono {
@@ -67,11 +80,12 @@
         }
 
         a {
-            color: inherit
+            color: inherit;
+            transition: color .15s, border-color .15s, background .18s
         }
 
         :focus-visible {
-            outline: 2px solid var(--ink);
+            outline: 2px solid var(--accent);
             outline-offset: 3px
         }
 
@@ -87,17 +101,21 @@
         }
 
         .topline a {
-            color: var(--ink);
+            color: var(--text);
             text-decoration: none;
-            border-bottom: 2px solid var(--lime);
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 2px
+        }
+
+        .topline a:hover {
+            color: var(--accent)
         }
 
         .brandrow {
             display: flex;
             align-items: baseline;
             justify-content: space-between;
-            padding-block: 20px
+            padding-block: 16px
         }
 
         .wordmark {
@@ -112,18 +130,69 @@
         .wordmark .sq {
             width: .18em;
             height: .18em;
-            background: var(--lime);
+            background: var(--accent);
             display: inline-block
         }
 
         .hero {
-            padding-block: 38px 28px
+            padding-block: 48px 36px;
+            position: relative
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset-inline: 0;
+            top: -100px;
+            height: 420px;
+            background: radial-gradient(560px 260px at 50% 30%, rgba(34, 211, 238, .10), transparent 70%);
+            pointer-events: none
+        }
+
+        .hero>* {
+            position: relative
+        }
+
+        @keyframes rise {
+            from {
+                opacity: 0;
+                transform: translateY(14px)
+            }
+
+            to {
+                opacity: 1;
+                transform: none
+            }
+        }
+
+        .hero .kicker,
+        .hero h1,
+        .hero .sub,
+        .hero .dl,
+        .hero .gift-meta {
+            animation: rise .6s cubic-bezier(.2, .7, .2, 1) both
+        }
+
+        .hero h1 {
+            animation-delay: .07s
+        }
+
+        .hero .sub {
+            animation-delay: .14s
+        }
+
+        .hero .dl {
+            animation-delay: .21s
+        }
+
+        .hero .gift-meta {
+            animation-delay: .26s
         }
 
         .kicker {
             font-size: 13px;
             font-weight: 500;
-            color: var(--muted);
+            color: var(--accent);
             margin-bottom: 18px
         }
 
@@ -132,16 +201,24 @@
             display: inline-block;
             width: 10px;
             height: 10px;
-            background: var(--lime);
+            background: var(--accent);
             margin-inline-end: 10px
         }
 
         h1 {
-            font-size: clamp(36px, 6vw, 64px);
+            font-size: clamp(36px, 6vw, 62px);
             font-weight: 700;
-            line-height: 1.18;
-            max-width: 20ch;
+            line-height: 1.2;
+            max-width: 22ch;
             text-wrap: balance
+        }
+
+        h1 em {
+            font-style: normal;
+            background: linear-gradient(120deg, #67E8F9, #5EEAD4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent
         }
 
         .sub {
@@ -154,23 +231,25 @@
         .dl {
             display: inline-block;
             font-weight: 700;
-            font-size: 19px;
+            font-size: 18px;
             text-decoration: none;
-            background: var(--ink);
-            color: var(--paper);
-            padding: 15px 32px;
-            margin-top: 20px
+            background: var(--accent-strong);
+            color: var(--accent-ink);
+            padding: 14px 30px;
+            border-radius: 10px;
+            margin-top: 22px;
+            transition: background .15s, transform .15s
         }
 
         .dl:hover {
-            background: var(--lime);
-            color: var(--ink)
+            background: var(--accent);
+            transform: translateY(-1px)
         }
 
         .gift-meta {
             font-size: 12px;
             color: var(--muted);
-            margin-top: 10px
+            margin-top: 12px
         }
 
         .sec {
@@ -186,7 +265,6 @@
 
         .how {
             list-style: none;
-            border-top: var(--hair);
             max-width: 880px;
             margin-top: 22px
         }
@@ -200,10 +278,15 @@
             align-items: start
         }
 
+        .how li:last-child {
+            border-bottom: none
+        }
+
         .how .snum {
             font-size: clamp(22px, 2.6vw, 30px);
             font-weight: 700;
-            color: var(--muted)
+            color: var(--accent);
+            opacity: .8
         }
 
         .how h3 {
@@ -218,7 +301,6 @@
 
         .soon-list {
             list-style: none;
-            border-top: var(--hair);
             margin-top: 22px;
             max-width: 880px
         }
@@ -231,6 +313,10 @@
             gap: 18px;
             flex-wrap: wrap;
             align-items: baseline
+        }
+
+        .soon-list li:last-child {
+            border-bottom: none
         }
 
         .soon-list .t {
@@ -260,8 +346,8 @@
         .qr {
             width: 170px;
             height: auto;
-            border: var(--hair);
-            padding: 8px;
+            border-radius: 14px;
+            padding: 10px;
             background: #fff
         }
 
@@ -269,14 +355,14 @@
             font-weight: 700;
             font-size: 17px;
             text-decoration: none;
-            border-bottom: 3px solid var(--lime);
+            border-bottom: 2px solid var(--accent);
             padding-bottom: 4px;
             display: inline-block;
             margin-top: 16px
         }
 
         .arrow-link:hover {
-            background: var(--lime)
+            color: var(--accent)
         }
 
         @media(max-width:720px) {
@@ -286,7 +372,7 @@
         }
 
         footer {
-            border-top: 3px solid var(--ink)
+            border-top: var(--hair)
         }
 
         .foot-row {
@@ -297,6 +383,21 @@
             padding-block: 14px;
             font-size: 12.5px;
             color: var(--muted)
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            html {
+                scroll-behavior: auto
+            }
+
+            .hero .kicker,
+            .hero h1,
+            .hero .sub,
+            .hero .dl,
+            .hero .gift-meta {
+                animation: none
+            }
         }
     </style>
 </head>
@@ -316,7 +417,7 @@
     <main>
         <section class="hero wrap">
             <p class="kicker">هدية · جاهزة الآن</p>
-            <h1>حزمة برومبتات FreeKit — انسخ واستخدم فوراً.</h1>
+            <h1>حزمة برومبتات <em>FreeKit</em> — انسخ واستخدم فوراً.</h1>
             <p class="sub">جيت من إنستغرام؟ هاي هديتك: ملف PDF فيه برومبتات مجرّبة جاهزة للنسخ واللصق مع أدوات الذكاء
                 الاصطناعي — نفس الأسلوب اللي نشرحه بمواضيعنا الأسبوعية. بدون تسجيل، بدون دفع.</p>
             <a class="dl" href="FREEKIT_Prompt_Pack.pdf" download>حمّل الحزمة ↓</a>
