@@ -13,12 +13,12 @@
     <meta property="og:url" content="https://freekit.me/">
     <meta property="og:title" content="FreeKit | عدّتك المجانية — Premium ببلاش">
     <meta property="og:description" content="أدوات Premium تشتغل ببلاش — أداة جديدة كل أسبوع · بدون تسجيل · بدون دفع">
-    <meta property="og:image" content="https://freekit.me/og-cover-home.png">
+    <meta property="og:image" content="https://freekit.me/og-cover-home-v2.png">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FreeKit | عدّتك المجانية — Premium ببلاش">
     <meta name="twitter:description" content="أدوات Premium تشتغل ببلاش — أداة جديدة كل أسبوع · بدون تسجيل · بدون دفع">
-    <meta name="twitter:image" content="https://freekit.me/og-cover-home.png">
+    <meta name="twitter:image" content="https://freekit.me/og-cover-home-v2.png">
 
     <link rel="icon"
         href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%2316130E"/><text x="50" y="70" font-size="56" font-family="Arial" font-weight="bold" fill="%239BC53D" text-anchor="middle">F</text></svg>'>
@@ -54,13 +54,13 @@
             color: var(--ink);
             font-family: 'IBM Plex Sans Arabic', system-ui, sans-serif;
             font-size: 17px;
-            line-height: 1.9;
+            line-height: 1.85;
             -webkit-font-smoothing: antialiased
         }
 
+        /* mono للاتيني والأرقام فقط — العربي ما يدخل mono أبداً */
         .mono {
-            font-family: 'JetBrains Mono', ui-monospace, monospace;
-            letter-spacing: .02em
+            font-family: 'JetBrains Mono', ui-monospace, monospace
         }
 
         bdi,
@@ -106,7 +106,7 @@
             flex-wrap: wrap;
             padding: 10px 24px;
             border-bottom: var(--hair);
-            font-size: 11.5px;
+            font-size: 12px;
             color: var(--muted)
         }
 
@@ -122,12 +122,12 @@
             align-items: baseline;
             justify-content: space-between;
             gap: 24px;
-            padding-block: 26px;
+            padding-block: 20px;
             flex-wrap: wrap
         }
 
         .wordmark {
-            font-size: clamp(34px, 5vw, 52px);
+            font-size: clamp(32px, 4.6vw, 46px);
             font-weight: 700;
             text-decoration: none;
             line-height: 1;
@@ -162,13 +162,14 @@
 
         /* ── Hero ── */
         .hero {
-            padding-block: 84px 68px
+            padding-block: 52px 40px
         }
 
         .kicker {
-            font-size: 12px;
+            font-size: 13px;
+            font-weight: 500;
             color: var(--muted);
-            margin-bottom: 24px
+            margin-bottom: 18px
         }
 
         .kicker::before {
@@ -181,11 +182,11 @@
         }
 
         h1 {
-            font-size: clamp(42px, 7.5vw, 84px);
+            font-size: clamp(40px, 7vw, 76px);
             font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -.01em;
-            max-width: 15ch
+            line-height: 1.18;
+            max-width: 20ch;
+            text-wrap: balance
         }
 
         h1 em {
@@ -195,13 +196,13 @@
 
         .sub {
             color: var(--muted);
-            max-width: 54ch;
-            margin-top: 26px;
+            max-width: 56ch;
+            margin-top: 20px;
             font-size: clamp(16px, 2vw, 19px)
         }
 
         .hero-cta {
-            margin-top: 38px
+            margin-top: 28px
         }
 
         .arrow-link {
@@ -233,31 +234,32 @@
         }
 
         .figure figcaption {
-            font-size: 11.5px;
+            font-size: 12.5px;
             color: var(--muted);
-            padding: 12px 0 16px;
+            padding: 10px 0 12px;
             border-bottom: var(--hair)
         }
 
         /* ── Sections ── */
         .sec {
-            padding-block: 96px
+            padding-block: 60px
         }
 
         h2 {
-            font-size: clamp(30px, 4.5vw, 52px);
+            font-size: clamp(28px, 4vw, 46px);
             font-weight: 700;
-            line-height: 1.2
+            line-height: 1.2;
+            text-wrap: balance
         }
 
         .sec-sub {
             color: var(--muted);
-            margin-top: 10px;
-            max-width: 54ch
+            margin-top: 8px;
+            max-width: 56ch
         }
 
         .sec-head {
-            margin-bottom: 48px
+            margin-bottom: 32px
         }
 
         /* ── Index list ── */
@@ -273,10 +275,10 @@
         .index a,
         .index .row {
             display: grid;
-            grid-template-columns: 64px 1fr auto 32px;
-            gap: 20px;
+            grid-template-columns: 56px 1fr auto 32px;
+            gap: 18px;
             align-items: center;
-            padding-block: 26px;
+            padding-block: 20px;
             text-decoration: none
         }
 
@@ -287,7 +289,7 @@
 
         .ttl {
             display: block;
-            font-size: clamp(20px, 2.6vw, 28px);
+            font-size: clamp(20px, 2.6vw, 27px);
             font-weight: 700;
             line-height: 1.4
         }
@@ -296,8 +298,8 @@
             display: block;
             color: var(--muted);
             font-size: 15px;
-            margin-top: 4px;
-            max-width: 64ch
+            margin-top: 3px;
+            max-width: 66ch
         }
 
         .meta {
@@ -330,7 +332,7 @@
 
             .index a,
             .index .row {
-                grid-template-columns: 40px 1fr
+                grid-template-columns: 36px 1fr
             }
 
             .index .meta {
@@ -346,27 +348,27 @@
         .steps {
             list-style: none;
             border-top: var(--hair);
-            max-width: 860px
+            max-width: 880px
         }
 
         .steps li {
             display: grid;
-            grid-template-columns: 92px 1fr;
-            gap: 18px;
-            padding-block: 26px;
+            grid-template-columns: 84px 1fr;
+            gap: 16px;
+            padding-block: 20px;
             border-bottom: var(--hair);
             align-items: start
         }
 
         .snum {
-            font-size: clamp(26px, 3vw, 36px);
+            font-size: clamp(24px, 3vw, 34px);
             font-weight: 700;
             color: var(--muted);
             line-height: 1.2
         }
 
         .steps h3 {
-            font-size: 20px;
+            font-size: 19px;
             font-weight: 700
         }
 
@@ -377,7 +379,7 @@
 
         @media(max-width:560px) {
             .steps li {
-                grid-template-columns: 56px 1fr
+                grid-template-columns: 52px 1fr
             }
         }
 
@@ -390,7 +392,7 @@
         }
 
         .stats>div {
-            padding: 36px 26px
+            padding: 26px 24px
         }
 
         .stats>div+div {
@@ -398,20 +400,20 @@
         }
 
         .stat {
-            font-size: clamp(40px, 5vw, 64px);
+            font-size: clamp(38px, 5vw, 58px);
             font-weight: 700;
             line-height: 1
         }
 
         .stats h3 {
-            font-size: 17px;
-            margin-top: 16px
+            font-size: 16px;
+            margin-top: 12px
         }
 
         .stats p {
             color: var(--muted);
             font-size: 14.5px;
-            margin-top: 6px
+            margin-top: 4px
         }
 
         @media(max-width:720px) {
@@ -431,13 +433,13 @@
         }
 
         .gift .sub {
-            margin-top: 18px
+            margin-top: 14px
         }
 
         .gift-actions {
-            margin-top: 32px;
+            margin-top: 24px;
             display: flex;
-            gap: 28px;
+            gap: 26px;
             align-items: center;
             flex-wrap: wrap
         }
@@ -449,7 +451,7 @@
             text-decoration: none;
             background: var(--ink);
             color: var(--paper);
-            padding: 14px 30px
+            padding: 13px 28px
         }
 
         .dl:hover {
@@ -458,9 +460,9 @@
         }
 
         .gift-meta {
-            font-size: 11.5px;
+            font-size: 12px;
             color: var(--muted);
-            margin-top: 16px
+            margin-top: 12px
         }
 
         /* ── Follow ── */
@@ -471,12 +473,12 @@
         .follow-grid {
             display: grid;
             grid-template-columns: 1fr auto;
-            gap: 48px;
+            gap: 44px;
             align-items: center
         }
 
         .qr {
-            width: 190px;
+            width: 180px;
             height: auto;
             border: var(--hair);
             padding: 8px;
@@ -484,9 +486,9 @@
         }
 
         .follow-actions {
-            margin-top: 28px;
+            margin-top: 22px;
             display: flex;
-            gap: 24px;
+            gap: 22px;
             align-items: center;
             flex-wrap: wrap
         }
@@ -495,10 +497,10 @@
             background: none;
             border: var(--hair);
             padding: 10px 18px;
-            font-size: 13px;
+            font-size: 14px;
+            font-family: inherit;
             cursor: pointer;
-            color: var(--ink);
-            font-family: 'JetBrains Mono', monospace
+            color: var(--ink)
         }
 
         .copybtn:hover {
@@ -514,7 +516,7 @@
         /* ── Footer ── */
         footer {
             border-top: 3px solid var(--ink);
-            margin-top: 24px
+            margin-top: 16px
         }
 
         .foot-row {
@@ -522,13 +524,13 @@
             gap: 26px;
             flex-wrap: wrap;
             justify-content: space-between;
-            padding-block: 22px;
-            font-size: 12px;
+            padding-block: 18px;
+            font-size: 12.5px;
             color: var(--muted)
         }
 
         .foot-lib {
-            padding-bottom: 36px;
+            padding-bottom: 30px;
             font-size: 15px
         }
 
@@ -567,12 +569,12 @@
     <a class="skip" href="#archive">تخطى للمحتوى</a>
 
     <header>
-        <div class="topline mono">
-            <span>FREEKIT.ME</span>
+        <div class="topline">
+            <span class="mono">FREEKIT.ME</span>
             <span>عدد أسبوعي · مختبر عملياً</span>
-            <span>$0 · NO SIGNUP</span>
+            <span class="mono">$0 · NO SIGNUP</span>
             <a href="https://www.instagram.com/freekit2?igsi=MTd0MGFwcDRiYTl2cQ==" target="_blank"
-                rel="noopener">INSTAGRAM ↗</a>
+                rel="noopener">تابعنا على إنستغرام ↗</a>
         </div>
         <div class="wrap brandrow">
             <a class="wordmark" href="/">FreeKit<span class="sq" aria-hidden="true"></span></a>
@@ -586,7 +588,7 @@
 
     <main>
         <section class="hero wrap">
-            <p class="kicker mono">عدّة مجانية · تُختبر قبل النشر</p>
+            <p class="kicker">عدّة مجانية · تُختبر قبل النشر</p>
             <h1>أدوات <em>Premium</em> تشتغل ببلاش. وأداة جديدة كل أسبوع.</h1>
             <p class="sub">FreeKit يدورلك بدائل مجانية لأغلى الأدوات المدفوعة، يختبرها عملياً، ويعلملك تفعيلها بخطوات
                 جاهزة — بدون تسجيل، بدون دفع، بدون تعقيد.</p>
@@ -596,7 +598,8 @@
 
         <figure class="wrap figure">
             <img src="photopea_live.jpg" alt="Photopea يعمل داخل المتصفح — لقطة حقيقية من الأداة" loading="lazy">
-            <figcaption class="mono">لقطة حقيقية — PHOTOPEA: فوتوشوب كامل داخل المتصفح، بلا تثبيت وبلا حساب</figcaption>
+            <figcaption>لقطة حقيقية — <bdi class="mono">PHOTOPEA</bdi>: فوتوشوب كامل داخل المتصفح، بلا تثبيت وبلا حساب
+            </figcaption>
         </figure>
 
         <section id="archive" class="wrap sec">
@@ -712,9 +715,9 @@
             </div>
         </section>
 
-        <section id="gift" class="sec">
-            <div class="wrap">
-                <p class="kicker mono">هدية</p>
+        <section id="gift" class="gift">
+            <div class="wrap sec">
+                <p class="kicker">هدية</p>
                 <h2>حزمة برومبتات FreeKit</h2>
                 <p class="sub">أول هدية مننا: ملف PDF فيه برومبتات جاهزة تنسخها وتستخدمها فوراً مع أدوات الذكاء
                     الاصطناعي — نفس الأسلوب اللي نشرحه بمواضيعنا الأسبوعية.</p>
@@ -722,7 +725,7 @@
                     <a class="dl" href="FREEKIT_Prompt_Pack.pdf" download>حمّل الحزمة ↓</a>
                     <a class="arrow-link" href="gift.html">صفحة الهدية <span class="arr" aria-hidden="true">←</span></a>
                 </div>
-                <p class="gift-meta mono">PDF · جاهزة للنسخ واللصق · بلا تسجيل</p>
+                <p class="gift-meta"><bdi class="mono">PDF</bdi> · جاهزة للنسخ واللصق · بلا تسجيل</p>
             </div>
         </section>
 
@@ -748,16 +751,16 @@
 
     <footer>
         <div class="wrap">
-            <div class="foot-row mono">
-                <span>@freekit2</span>
-                <span>freekit.me</span>
+            <div class="foot-row">
+                <span class="mono">@freekit2</span>
+                <span class="mono">freekit.me</span>
                 <span>عدد جديد كل أسبوع</span>
             </div>
             <p class="foot-lib"><a href="tools.html">مكتبة الأدوات الكاملة — 36 أداة مجانية مختبرة</a></p>
         </div>
     </footer>
 
-    <div class="toast mono" id="toast" role="status" aria-live="polite">تم النسخ</div>
+    <div class="toast" id="toast" role="status" aria-live="polite">تم النسخ</div>
 
     <script>
         (function () {
