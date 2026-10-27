@@ -44,6 +44,9 @@
             --accent-ink: #0B0F1C;
             --hair: 1px solid rgba(234, 240, 250, .09);
             --max-w: 1100px;
+            --radius: 12px;
+            --radius-sm: 8px;
+            --ease: cubic-bezier(.2, .7, .2, 1);
         }
 
         * {
@@ -77,6 +80,10 @@
         bdi,
         [dir="ltr"] {
             unicode-bidi: isolate
+        }
+
+        [id] {
+            scroll-margin-top: 24px
         }
 
         .wrap {
@@ -157,7 +164,21 @@
             width: .18em;
             height: .18em;
             background: var(--accent);
-            display: inline-block
+            display: inline-block;
+            animation: blink 1.2s steps(1, end) infinite
+        }
+
+        @keyframes blink {
+
+            0%,
+            55% {
+                opacity: 1
+            }
+
+            56%,
+            100% {
+                opacity: .18
+            }
         }
 
         .brandrow nav {
@@ -185,18 +206,24 @@
 
         /* ── Hero ── */
         .hero {
-            padding-block: 60px 44px;
-            text-align: center;
-            position: relative
+            padding-block: 64px 48px;
+            padding-inline-start: 28px;
+            text-align: start;
+            position: relative;
+            border-inline-start: 2px solid var(--accent);
+            animation: fade .5s var(--ease) both
         }
 
         .hero::before {
             content: "";
             position: absolute;
-            inset-inline: 0;
-            top: -120px;
-            height: 480px;
-            background: radial-gradient(560px 280px at 50% 30%, rgba(180, 244, 97, .10), transparent 70%);
+            inset: 0;
+            background-image:
+                linear-gradient(to right, rgba(234, 240, 250, .05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(234, 240, 250, .05) 1px, transparent 1px);
+            background-size: 72px 72px;
+            -webkit-mask-image: radial-gradient(85% 75% at 72% 0%, #000, transparent 100%);
+            mask-image: radial-gradient(85% 75% at 72% 0%, #000, transparent 100%);
             pointer-events: none
         }
 
@@ -204,35 +231,14 @@
             position: relative
         }
 
-        @keyframes rise {
+        @keyframes fade {
             from {
-                opacity: 0;
-                transform: translateY(14px)
+                opacity: 0
             }
 
             to {
-                opacity: 1;
-                transform: none
+                opacity: 1
             }
-        }
-
-        .hero .kicker,
-        .hero h1,
-        .hero .sub,
-        .hero .hero-cta {
-            animation: rise .6s cubic-bezier(.2, .7, .2, 1) both
-        }
-
-        .hero h1 {
-            animation-delay: .07s
-        }
-
-        .hero .sub {
-            animation-delay: .14s
-        }
-
-        .hero .hero-cta {
-            animation-delay: .21s
         }
 
         .kicker {
@@ -252,31 +258,32 @@
         }
 
         h1 {
-            font-size: clamp(40px, 7vw, 74px);
+            font-size: clamp(38px, 6.4vw, 68px);
             font-weight: 800;
-            line-height: 1.2;
-            max-width: 22ch;
-            margin-inline: auto;
+            line-height: 1.18;
+            letter-spacing: -.01em;
+            max-width: 20ch;
+            margin-inline: 0;
             text-wrap: balance
         }
 
         h1 em {
             font-style: normal;
-            background: linear-gradient(120deg, #B4F461, #D9FF8F);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent
+            color: var(--accent);
+            background: linear-gradient(180deg, transparent 60%, rgba(180, 244, 97, .16) 60%, rgba(180, 244, 97, .16) 94%, transparent 94%);
+            padding-inline: .06em
         }
 
         .sub {
             color: var(--muted);
-            max-width: 56ch;
-            margin: 16px auto 0;
-            font-size: clamp(16px, 2vw, 19px)
+            max-width: 54ch;
+            margin: 18px 0 0;
+            font-size: clamp(16px, 2vw, 19px);
+            text-wrap: pretty
         }
 
         .hero-cta {
-            margin-top: 24px
+            margin-top: 26px
         }
 
         .arrow-link {
@@ -285,7 +292,10 @@
             text-decoration: none;
             color: var(--text);
             border-bottom: 2px solid var(--accent);
-            padding-bottom: 4px
+            padding-bottom: 4px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px
         }
 
         .arrow-link:hover {
@@ -294,7 +304,11 @@
 
         .arr {
             display: inline-block;
-            margin-inline-start: 8px
+            transition: transform .18s var(--ease)
+        }
+
+        .arrow-link:hover .arr {
+            transform: translateX(-5px)
         }
 
         /* ── Figure ── */
@@ -306,7 +320,7 @@
             width: 100%;
             display: block;
             border: var(--hair);
-            border-radius: 16px
+            border-radius: var(--radius)
         }
 
         .figure figcaption {
@@ -317,24 +331,26 @@
 
         /* ── Sections ── */
         .sec {
-            padding-block: 48px
+            padding-block: 52px
         }
 
         h2 {
             font-size: clamp(28px, 4vw, 46px);
             font-weight: 800;
             line-height: 1.2;
+            letter-spacing: -.01em;
             text-wrap: balance
         }
 
         .sec-sub {
             color: var(--muted);
             margin-top: 8px;
-            max-width: 56ch
+            max-width: 56ch;
+            text-wrap: pretty
         }
 
         .sec-head {
-            margin-bottom: 26px
+            margin-bottom: 28px
         }
 
         /* ── Index list ── */
@@ -352,20 +368,39 @@
 
         .index a,
         .index .row {
+            position: relative;
             display: grid;
             grid-template-columns: 56px 1fr auto 32px;
             gap: 18px;
             align-items: center;
             padding: 16px 14px;
             margin-inline: -14px;
-            border-radius: 14px;
-            text-decoration: none
+            border-radius: var(--radius);
+            text-decoration: none;
+            transition: background .18s var(--ease)
+        }
+
+        .index a::before {
+            content: "";
+            position: absolute;
+            inset-block: 10px;
+            inset-inline-start: 0;
+            width: 2px;
+            background: var(--accent);
+            transform: scaleY(0);
+            transform-origin: center;
+            transition: transform .2s var(--ease)
+        }
+
+        .index a:hover::before {
+            transform: scaleY(1)
         }
 
         .index .num {
             font-size: 13px;
             color: var(--accent);
-            opacity: .85
+            opacity: .7;
+            transition: opacity .18s var(--ease)
         }
 
         .ttl {
@@ -380,7 +415,8 @@
             color: var(--muted);
             font-size: 15px;
             margin-top: 3px;
-            max-width: 66ch
+            max-width: 66ch;
+            text-wrap: pretty
         }
 
         .meta {
@@ -392,11 +428,15 @@
         .a-arr {
             font-size: 22px;
             color: var(--muted);
-            transition: transform .18s, color .18s
+            transition: transform .18s var(--ease), color .18s
         }
 
         .index a:hover {
-            background: var(--bg-soft)
+            background: rgba(180, 244, 97, .035)
+        }
+
+        .index a:hover .num {
+            opacity: 1
         }
 
         .index a:hover .a-arr {
@@ -472,7 +512,7 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             border: var(--hair);
-            border-radius: 16px;
+            border-radius: var(--radius);
             overflow: hidden;
             background: rgba(16, 24, 40, .55)
         }
@@ -489,7 +529,9 @@
             font-size: clamp(38px, 5vw, 56px);
             font-weight: 700;
             line-height: 1;
-            color: var(--accent)
+            color: var(--accent);
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -.02em
         }
 
         .stats h3 {
@@ -518,7 +560,7 @@
         .gift-panel {
             background: var(--bg-soft);
             border: var(--hair);
-            border-radius: 18px;
+            border-radius: var(--radius);
             padding: 32px
         }
 
@@ -542,13 +584,13 @@
             background: var(--accent-strong);
             color: var(--accent-ink);
             padding: 12px 26px;
-            border-radius: 10px;
-            transition: background .15s, transform .15s
+            border-radius: var(--radius-sm);
+            transition: background .15s, box-shadow .2s var(--ease)
         }
 
         .dl:hover {
             background: var(--accent);
-            transform: translateY(-1px)
+            box-shadow: 0 0 0 4px rgba(180, 244, 97, .16)
         }
 
         .gift-meta {
@@ -572,7 +614,7 @@
         .qr {
             width: 180px;
             height: auto;
-            border-radius: 14px;
+            border-radius: var(--radius-sm);
             padding: 10px;
             background: #fff
         }
@@ -593,7 +635,7 @@
             font-family: inherit;
             cursor: pointer;
             color: var(--muted);
-            border-radius: 10px;
+            border-radius: var(--radius-sm);
             transition: color .15s, border-color .15s
         }
 
@@ -648,7 +690,7 @@
             color: var(--text);
             padding: 10px 20px;
             font-size: 13px;
-            border-radius: 10px;
+            border-radius: var(--radius-sm);
             opacity: 0;
             pointer-events: none;
             transition: opacity .25s
@@ -664,11 +706,15 @@
                 scroll-behavior: auto
             }
 
-            .hero .kicker,
-            .hero h1,
-            .hero .sub,
-            .hero .hero-cta {
+            .hero,
+            .wordmark .sq {
                 animation: none
+            }
+
+            .index a::before,
+            .arr,
+            .a-arr {
+                transition: none
             }
         }
     </style>
