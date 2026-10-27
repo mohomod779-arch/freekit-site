@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreeKit | دليل السكلات — 24 مهارة تشتغل بالكلام</title>
+<meta name="description" content="دليل السكلات الكامل: شنو تسوي كل سكلة، شلون تستعملها، والأمر الجاهز للنسخ. 24 مهارة للتصميم والمحتوى والهندسة والمستندات والبحث.">
+<link rel="canonical" href="https://freekit.me/skills.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FreeKit | دليل السكلات">
+<meta property="og:description" content="24 مهارة: شنو تسوي + شلون تستعملها + الأمر الجاهز.">
+<meta property="og:image" content="https://freekit.me/og-cover-home.png">
+<meta property="og:url" content="https://freekit.me/skills.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FreeKit | دليل السكلات">
+<meta name="twitter:description" content="24 مهارة: شنو تسوي + شلون تستعملها + الأمر الجاهز.">
+<meta name="twitter:image" content="https://freekit.me/og-cover-home.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230B0F1C'/><text x='32' y='45' font-family='Arial' font-size='38' font-weight='800' fill='%23B4F461' text-anchor='middle'>F</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0F1C; --panel:#0D1420; --glass:rgba(30,41,59,.75); --glass-solid:#192333;
+  --fg:#FFFFFF; --muted:#94A3B8; --lime:#B4F461; --lime-rgb:180,244,97;
+  --cyan:#38BDF8; --indigo:#6366F1; --red:#F87171;
+  --border:#334155; --line:rgba(180,244,97,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg); color:var(--fg); font-family:'Tajawal',system-ui,sans-serif;
+  line-height:1.7; overflow-x:hidden; position:relative;
+}
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:radial-gradient(rgba(148,163,184,.14) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+}
+.glow{position:fixed; border-radius:50%; filter:blur(110px); z-index:0; pointer-events:none}
+.g1{width:520px;height:520px;top:-220px;left:-140px;background:rgba(180,244,97,.16)}
+.g2{width:560px;height:560px;bottom:-260px;right:-180px;background:rgba(99,102,241,.14)}
+.mono{font-family:'JetBrains Mono',monospace}
+.wrap{position:relative; z-index:1; max-width:1120px; margin:0 auto; padding:0 22px}
+
+/* NAV */
+.nav{
+  position:sticky; top:0; z-index:50; backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  background:var(--glass); border-bottom:1px solid rgba(51,65,85,.6);
+}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; height:66px; gap:18px}
+.logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:19px; color:var(--fg); text-decoration:none; letter-spacing:-.3px}
+.logo .f{
+  width:32px;height:32px;border-radius:9px;background:var(--lime);color:#0B0F1C;
+  display:grid;place-items:center;font-weight:800;font-size:18px;
+}
+.logo b{color:var(--lime)}
+.nav-links{display:flex; align-items:center; gap:22px; font-size:14.5px}
+.nav-links a{color:var(--muted); text-decoration:none; transition:.2s}
+.nav-links a:hover{color:var(--fg)}
+.nav-links a.on{color:var(--lime); font-weight:700}
+.cta-btn{
+  background:var(--lime); color:#0B0F1C; font-weight:800; font-size:14px;
+  padding:9px 18px; border-radius:10px; text-decoration:none; white-space:nowrap;
+  transition:.2s; border:none; cursor:pointer;
+}
+.cta-btn:hover{filter:brightness(1.08); transform:translateY(-1px)}
+
+/* HERO */
+.hero{padding:74px 0 34px; text-align:center}
+.pill{
+  display:inline-flex; align-items:center; gap:8px; font-size:12.5px; font-weight:700;
+  color:var(--lime); background:rgba(180,244,97,.08); border:1px solid var(--line);
+  padding:6px 14px; border-radius:999px; margin-bottom:22px; letter-spacing:.4px;
+}
+.pill .dot{width:6px;height:6px;border-radius:50%;background:var(--lime);box-shadow:0 0 8px var(--lime)}
+h1{font-size:clamp(30px,5.2vw,50px); font-weight:800; line-height:1.28; letter-spacing:-.8px}
+.hl{color:var(--lime)}
+.sub{color:var(--muted); font-size:17px; max-width:620px; margin:18px auto 0; line-height:1.8}
+
+/* SECTIONS */
+.sec{padding:46px 0}
+.sec-head{margin-bottom:26px}
+.sec-title{font-size:clamp(22px,3.4vw,30px); font-weight:800; letter-spacing:-.4px}
+.sec-sub{color:var(--muted); margin-top:8px; font-size:15px}
+
+/* STEPS */
+.steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:8px}
+.step{
+  background:var(--panel); border:1px solid var(--border); border-radius:16px; padding:22px;
+}
+.step .n{
+  width:30px;height:30px;border-radius:9px;background:rgba(180,244,97,.12);
+  color:var(--lime); display:grid;place-items:center;font-weight:800;font-family:'JetBrains Mono',monospace;
+  font-size:14px; margin-bottom:12px;
+}
+.step h4{font-size:16px; margin-bottom:6px}
+.step p{color:var(--muted); font-size:14px; line-height:1.75}
+
+/* SEARCH + TABS */
+.controls{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-bottom:20px}
+.search-wrap{flex:1 1 260px; position:relative}
+.search{
+  width:100%; background:var(--panel); border:1px solid var(--border); border-radius:12px;
+  color:var(--fg); font-family:'Tajawal',sans-serif; font-size:15px; padding:12px 42px 12px 16px;
+  outline:none; transition:.2s;
+}
+.search:focus{border-color:var(--line); box-shadow:0 0 0 3px rgba(180,244,97,.08)}
+.search::placeholder{color:#64748B}
+.search-wrap svg{position:absolute; top:50%; right:14px; transform:translateY(-50%); width:17px;height:17px; stroke:#64748B}
+.count{font-size:13px; color:var(--muted); white-space:nowrap}
+.count b{color:var(--lime); font-family:'JetBrains Mono',monospace}
+.tabs{display:flex; flex-wrap:wrap; gap:8px; margin-bottom:26px}
+.tab{
+  background:var(--panel); border:1px solid var(--border); color:var(--muted);
+  font-family:'Tajawal',sans-serif; font-size:13.5px; font-weight:700;
+  padding:7px 15px; border-radius:999px; cursor:pointer; transition:.18s;
+}
+.tab:hover{color:var(--fg); border-color:#475569}
+.tab.active{background:var(--lime); color:#0B0F1C; border-color:var(--lime)}
+
+/* CARDS */
+.grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:16px}
+.tool{
+  background:var(--panel); border:1px solid var(--border); border-radius:18px; padding:22px;
+  transition:.22s; display:flex; flex-direction:column; gap:10px;
+  scroll-margin-top:90px;
+}
+.tool:hover{border-color:var(--line); transform:translateY(-3px); box-shadow:0 14px 34px rgba(0,0,0,.34)}
+.tool:target{border-color:var(--lime); box-shadow:0 0 0 3px rgba(180,244,97,.14)}
+.tool.hide{display:none}
+.t-top{display:flex; align-items:center; justify-content:space-between; gap:10px}
+.t-cat{
+  font-size:10.5px; font-weight:700; letter-spacing:1px; color:var(--lime);
+  background:rgba(180,244,97,.08); border:1px solid var(--line); padding:3px 9px; border-radius:6px;
+}
+.t-num{font-size:11px; color:#475569; font-family:'JetBrains Mono',monospace}
+.tool h3{font-size:18px; font-weight:800; letter-spacing:-.2px; font-family:'JetBrains Mono',monospace}
+.desc{color:var(--muted); font-size:14px; line-height:1.75}
+.how{
+  font-size:13.5px; color:#CBD5E1; background:rgba(56,189,248,.06);
+  border-right:3px solid rgba(56,189,248,.5); border-radius:8px; padding:9px 12px; line-height:1.7;
+}
+.how b{color:var(--cyan); font-weight:700}
+.sk-cmd{
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  background:#080B14; border:1px solid #1E293B; border-radius:10px; padding:10px 12px;
+  font-family:'JetBrains Mono',monospace; font-size:12.5px; color:var(--lime);
+  cursor:pointer; transition:.18s; text-align:right; width:100%; margin-top:auto; direction:ltr;
+}
+.sk-cmd:hover{border-color:var(--line); background:#0A1020}
+.sk-cmd .txt{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.sk-cmd .cp{color:#475569; font-size:10px; flex:0 0 auto; letter-spacing:.5px}
+.sk-cmd.copied{border-color:var(--lime); color:var(--lime)}
+.sk-cmd.copied .cp{color:var(--lime)}
+
+.note{
+  background:rgba(56,189,248,.06); border:1px solid rgba(56,189,248,.24);
+  border-radius:14px; padding:18px 20px; font-size:14px; color:#CBD5E1; line-height:1.8; margin-top:26px;
+}
+.note b{color:var(--cyan)}
+
+.cta-box{
+  background:linear-gradient(150deg, rgba(180,244,97,.08), rgba(99,102,241,.08));
+  border:1px solid var(--line); border-radius:20px; padding:34px 26px; text-align:center; margin-top:20px;
+}
+.cta-box h3{font-size:clamp(20px,3vw,27px); font-weight:800; margin-bottom:10px}
+.cta-box p{color:var(--muted); font-size:15px; max-width:520px; margin:0 auto 20px}
+.cta-box .cta-btn{display:inline-block; padding:12px 26px; font-size:15px}
+
+footer{border-top:1px solid rgba(51,65,85,.6); margin-top:56px; padding:34px 0; text-align:center}
+.brand{color:var(--lime); font-weight:800; font-size:16px; margin-bottom:6px}
+footer p{color:#64748B; font-size:13px}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .steps{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .hero{padding:48px 0 24px}
+  .wrap{padding:0 16px}
+}
+</style>
+</head>
+<body>
+<div class="glow g1"></div>
+<div class="glow g2"></div>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><span class="f">F</span>Free<b>Kit</b></a>
+    <div class="nav-links">
+      <a href="index.html#topics">المواضيع</a>
+      <a href="tools.html">مكتبة الأدوات</a>
+      <a class="on" href="skills.html">دليل السكلات</a>
+      <a href="index.html#protocol">البروتوكول</a>
+      <a href="index.html#why">لماذا FreeKit</a>
+      <a class="cta-btn" href="https://instagram.com/freekit2" target="_blank" rel="noopener">تابعنا</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="pill"><span class="dot"></span><span class="mono">SKILLS GUIDE • v1.0</span></div>
+  <h1>٢٤ مهارة تشتغل <span class="hl">بالكلام</span><br>مو بالكود</h1>
+  <p class="sub">
+    كل سكلة هنا مكتوب شنو تسوي، شلون تستعملها، والأمر الجاهز للنسخ.
+    ما تحتاج تحفظ شي — اكتب طلبك بلغتك، والسكلة الصح تنحمل لحالها.
+  </p>
+</header>
+
+<section class="sec wrap" id="how">
+  <div class="sec-head">
+    <h2 class="sec-title">شلون يشتغل الموضوع؟</h2>
+    <p class="sec-sub">ثلاث خطوات، بلا إعدادات.</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="n">01</div>
+      <h4>تكتب طلبك عادي</h4>
+      <p>"حلل لي تصميم هالموقع" أو "سوي لي كابشن لريل". بلغتك، بلا مصطلحات.</p>
+    </div>
+    <div class="step">
+      <div class="n">02</div>
+      <h4>السكلة تنحمل لحالها</h4>
+      <p>النظام يطابق طلبك مع السكلة المناسبة ويشغّلها — إنت ما تختار ولا تحمّل شي.</p>
+    </div>
+    <div class="step">
+      <div class="n">03</div>
+      <h4>مخرَج بمعيار، مو رأي</h4>
+      <p>كل سكلة تعطي مخرَج محدد: ملف، سكربت، تقرير، أو رقم مقاس — مو "كلام حلو".</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="skills">
+  <div class="sec-head">
+    <h2 class="sec-title">الدليل الكامل</h2>
+    <p class="sec-sub">اضغط على أي أمر حتى تنسخه. كل سكلة لها رابط مباشر.</p>
+  </div>
+
+  <div class="controls">
+    <div class="search-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input class="search" id="q" type="search" placeholder="ابحث باسم السكلة أو الكلمة المفتاحية…" autocomplete="off">
+    </div>
+    <div class="count">النتائج: <b id="cnt">24</b></div>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-filter="all">الكل</button>
+    <button class="tab" data-filter="design">التصميم</button>
+    <button class="tab" data-filter="content">المحتوى</button>
+    <button class="tab" data-filter="eng">الهندسة</button>
+    <button class="tab" data-filter="docs">المستندات</button>
+    <button class="tab" data-filter="research">البحث</button>
+    <button class="tab" data-filter="site">الموقع</button>
+  </div>
+
+  <div class="grid" id="skillGrid">
+
+    <article class="tool" id="s-taste" data-cat="design">
+      <div class="t-top"><span class="t-cat mono">DESIGN</span><span class="t-num">01</span></div>
+      <h3>taste</h3>
+      <p class="desc">تفتح الموقع بمتصفح حقيقي، تلتقط DOM + لقطة شاشة، وتطلعلك نظام التصميم الكامل: ألوان، خطوط، مسافات، أنصاف أقطار — وملف DNA يشرح <em>ليش</em> التصميم ناجح.</p>
+      <p class="how"><b>الاستعمال:</b> أعطني رابط أي موقع، وأرجعلك ملفين: <span class="mono">domain.md</span> + <span class="mono">domain.json</span> جاهزين للاستعمال كمصدر تصميم.</p>
+      <button class="sk-cmd" data-cmd="/taste https://example.com"><span class="txt">/taste &lt;url&gt;</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-refactoring-ui" data-cat="design">
+      <div class="t-top"><span class="t-cat mono">DESIGN</span><span class="t-num">02</span></div>
+      <h3>refactoring-ui</h3>
+      <p class="desc">مبادئ تصميم واجهات عملية: تسلسل بصري، نظرية ألوان، تباعد، تايبوغرافي، وكيف تكتب نص واجهة ما يبين مكتوب من AI.</p>
+      <p class="how"><b>الاستعمال:</b> اسأل "شنو اللون الأنسب لهذا الزر" أو "راجع هالواجهة" — تجيبلك قرار ومبرره، مو ذوق.</p>
+      <button class="sk-cmd" data-cmd="راجع تصميم هالواجهة واقترح تحسينات"><span class="txt">راجع تصميم هالواجهة…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-frontend-design" data-cat="design">
+      <div class="t-top"><span class="t-cat mono">DESIGN</span><span class="t-num">03</span></div>
+      <h3>frontend-design</h3>
+      <p class="desc">توجيه بصري للواجهات الجديدة: اتجاه فني واضح، اختيار خطوط مقصود، وابتعاد عن القوالب الجاهزة الي تطلع من أي أداة.</p>
+      <p class="how"><b>الاستعمال:</b> وقت تبني صفحة أو مكوّن جديد — تطلب اتجاه قبل الكود، فتطلع الواجهة بهوية مو قالب.</p>
+      <button class="sk-cmd" data-cmd="اختر اتجاه بصري لصفحة هبوط لمشروع AI"><span class="txt">اختر اتجاه بصري لصفحة…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-canvas-design" data-cat="design">
+      <div class="t-top"><span class="t-cat mono">DESIGN</span><span class="t-num">04</span></div>
+      <h3>canvas-design</h3>
+      <p class="desc">تنشئ بوسترات وتصاميم ثابتة بصيغة PNG أو PDF — أصلية، مو نسخ من شغل فنانين.</p>
+      <p class="how"><b>الاستعمال:</b> "سوي لي بوستر إعلان" وتعطيها المقاس والنص والألوان — ترجعلك ملف جاهز.</p>
+      <button class="sk-cmd" data-cmd="سوي بوستر 1080x1350 عن إدارة المخاطر"><span class="txt">سوي بوستر 1080×1350…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-freekit-design-system" data-cat="design">
+      <div class="t-top"><span class="t-cat mono">DESIGN</span><span class="t-num">05</span></div>
+      <h3>freekit-design-system</h3>
+      <p class="desc">هوية FreeKit نفسها: الألوان، الخطوط، المكوّنات، ونبرة الكتابة. أي صفحة جديدة لازم تمر منها حتى تبقى بالعائلة.</p>
+      <p class="how"><b>الاستعمال:</b> "سوي صفحة جديدة للموقع" — تنحمل تلقائياً وتلتزم بالهوية بلا ما تعيد الاختيار من الصفر.</p>
+      <button class="sk-cmd" data-cmd="سوي صفحة جديدة على freekit.me بنفس الهوية"><span class="txt">صفحة جديدة بنفس الهوية</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-viral-hooks" data-cat="content">
+      <div class="t-top"><span class="t-cat mono">CONTENT</span><span class="t-num">06</span></div>
+      <h3>viral-hooks</h3>
+      <p class="desc">أول ١-٣ ثواني الي تحدد إذا الفيديو ينشاف أو ينقفل. تعطيك هوكات بأنماط مجرّبة (Kallaway، MrBeast، Hormozi) وتقيّم الهوك اللي عندك.</p>
+      <p class="how"><b>الاستعمال:</b> أعطني موضوع الريل، وأرجعلك ٥-٨ هوكات متنوعة + critique للضعيف منها.</p>
+      <button class="sk-cmd" data-cmd="اعطني 6 هوكات لريل عن بوت التداول"><span class="txt">اعطني 6 هوكات لريل…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-viral-short-form" data-cat="content">
+      <div class="t-top"><span class="t-cat mono">CONTENT</span><span class="t-num">07</span></div>
+      <h3>viral-short-form</h3>
+      <p class="desc">سكربت كامل: هوك ← تصعيد ← مكافأة ← CTA. تشتغل على ريلز وتيك توك وشورتس، وكل نوع محتوى (شرح، قصة، قبل/بعد).</p>
+      <p class="how"><b>الاستعمال:</b> "اكتب سكربت ٤٠ ثانية عن X" — ترجعلك سكربت مقسّم بمقاطع وبتوقيت.</p>
+      <button class="sk-cmd" data-cmd="اكتب سكربت ريل 40 ثانية عن تنظيف البيانات"><span class="txt">اكتب سكربت ريل 40 ثانية…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-viral-captions" data-cat="content">
+      <div class="t-top"><span class="t-cat mono">CONTENT</span><span class="t-num">08</span></div>
+      <h3>viral-captions-and-ctas</h3>
+      <p class="desc">الكابشن والCTA: الطول المناسب لكل منصة، أول سطر قبل القطع، الهاشتاغات الحقيقية، والكومنت المثبت — وشنو الـ engagement bait الي يعاقبك عليه الخوارزم.</p>
+      <p class="how"><b>الاستعمال:</b> أعطني موضوع الفيديو وأرجعلك كابشن + هاشتاغات + CTA نظيف (حفظ/إرسال، مو "اكتب بالكومنت").</p>
+      <button class="sk-cmd" data-cmd="اكتب كابشن وهاشتاغات لريل عن Claude Code"><span class="txt">كابشن + هاشتاغات لريل…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-insta-carousel" data-cat="content">
+      <div class="t-top"><span class="t-cat mono">CONTENT</span><span class="t-num">09</span></div>
+      <h3>insta-carousel</h3>
+      <p class="desc">كاروسيل انستا كامل: تكتب النص شريحة-شريحة وترندر PNG ١٠٨٠×١٣٥٠ بـ Pillow، بدعم عربي مشكّل صح.</p>
+      <p class="how"><b>الاستعمال:</b> "سوي كاروسيل ٧ شرائح عن X" — ترجعلك ملفات PNG جاهزة للرفع + النص.</p>
+      <button class="sk-cmd" data-cmd="سوي كاروسيل 7 شرائح عن إدارة المخاطر"><span class="txt">سوي كاروسيل 7 شرائح…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-thumbnailrater" data-cat="content">
+      <div class="t-top"><span class="t-cat mono">CONTENT</span><span class="t-num">10</span></div>
+      <h3>thumbnailrater</h3>
+      <p class="desc">تقييم غلاف أو تصميم على معايير الـ CTR: وضوح بحجم مصغّر، تباين، نص مقروء، وبطل واحد. ما تدّعي رقم CTR — تعطيك ملاحظات قابلة للتنفيذ.</p>
+      <p class="how"><b>الاستعمال:</b> دز صورة الغلاف وأرجعلك تقييم + قائمة تحسينات مرتبة بالأولوية.</p>
+      <button class="sk-cmd" data-cmd="قيّم غلاف الريل هذا وأعطني تحسينات"><span class="txt">قيّم غلاف الريل…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-video-editing" data-cat="content">
+      <div class="t-top"><span class="t-cat mono">CONTENT</span><span class="t-num">11</span></div>
+      <h3>video-editing</h3>
+      <p class="desc">ريل عمودي ٩:١٦ من سكربت معتمد + تسجيل: كابشن كاريوكي متزامن، موشن غرافيك، SFX، وبوابة تحقق إلزامية قبل التسليم.</p>
+      <p class="how"><b>الاستعمال:</b> أعطني الفيديو + السكربت، وأرجعلك mp4 مرندَر متحقَّق منه بـ ffprobe ولقطات فريمات.</p>
+      <button class="sk-cmd" data-cmd="سوي ريل 9:16 من هذا الفيديو والسكربت"><span class="txt">سوي ريل 9:16…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-remotion" data-cat="content">
+      <div class="t-top"><span class="t-cat mono">CONTENT</span><span class="t-num">12</span></div>
+      <h3>remotion-motion-graphics</h3>
+      <p class="desc">فيديو بـ React: أنيميشن نص، لوجو، إنترو/أوترو، وكومبوزيشن معقّدة — رندر على السيرفر (Node 22).</p>
+      <p class="how"><b>الاستعمال:</b> "سوي إنترو لوجو ٣ ثواني" أو "أضف كابشن متحرك لهالفيديو" — يرجعلك mp4.</p>
+      <button class="sk-cmd" data-cmd="سوي إنترو 3 ثواني لشعار FreeKit"><span class="txt">سوي إنترو 3 ثواني…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-brainstorming" data-cat="eng">
+      <div class="t-top"><span class="t-cat mono">ENG</span><span class="t-num">13</span></div>
+      <h3>brainstorming</h3>
+      <p class="desc">قبل أي كود: تسحب المتطلب الحقيقي بـ ٣-٥ أسئلة وتعطيك المواصفة تراجعها. تمنع بناء الشي الغلط بسرعة.</p>
+      <p class="how"><b>الاستعمال:</b> "أريد أسوي X" — ترد عليك بأسئلة ومخطط قبل سطر كود واحد.</p>
+      <button class="sk-cmd" data-cmd="أريد أسوي أداة تتابع الأسعار، ناقشني قبل الكود"><span class="txt">ناقشني قبل الكود…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-writing-plans" data-cat="eng">
+      <div class="t-top"><span class="t-cat mono">ENG</span><span class="t-num">14</span></div>
+      <h3>writing-plans</h3>
+      <p class="desc">تحوّل المواصفة لخطة مهام صغيرة (٢-٥ دقائق لكل مهمة) بمسارات ملفات وverification خطوة-خطوة.</p>
+      <p class="how"><b>الاستعمال:</b> بعد ما تتّفق على المتطلب — تطلب خطة، فتصير المهام قابلة للتنفيذ بلا تفسير.</p>
+      <button class="sk-cmd" data-cmd="سوي خطة تنفيذ لهذي المواصفة"><span class="txt">سوي خطة تنفيذ…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-tdd" data-cat="eng">
+      <div class="t-top"><span class="t-cat mono">ENG</span><span class="t-num">15</span></div>
+      <h3>test-driven-development</h3>
+      <p class="desc">RED ← GREEN ← REFACTOR: تكتب اختبار يفشل أول، تشوفه يفشل للسبب الصح، بعدها أقل كود ينجحه.</p>
+      <p class="how"><b>الاستعمال:</b> "أضف ميزة X" — تبدأ باختبار مو بكود، فتصير الميزة مقيسة من أول يوم.</p>
+      <button class="sk-cmd" data-cmd="أضف ميزة تنبيه السعر بالـ TDD"><span class="txt">أضف ميزة بالـ TDD…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-debugging" data-cat="eng">
+      <div class="t-top"><span class="t-cat mono">ENG</span><span class="t-num">16</span></div>
+      <h3>systematic-debugging</h3>
+      <p class="desc">أربع مراحل: أعِد إنتاج الخطأ، اعزل، لگى السبب الجذري، بعدها صلّح. تمنع "تجريب عشوائي" يخرب أشياء شغالة.</p>
+      <p class="how"><b>الاستعمال:</b> أي خطأ أو سلوك غريب — أعطني الخطأ وأبدأ بالعزل مو بالتخمين.</p>
+      <button class="sk-cmd" data-cmd="هذا الخطأ يطلع كل مرة، شخّصه من الجذر"><span class="txt">شخّص الخطأ من الجذر…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-code-review" data-cat="eng">
+      <div class="t-top"><span class="t-cat mono">ENG</span><span class="t-num">17</span></div>
+      <h3>requesting-code-review</h3>
+      <p class="desc">قائمة تحقق قبل الدمج + مراجع مستقل يفحص إذا الشغل مطابق للمتطلبات، مو بس "يشتغل".</p>
+      <p class="how"><b>الاستعمال:</b> قبل أي commit أو merge مهم — راجع الكود وأرجعلك ملاحظات مرتبة بالخطورة.</p>
+      <button class="sk-cmd" data-cmd="راجع الكود قبل الدمج"><span class="txt">راجع الكود قبل الدمج</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-verification" data-cat="eng">
+      <div class="t-top"><span class="t-cat mono">ENG</span><span class="t-num">18</span></div>
+      <h3>verification-before-completion</h3>
+      <p class="desc">ممنوع كلمة "خلص" بلا دليل: ينفّذ أمر التحقق فعلاً ويعرض المخرَج قبل أي ادّعاء نجاح.</p>
+      <p class="how"><b>الاستعمال:</b> أي تسليم — يمر من هنا، فتشوف الأمر والنتيجة مو الوعد.</p>
+      <button class="sk-cmd" data-cmd="تحقق من إن الشغل خلص فعلاً وأرني الدليل"><span class="txt">أرني دليل الإنجاز…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-parallel-agents" data-cat="eng">
+      <div class="t-top"><span class="t-cat mono">ENG</span><span class="t-num">19</span></div>
+      <h3>dispatching-parallel-agents</h3>
+      <p class="desc">مهام مستقلة تتنفّذ بنفس الوقت: ٣-٨ وكلاء بالتوازي، وكل واحد يرجع نتيجة، بعدها تُدمج.</p>
+      <p class="how"><b>الاستعمال:</b> "افحص هالخمسة أشياء" — تصير ٥ مسارات متوازية بدل طابور طويل.</p>
+      <button class="sk-cmd" data-cmd="افحص الخمسة سيرفرات بالتوازي وأعطني جدول"><span class="txt">افحص 5 سيرفرات بالتوازي…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-pdf" data-cat="docs">
+      <div class="t-top"><span class="t-cat mono">DOCS</span><span class="t-num">20</span></div>
+      <h3>pdf</h3>
+      <p class="desc">كل عمليات PDF: استخراج نص/جداول، دمج، تقسيم، تدوير، علامة مائية، تعبئة نماذج، تشفير، وOCR للمسحوب.</p>
+      <p class="how"><b>الاستعمال:</b> "استخرج الجداول من هذا PDF" أو "ادمج هذولا الملفين" — ترجعلك ملف أو جدول.</p>
+      <button class="sk-cmd" data-cmd="استخرج النص والجداول من هذا الـ PDF"><span class="txt">استخرج من PDF…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-xlsx" data-cat="docs">
+      <div class="t-top"><span class="t-cat mono">DOCS</span><span class="t-num">21</span></div>
+      <h3>xlsx</h3>
+      <p class="desc">جداول: معادلات، مخططات، تنظيف بيانات وسخة، وتحويل بين CSV/TSV/XLSX — تفتح، تعدّل، وتنتج ملف.</p>
+      <p class="how"><b>الاستعمال:</b> "نظّف هذا الجدول وسوي مخطط" — ترجعلك ملف xlsx جاهز مو نص.</p>
+      <button class="sk-cmd" data-cmd="نظّف بيانات هذا الجدول وسوي مخطط"><span class="txt">نظّف الجدول + مخطط…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-deep-research" data-cat="research">
+      <div class="t-top"><span class="t-cat mono">RESEARCH</span><span class="t-num">22</span></div>
+      <h3>deep-research</h3>
+      <p class="desc">بحث متعدد المصادر مع تحقق واستشهادات داخل النص — تفرّق بين الرأي والحقيقة، وتذكر ما لم يُثبت.</p>
+      <p class="how"><b>الاستعمال:</b> "ابحث وقارن بين X و Y" — ترجعلك تقرير بمصادر، مو تلخيص سطحي.</p>
+      <button class="sk-cmd" data-cmd="ابحث وقارن بين ElevenLabs و Azure TTS"><span class="txt">ابحث وقارن بين…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-github-pages" data-cat="site">
+      <div class="t-top"><span class="t-cat mono">SITE</span><span class="t-num">23</span></div>
+      <h3>github-pages-site-manager</h3>
+      <p class="desc">إدارة موقع freekit.me: قراءة الملف قبل الكتابة (يحتاج sha)، حماية CNAME، رسائل commit موحّدة، وإعادة بناء الصفحات.</p>
+      <p class="how"><b>الاستعمال:</b> "أضف قسم للصفحة" أو "حدّث الـ sitemap" — التنفيذ يمشي بالقواعد بلا ما ينكسر البناء.</p>
+      <button class="sk-cmd" data-cmd="أضف صفحة جديدة للموقع وحدّث sitemap"><span class="txt">أضف صفحة + sitemap…</span><span class="cp">COPY</span></button>
+    </article>
+
+    <article class="tool" id="s-skill-creator" data-cat="site">
+      <div class="t-top"><span class="t-cat mono">SITE</span><span class="t-num">24</span></div>
+      <h3>skill-creator</h3>
+      <p class="desc">تصنع سكلة جديدة من الصفر أو تحسّن موجودة: تكتب SKILL.md، تضبط الوصف حتى تنحمل بالسؤال الصح، وتقيس أدائها مقابل خط أساس.</p>
+      <p class="how"><b>الاستعمال:</b> "سوي سكلة لهذا الشغل المتكرر" — ترجعلك سكلة جاهزة للتثبيت + اختبار.</p>
+      <button class="sk-cmd" data-cmd="سوي سكلة جديدة لتقارير السيرفر الأسبوعية"><span class="txt">سوي سكلة جديدة…</span><span class="cp">COPY</span></button>
+    </article>
+
+  </div>
+
+  <div class="note">
+    <b>ملاحظة:</b> كل سكلة لها رابط مباشر — مثل <span class="mono">freekit.me/skills.html#s-taste</span>.
+    استخدمها بأتمتة ManyChat: لما أحد يكتب اسم سكلة بالكومنت، يوصله الرابط بالخاص مباشرة.
+  </div>
+</section>
+
+<section class="sec wrap">
+  <div class="cta-box">
+    <h3>عندك شغل متكرر؟ صيره سكلة</h3>
+    <p>أي شي تسويه أكثر من ثلاث مرات، يستحق سكلة. قلي شنو تسوي وأسويها لك.</p>
+    <a class="cta-btn" href="https://instagram.com/freekit2" target="_blank" rel="noopener">تواصل ويانا</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">FreeKit</div>
+    <p class="mono">freekit.me • أدوات وسكلات عربية تشتغل</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var q = document.getElementById('q');
+  var grid = document.getElementById('skillGrid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.tool'));
+  var cnt = document.getElementById('cnt');
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  var activeCat = 'all';
+
+  function apply(){
+    var term = (q.value || '').trim().toLowerCase();
+    var shown = 0;
+    cards.forEach(function(c){
+      var catOk = (activeCat === 'all') || (c.getAttribute('data-cat') === activeCat);
+      var textOk = !term || c.textContent.toLowerCase().indexOf(term) !== -1;
+      var ok = catOk && textOk;
+      c.classList.toggle('hide', !ok);
+      if (ok) shown++;
+    });
+    cnt.textContent = shown;
+  }
+
+  q.addEventListener('input', apply);
+
+  tabs.forEach(function(t){
+    t.addEventListener('click', function(){
+      tabs.forEach(function(x){ x.classList.remove('active'); });
+      t.classList.add('active');
+      activeCat = t.getAttribute('data-filter');
+      apply();
+    });
+  });
+
+  grid.addEventListener('click', function(e){
+    var btn = e.target.closest('.sk-cmd');
+    if (!btn) return;
+    var cmd = btn.getAttribute('data-cmd') || '';
+    var label = btn.querySelector('.cp');
+    function done(){
+      btn.classList.add('copied');
+      if (label) label.textContent = 'COPIED';
+      setTimeout(function(){
+        btn.classList.remove('copied');
+        if (label) label.textContent = 'COPY';
+      }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(cmd).then(done, done);
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = cmd; document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(err){}
+      document.body.removeChild(ta); done();
+    }
+  });
+
+  apply();
+})();
+</script>
+</body>
+</html>
