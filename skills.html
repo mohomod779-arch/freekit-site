@@ -232,10 +232,7 @@
 
         h1 em {
             font-style: normal;
-            background: linear-gradient(120deg, #B4F461, #D9FF8F);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent
+            color: #B4F461
         }
 
         .sub {
@@ -362,7 +359,7 @@
 
         .sk.new {
             border-color: rgba(180, 244, 97, .5);
-            background: linear-gradient(160deg, rgba(180, 244, 97, .07), rgba(16, 24, 40, .6) 55%)
+            background: rgba(180, 244, 97, .06)
         }
 
         .sk:target {
@@ -464,7 +461,7 @@
             margin-top: 34px;
             border: var(--hair);
             border-radius: 18px;
-            background: linear-gradient(160deg, rgba(180, 244, 97, .08), rgba(16, 24, 40, .5));
+            background: rgba(180, 244, 97, .07);
             padding: 30px;
             text-align: center
         }
@@ -565,7 +562,13 @@
         .toast.show {
             opacity: 1
         }
-    </style>
+    
+        /* v2 polish: skills-guided cleanup (no eyebrow, no joined meta strings, no decorative glow/grid, no gradient text) */
+        .brandrow nav a { white-space: nowrap }
+        .hero::before { display: none }
+        .meta > span + span::before, .topline > span > span + span::before { content: ""; display: inline-block; width: 1px; height: .8em; background: currentColor; opacity: .35; margin-inline: .7em; vertical-align: -.05em }
+        .foot-lib a + a { margin-inline-start: 20px }
+</style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"CollectionPage","name":"FreeKit — دليل السكلات","url":"https://freekit.me/skills.html","description":"27 مهارة تشتغل داخل كلود كود بأمر واحد: تصميم، محتوى، هندسة، مستندات، بحث، وإدارة الموقع.","inLanguage":"ar","isPartOf":{"@type":"WebSite","name":"FreeKit","url":"https://freekit.me/"}}
     </script>
@@ -576,9 +579,9 @@
 
     <header>
         <div class="topline">
-            <span class="mono">SKILLS GUIDE · v2.0</span>
+            <span class="mono"><span>SKILLS GUIDE</span><span>v2.0</span></span>
             <span class="mono">27 SKILLS</span>
-            <span class="mono">$0 · NO SIGNUP</span>
+            <span class="mono"><span>$0</span><span>NO SIGNUP</span></span>
         </div>
         <div class="wrap brandrow">
             <a class="wordmark" href="/">FreeKit<span class="sq" aria-hidden="true"></span></a>
@@ -595,7 +598,6 @@
 
     <main>
         <section class="hero wrap">
-            <p class="kicker">دليل عملي · كل سكلة بأمر واحد</p>
             <h1>٢٧ مهارة <em>تشتغل بالكلام</em></h1>
             <p class="sub">كل سكلة من هذولا تضيف قدرة جديدة لكلود كود: تصميم واجهات، كتابة محتوى، هندسة كود، مستندات،
                 بحث، وإدارة موقعك. تحت كل وحدة: شنو تسوي، شلون تستعملها، والأمر الجاهز للنسخ.</p>
@@ -643,7 +645,7 @@
             <div class="grid" id="skillGrid">
 
                 <article class="sk new" id="s-design-cmd" data-cat="claude">
-                    <div class="sk-top"><span class="cat mono">CLAUDE CODE · جديد</span><span class="num mono">01</span></div>
+                    <div class="sk-top"><span class="cat mono">CLAUDE CODE</span><span class="num mono">01</span></div>
                     <h3>/design</h3>
                     <p class="desc">تكتبله شنو تريد، يرسملك ثلاث لوحات تصميم قابلة للتعديل، تختار وحدة وهو ينفذها كود
                         حقيقي — من فكرة لواجهة شغالة بجلسة وحدة.</p>
@@ -653,7 +655,7 @@
                 </article>
 
                 <article class="sk new" id="s-plugin-eval" data-cat="claude">
-                    <div class="sk-top"><span class="cat mono">CLAUDE CODE · جديد</span><span class="num mono">02</span></div>
+                    <div class="sk-top"><span class="cat mono">CLAUDE CODE</span><span class="num mono">02</span></div>
                     <h3>claude plugin eval</h3>
                     <p class="desc">يختبر البلجن مالتك على مجموعة حالات اختبار، يعطيك سكور، ويقارنه بخط الأساس — تعرف
                         إذا يحسّن الشغل ولا بس يستهلك توكنات.</p>
@@ -663,7 +665,7 @@
                 </article>
 
                 <article class="sk new" id="s-fork-mode" data-cat="claude">
-                    <div class="sk-top"><span class="cat mono">CLAUDE CODE · جديد</span><span class="num mono">03</span></div>
+                    <div class="sk-top"><span class="cat mono">CLAUDE CODE</span><span class="num mono">03</span></div>
                     <h3>fork mode</h3>
                     <p class="desc">وكيل فرعي يرث المحادثة كاملة، يشتغل مهمة جانبية بلا ما يضيع السياق، وبعدين يرجع
                         النتيجة — بدل ما تبدأ من الصفر بجلسة جديدة.</p>
@@ -725,7 +727,7 @@
                     <div class="sk-top"><span class="cat mono">CONTENT</span><span class="num mono">09</span></div>
                     <h3>viral-hooks</h3>
                     <p class="desc">أول ١-٣ ثواني الي تحدد إذا الفيديو ينشاف أو ينقفل. تعطيك هوكات بأنماط مجرّبة
-                        (Kallaway، MrBeast، Hormozi) وتقيّم الهوك اللي عندك.</p>
+                        (<bdi>Kallaway</bdi>، <bdi>MrBeast</bdi>، Hormozi) وتقيّم الهوك اللي عندك.</p>
                     <p class="usebar"><b>الاستعمال:</b> أعطني موضوع الريل، وأرجعلك ٥-٨ هوكات متنوعة + critique للضعيف
                         منها.</p>
                     <button class="cmd" data-cmd="اعطني 6 هوكات لريل عن بوت التداول"><span class="txt">اعطني 6 هوكات لريل عن بوت التداول</span><span class="cp">COPY</span></button>
@@ -744,7 +746,7 @@
                 <article class="sk" id="s-viral-captions" data-cat="content">
                     <div class="sk-top"><span class="cat mono">CONTENT</span><span class="num mono">11</span></div>
                     <h3>viral-captions-and-ctas</h3>
-                    <p class="desc">الكابشن والCTA: الطول المناسب لكل منصة، أول سطر قبل القطع، الهاشتاغات الحقيقية،
+                    <p class="desc">الكابشن وال<bdi>CTA</bdi>: الطول المناسب لكل منصة، أول سطر قبل القطع، الهاشتاغات الحقيقية،
                         والكومنت المثبت — وشنو الـ engagement bait الي يعاقبك عليه الخوارزم.</p>
                     <p class="usebar"><b>الاستعمال:</b> أعطني موضوع الفيديو وأرجعلك كابشن + هاشتاغات + CTA نظيف
                         (حفظ/إرسال، مو «اكتب بالكومنت»).</p>
@@ -754,7 +756,7 @@
                 <article class="sk" id="s-insta-carousel" data-cat="content">
                     <div class="sk-top"><span class="cat mono">CONTENT</span><span class="num mono">12</span></div>
                     <h3>insta-carousel</h3>
-                    <p class="desc">كاروسيل انستا كامل: تكتب النص شريحة-شريحة وترندر PNG ١٠٨٠×١٣٥٠ بـ Pillow، بدعم
+                    <p class="desc">كاروسيل انستا كامل: تكتب النص شريحة-شريحة وترندر PNG ١٠٨٠×١٣٥٠ بـ <bdi>Pillow</bdi>، بدعم
                         عربي مشكّل صح.</p>
                     <p class="usebar"><b>الاستعمال:</b> «سوي كاروسيل ٧ شرائح عن X» — ترجعلك ملفات PNG جاهزة للرفع +
                         النص.</p>
@@ -774,7 +776,7 @@
                 <article class="sk" id="s-video-editing" data-cat="content">
                     <div class="sk-top"><span class="cat mono">CONTENT</span><span class="num mono">14</span></div>
                     <h3>video-editing</h3>
-                    <p class="desc">ريل عمودي ٩:١٦ من سكربت معتمد + تسجيل: كابشن كاريوكي متزامن، موشن غرافيك، SFX،
+                    <p class="desc">ريل عمودي ٩:١٦ من سكربت معتمد + تسجيل: كابشن كاريوكي متزامن، موشن غرافيك، <bdi>SFX</bdi>،
                         وبوابة تحقق إلزامية قبل التسليم.</p>
                     <p class="usebar"><b>الاستعمال:</b> أعطني الفيديو + السكربت، وأرجعلك mp4 مرندَر متحقَّق منه بـ
                         ffprobe ولقطات فريمات.</p>
@@ -803,7 +805,7 @@
                 <article class="sk" id="s-writing-plans" data-cat="eng">
                     <div class="sk-top"><span class="cat mono">ENGINEERING</span><span class="num mono">17</span></div>
                     <h3>writing-plans</h3>
-                    <p class="desc">تحوّل المواصفة لخطة مهام صغيرة (٢-٥ دقائق لكل مهمة) بمسارات ملفات وverification
+                    <p class="desc">تحوّل المواصفة لخطة مهام صغيرة (٢-٥ دقائق لكل مهمة) بمسارات ملفات و<bdi>verification</bdi>
                         خطوة-خطوة.</p>
                     <p class="usebar"><b>الاستعمال:</b> بعد ما تتّفق على المتطلب — تطلب خطة، فتصير المهام قابلة للتنفيذ
                         بلا تفسير.</p>
@@ -860,7 +862,7 @@
                     <div class="sk-top"><span class="cat mono">DOCUMENTS</span><span class="num mono">23</span></div>
                     <h3>pdf</h3>
                     <p class="desc">كل عمليات PDF: استخراج نص/جداول، دمج، تقسيم، تدوير، علامة مائية، تعبئة نماذج،
-                        تشفير، وOCR للمسحوب.</p>
+                        تشفير، و<bdi>OCR</bdi> للمسحوب.</p>
                     <p class="usebar"><b>الاستعمال:</b> «استخرج الجداول من هذا PDF» أو «ادمج هذولا الملفين» — ترجعلك
                         ملف أو جدول.</p>
                     <button class="cmd" data-cmd="استخرج النص والجداول من هذا الـ PDF"><span class="txt">استخرج النص والجداول من هذا الـ PDF</span><span class="cp">COPY</span></button>
@@ -887,7 +889,7 @@
                 <article class="sk" id="s-github-pages" data-cat="site">
                     <div class="sk-top"><span class="cat mono">SITE</span><span class="num mono">26</span></div>
                     <h3>github-pages-site-manager</h3>
-                    <p class="desc">إدارة موقع freekit.me: قراءة الملف قبل الكتابة (يحتاج sha)، حماية CNAME، رسائل
+                    <p class="desc">إدارة موقع freekit.me: قراءة الملف قبل الكتابة (يحتاج sha)، حماية <bdi>CNAME</bdi>، رسائل
                         commit موحّدة، وإعادة بناء الصفحات.</p>
                     <p class="usebar"><b>الاستعمال:</b> «أضف قسم للصفحة» أو «حدّث الـ sitemap» — التنفيذ يمشي بالقواعد
                         بلا ما ينكسر البناء.</p>
@@ -897,7 +899,7 @@
                 <article class="sk" id="s-skill-creator" data-cat="site">
                     <div class="sk-top"><span class="cat mono">SITE</span><span class="num mono">27</span></div>
                     <h3>skill-creator</h3>
-                    <p class="desc">تصنع سكلة جديدة من الصفر أو تحسّن موجودة: تكتب SKILL.md، تضبط الوصف حتى تنحمل
+                    <p class="desc">تصنع سكلة جديدة من الصفر أو تحسّن موجودة: تكتب <bdi>SKILL.md</bdi>، تضبط الوصف حتى تنحمل
                         بالسؤال الصح، وتقيس أدائها مقابل خط أساس.</p>
                     <p class="usebar"><b>الاستعمال:</b> «سوي سكلة لهذا الشغل المتكرر» — ترجعلك سكلة جاهزة للتثبيت +
                         اختبار.</p>
@@ -923,9 +925,9 @@
             <div class="foot-row">
                 <span class="mono">@freekit2</span>
                 <span class="mono">freekit.me</span>
-                <span>27 سكلة · محدّث باستمرار</span>
+                <span>27 سكلة، محدّث باستمرار</span>
             </div>
-            <p class="foot-lib"><a href="index.html">الرئيسية</a> · <a href="tools.html">مكتبة الأدوات — 36 أداة</a>
+            <p class="foot-lib"><a href="index.html">الرئيسية</a><a href="tools.html">مكتبة الأدوات — 36 أداة</a>
             </p>
         </div>
     </footer>
