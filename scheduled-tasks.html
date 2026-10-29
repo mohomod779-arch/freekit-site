@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://freekit.me/scheduled-tasks.html">
     <meta property="og:title" content="FreeKit | المهام المجدولة بكلود كود — يشتغل وأنت نايم">
     <meta property="og:description" content="دليل عملي: شلون تخلي كلود كود يشغّل مهمة بوقتها بالسحابة حتى لو لابتوبك مسكّر — الخطوات، الأوامر الجاهزة للنسخ، والحدود اللي لازم تعرفها.">
-    <meta property="og:image" content="https://pomf2.lain.la/f/ja3vqxc7.png">
+    <meta property="og:image" content="https://freekit.me/og-cover-scheduled.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
@@ -20,7 +20,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="FreeKit | المهام المجدولة بكلود كود — يشتغل وأنت نايم">
     <meta name="twitter:description" content="دليل عملي: شلون تخلي كلود كود يشغّل مهمة بوقتها بالسحابة حتى لو لابتوبك مسكّر — الخطوات، الأوامر الجاهزة للنسخ، والحدود اللي لازم تعرفها.">
-    <meta name="twitter:image" content="https://pomf2.lain.la/f/ja3vqxc7.png">
+    <meta name="twitter:image" content="https://freekit.me/og-cover-scheduled.png">
 
     <link rel="icon"
         href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230B0F1C"/><text x="50" y="70" font-size="56" font-family="Arial" font-weight="bold" fill="%23B4F461" text-anchor="middle">F</text></svg>'>
@@ -231,10 +231,7 @@
 
         h1 em {
             font-style: normal;
-            background: linear-gradient(120deg, #B4F461, #D9FF8F);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent
+            color: #B4F461
         }
 
         .sub {
@@ -361,7 +358,7 @@
 
         .sk.new {
             border-color: rgba(180, 244, 97, .5);
-            background: linear-gradient(160deg, rgba(180, 244, 97, .07), rgba(16, 24, 40, .6) 55%)
+            background: rgba(180, 244, 97, .06)
         }
 
         .sk:target {
@@ -463,7 +460,7 @@
             margin-top: 34px;
             border: var(--hair);
             border-radius: 18px;
-            background: linear-gradient(160deg, rgba(180, 244, 97, .08), rgba(16, 24, 40, .5));
+            background: rgba(180, 244, 97, .07);
             padding: 30px;
             text-align: center
         }
@@ -577,6 +574,12 @@
         .warn b { color: var(--text); }
         .src { list-style: none; display: grid; gap: 10px; }
         .src a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); }
+
+        /* v2 polish: skills-guided cleanup (no eyebrow, no joined meta strings, no decorative glow/grid, no gradient text) */
+        .brandrow nav a { white-space: nowrap }
+        .hero::before { display: none }
+        .meta > span + span::before, .topline > span > span + span::before { content: ""; display: inline-block; width: 1px; height: .8em; background: currentColor; opacity: .35; margin-inline: .7em; vertical-align: -.05em }
+        .foot-lib a + a { margin-inline-start: 20px }
 </style>
 </head>
 
@@ -585,9 +588,9 @@
 
     <header>
         <div class="topline">
-            <span class="mono">SCHEDULED TASKS · GUIDE</span>
+            <span class="mono">SCHEDULED TASKS</span>
             <span class="mono">RESEARCH PREVIEW</span>
-            <span class="mono">$0 · NO SIGNUP</span>
+            <span class="mono">NO SIGNUP</span>
         </div>
         <div class="wrap brandrow">
             <a class="wordmark" href="/">FreeKit<span class="sq" aria-hidden="true"></span></a>
@@ -604,7 +607,6 @@
 
     <main>
         <section class="hero wrap">
-            <p class="kicker">دليل عملي · من ريل «يشتغل بدونك»</p>
             <h1>كلود كود <em>يشتغل وأنت نايم</em></h1>
             <p class="sub">المهام المجدولة: تحفظ مهمة مرة وحدة، وكلود كود يشغّلها بوقتها على السحابة حتى لو لابتوبك مسكّر.
                 هذا الدليل فيه الخطوات، الأوامر الجاهزة للنسخ، والحدود اللي لازم تعرفها قبل ما تعتمد عليها.</p>
@@ -638,21 +640,21 @@
             </div>
             <div class="grid">
                 <article class="sk" id="s-1">
-                    <div class="sk-top"><span class="cat mono">CLOUD · بدون لابتوبك</span><span class="num mono">01</span></div>
+                    <div class="sk-top"><span class="cat mono">CLOUD</span><span class="num mono">01</span></div>
                     <h3>/schedule</h3>
-                    <p class="desc">تنشئ مهمة سحابية تنحفظ وتشتغل بالوقت اللي تحدده، حتى لو الجهاز مسكّر. متاحة بخطط Pro وMax وTeam وEnterprise.</p>
+                    <p class="desc">تنشئ مهمة سحابية تنحفظ وتشتغل بالوقت اللي تحدده، حتى لو الجهاز مسكّر. متاحة بخطط Pro و<bdi>Max</bdi> و<bdi>Team</bdi> و<bdi>Enterprise.</bdi></p>
                     <p class="usebar"><b>الاستعمال:</b> اكتب <code>/schedule</code> وبعدها وصف المهمة والوقت بجملة وحدة، أو أنشئها من claude.ai/code/routines.</p>
                     <button class="cmd" type="button" data-cmd="/schedule daily PR review at 9am"><span class="txt">/schedule daily PR review at 9am</span><span class="cp">COPY</span></button>
                 </article>
                 <article class="sk" id="s-2">
-                    <div class="sk-top"><span class="cat mono">SESSION · الجلسة مفتوحة</span><span class="num mono">02</span></div>
+                    <div class="sk-top"><span class="cat mono">SESSION</span><span class="num mono">02</span></div>
                     <h3>/loop</h3>
                     <p class="desc">يعيد نفس الطلب كل فترة داخل الجلسة. يشتغل على جهازك، فالجلسة لازم تبقى مفتوحة، والمهمة المتكررة تنتهي تلقائياً بعد 7 أيام.</p>
                     <p class="usebar"><b>الاستعمال:</b> اكتب <code>/loop</code> والفترة (أقلها دقيقة) والطلب. للإلغاء اطلب من كلود يلغي المهمة.</p>
                     <button class="cmd" type="button" data-cmd="/loop 5m check if the deployment finished and tell me what happened"><span class="txt">/loop 5m check if the deployment finished and tell me what happened</span><span class="cp">COPY</span></button>
                 </article>
                 <article class="sk" id="s-3">
-                    <div class="sk-top"><span class="cat mono">TIP · اكتب الطلب كامل</span><span class="num mono">03</span></div>
+                    <div class="sk-top"><span class="cat mono">TIP</span><span class="num mono">03</span></div>
                     <h3>طلب مكتفي بنفسه</h3>
                     <p class="desc">المهمة السحابية تشتغل على نسخة جديدة من المستودع بدون ملفاتك المحلية، فاكتب الطلب كأن أحد غريب يقرأه: شنو تسوي، وين، وشنو معنى إنها خلصت.</p>
                     <p class="usebar"><b>الاستعمال:</b> حدّد شكل المخرَج (ملخص، تعليق، أو PR) وشرط الإيقاف بنفس الجملة.</p>
@@ -663,7 +665,7 @@
 
         <section class="wrap sec" id="compare">
             <div class="sec-head">
-                <h2>سحابة ولا /loop؟</h2>
+                <h2>سحابة ولا /<bdi>loop</bdi>؟</h2>
                 <p class="sec-sub">الفرق الأساسي: وين تشتغل المهمة.</p>
             </div>
             <div class="tbl-wrap">
@@ -688,7 +690,7 @@
             </div>
             <ol class="warn">
                 <li><span class="n mono">01</span><span><b>ميزة تجريبية (research preview).</b> السلوك والحدود ممكن تتغير.</span></li>
-                <li><span class="n mono">02</span><span><b>الشغل يطلع باسمك.</b> الـcommits والـPRs اللي تسويها المهمة تحمل حسابك على GitHub.</span></li>
+                <li><span class="n mono">02</span><span><b>الشغل يطلع باسمك.</b> الـ<bdi>commits</bdi> والـ<bdi>PRs</bdi> اللي تسويها المهمة تحمل حسابك على GitHub.</span></li>
                 <li><span class="n mono">03</span><span><b>تستهلك من حد استخدامك.</b> وهي مو مشتركة مع زملائك بالفريق.</span></li>
                 <li><span class="n mono">04</span><span><b>تحكم بالفروع.</b> المهمة تدفع عادةً لفروع بإسم <span class="mono">claude/</span>؛ ولضبط وين تكدر تدفع استعمل branch protection على GitHub.</span></li>
                 <li><span class="n mono">05</span><span><b>أول تشغيلات بعينك.</b> تأكد من النتيجة قبل ما تتركها تشتغل لحالها.</span></li>
@@ -712,9 +714,9 @@
             <div class="foot-row">
                 <span class="mono">@freekit2</span>
                 <span class="mono">freekit.me</span>
-                <span>دليل المهام المجدولة · محدّث 2026-10-29</span>
+                <span>دليل المهام المجدولة، محدّث 2026-10-29</span>
             </div>
-            <p class="foot-lib"><a href="index.html">الرئيسية</a> · <a href="skills.html">دليل السكلات</a> · <a href="tools.html">مكتبة الأدوات</a>
+            <p class="foot-lib"><a href="index.html">الرئيسية</a><a href="skills.html">دليل السكلات</a><a href="tools.html">مكتبة الأدوات</a>
             </p>
         </div>
     </footer>
