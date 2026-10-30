@@ -5,10 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>FreeKit | Google AI Studio — استعمل جمناي بحدود سخية ومجاناً بدلاً من التطبيق</title>
-    <meta name="description"
-        content="Google AI Studio هو مختبر غوغل المجاني للمطورين وصناع المحتوى: حصة مجانية سخية تتجدد يومياً، تحكم دقيق بالحرارة والفلاتر، بحث RAG حي، ومنفذ كود Python بدون اشتراكات.">
-    <link rel="canonical" href="https://freekit.me/studio.html">
-
+    <meta name="description" content="Google AI Studio هو مختبر غوغل المجاني للمطورين وصناع المحتوى: حصة مجانية سخية تتجدد يومياً، تحكم دقيق بالحرارة والفلاتر، بحث RAG حي، ومنفذ كود Python بدون اشتراكات.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://freekit.me/studio.html">
     <meta property="og:title" content="Google AI Studio — مختبر غوغل المجاني بدلاً من الاشتراكات">
@@ -18,99 +15,14 @@
     <meta name="twitter:title" content="Google AI Studio — مختبر غوغل المجاني">
     <meta name="twitter:description" content="حصة يومية سخية · RAG · إلغاء الفلاتر المزعجة · مجاناً">
     <meta name="twitter:image" content="https://freekit.me/og-cover-home.png">
+    <link rel="canonical" href="https://freekit.me/studio.html">
 
-    <link rel="icon"
-        href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%230B0F1C"/><text x="50" y="68" font-size="52" font-family="Arial" font-weight="bold" fill="%23B4F461" text-anchor="middle">F</text></svg>'>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
-        rel="stylesheet">
-    <style>
-        :root{--bg:#0B0F1C;--card:#121A2E;--panel:#0D1420;--fg:#F4F7FA;--muted:#A6B1C5;--lime:#B4F461;--cyan:#38BDF8;--red:#F87171;--line:rgba(180,244,97,.25);--border:#334155;--lime-rgb:180,244,97}
-        *{margin:0;padding:0;box-sizing:border-box}
-        html{scroll-behavior:smooth}
-        body{background:var(--bg);color:var(--fg);font-family:'Tajawal',sans-serif;line-height:1.7;overflow-x:hidden}
-        .mono{font-family:'JetBrains Mono',monospace}
-        .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-        body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(circle,#1E293B 1.5px,transparent 1.5px);background-size:46px 46px;opacity:.5}
-        section{position:relative;z-index:1}
-        #progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;background:var(--lime);z-index:60}
-        header{position:sticky;top:0;z-index:50;background:rgba(11,15,28,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-        .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto}
-        .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--fg);text-decoration:none}
-        .logo .f{width:38px;height:38px;border-radius:10px;background:var(--bg);border:2px solid var(--lime);display:grid;place-items:center;color:var(--lime);font-size:20px;font-weight:800}
-        .logo bdi span{color:var(--lime)}
-        .nav-links{display:flex;gap:24px;align-items:center}
-        .nav-links a{color:var(--muted);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
-        .nav-links a:hover{color:var(--lime)}
-        .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:12px;font-weight:700;font-size:15px;text-decoration:none;transition:transform .15s,box-shadow .15s;cursor:pointer;border:none;font-family:inherit}
-        .btn-lime{background:var(--lime);color:#0B0F1C;box-shadow:0 4px 20px rgba(var(--lime-rgb),.2)}
-        .btn-lime:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(var(--lime-rgb),.3)}
-        .btn-ghost{border:1.5px solid var(--line);color:var(--lime);background:transparent}
-        .btn-ghost:hover{background:rgba(var(--lime-rgb),.08)}
-        .hero{padding:100px 24px 70px;text-align:center}
-        .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(var(--lime-rgb),.1);border:1px solid var(--line);color:var(--lime);font-size:14px;font-weight:700;padding:8px 18px;border-radius:999px;margin-bottom:24px}
-        .pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pulse 2.2s ease-in-out infinite}
-        .hero h1{font-size:clamp(34px,5.5vw,58px);font-weight:800;line-height:1.25;margin-bottom:20px}
-        .hero h1 .hl{color:var(--lime)}
-        .hero p{font-size:clamp(16px,2.4vw,20px);color:var(--muted);max-width:700px;margin:0 auto 36px}
-        .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-        .sec{padding:76px 24px}
-        .sec-title{font-size:clamp(28px,4vw,40px);font-weight:800;text-align:center;margin-bottom:12px}
-        .sec-sub{text-align:center;color:var(--muted);font-size:17px;max-width:640px;margin:0 auto 48px}
-        .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-        .card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px;transition:transform .2s,border-color .2s}
-        .card:hover{transform:translateY(-4px);border-color:var(--lime)}
-        .card::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(240px circle at var(--mx,50%) var(--my,50%),rgba(var(--lime-rgb),.12),transparent 60%);opacity:0;transition:opacity .25s;pointer-events:none}
-        .card:hover::after{opacity:1}
-        .card .icon{width:48px;height:48px;border-radius:12px;background:rgba(var(--lime-rgb),.1);display:grid;place-items:center;margin-bottom:16px;font-size:22px}
-        .card h3{font-size:20px;font-weight:700;margin-bottom:8px}
-        .card p{color:var(--muted);font-size:15px}
-        .cmp-wrap{overflow-x:auto;max-width:920px;margin:0 auto;border:1px solid var(--border);border-radius:18px}
-        .cmp{width:100%;border-collapse:collapse;background:var(--card);min-width:640px}
-        .cmp th,.cmp td{padding:16px 18px;text-align:start;border-bottom:1px solid var(--border);font-size:15px}
-        .cmp thead th{background:rgba(var(--lime-rgb),.08);color:var(--lime);font-size:14px;letter-spacing:.5px}
-        .cmp tbody tr:last-child td{border-bottom:none}
-        .cmp td:first-child{color:var(--fg);font-weight:700;white-space:nowrap}
-        .cmp td{color:var(--muted)}
-        .cmp td:nth-child(2){color:var(--lime);font-weight:700}
-        .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:22px}
-        .pcard{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:14px}
-        .pcard h3{font-size:18px;font-weight:800}
-        .pcard .pdesc{color:var(--muted);font-size:14px}
-        .pbox{background:var(--panel);border:1px solid var(--border);border-inline-start:3px solid var(--lime);border-radius:12px;padding:16px 18px;font-size:14px;line-height:1.9;color:var(--fg);white-space:pre-wrap;flex:1}
-        .copy-btn{align-self:flex-start;background:transparent;border:1px solid var(--border);color:var(--lime);font-size:13px;font-weight:700;padding:8px 16px;border-radius:9px;cursor:pointer;font-family:'JetBrains Mono',monospace;transition:color .15s,border-color .15s}
-        .copy-btn:hover{color:var(--lime);border-color:var(--lime)}
-        .steps{display:grid;gap:16px;max-width:760px;margin:0 auto}
-        .step{display:flex;align-items:flex-start;gap:20px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px}
-        .step .num{min-width:44px;height:44px;border-radius:50%;background:var(--lime);color:#0B0F1C;display:grid;place-items:center;font-weight:800;font-size:18px}
-        .step h4{font-size:18px;font-weight:700;margin-bottom:4px}
-        .step p{color:var(--muted);font-size:15px}
-        .cta-box{background:rgba(var(--lime-rgb), .06);border:1px solid var(--line);border-radius:24px;padding:56px 32px;text-align:center;max-width:800px;margin:0 auto}
-        .cta-box h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:16px}
-        .cta-box p{color:var(--muted);font-size:17px;margin-bottom:30px}
-        footer{border-top:1px solid var(--border);padding:40px 24px;text-align:center;color:var(--muted);font-size:14px;margin-top:80px}
-        footer .brand{color:var(--lime);font-weight:700}
-        .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-        .reveal.on{opacity:1;transform:none}
-        @keyframes pulse{0%,100%{box-shadow:0 0 6px var(--lime)}50%{box-shadow:0 0 16px var(--lime)}}
-        @keyframes shine{to{background-position:200% center}}
-        @media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}.hero h1 .hl,.pill::before{animation:none}html{scroll-behavior:auto}}
-        @media(max-width:640px){.nav-links{display:none}.hero{padding:60px 20px 50px}.sec{padding:60px 20px}.pgrid{grid-template-columns:1fr}}
-    
-        body::before { display: none }
-        .card::after { display: none }
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/v3.css?v=3">
+        <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%23060A14"/><text x="50" y="68" font-size="52" font-family="monospace" font-weight="bold" fill="%2335D6E8" text-anchor="middle">F</text></svg>'>
 
-        /* v2 polish: skills-guided cleanup (no eyebrow, no joined meta strings, no decorative glow/grid, no gradient text) */
-        .brandrow nav a { white-space: nowrap }
-        .hero::before { display: none }
-        .meta > span + span::before, .topline > span > span + span::before { content: ""; display: inline-block; width: 1px; height: .8em; background: currentColor; opacity: .35; margin-inline: .7em; vertical-align: -.05em }
-        .foot-lib a + a { margin-inline-start: 20px }
-</style>
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Article","headline":"Google AI Studio — مختبر غوغل المجاني بدلاً من الاشتراكات","description":"استعمل نماذج جمناي المتطورة بحصة مجانية سخية تتجدد يومياً تدفع بيها 0$ مع فلاتر أمان قابلة للإلغاء وبحث RAG حي ومنفذ كود محلي.","image":"https://freekit.me/og-cover-home.png","datePublished":"2026-09-04T06:00:00Z","dateModified":"2026-09-13T03:00:00Z","inLanguage":"ar","mainEntityOfPage":"https://freekit.me/studio.html","author":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"},"publisher":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"}}
-    </script>
 </head>
 
 <body>
