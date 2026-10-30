@@ -508,7 +508,16 @@
                 padding: 60px 20px
             }
         }
-    </style>
+    
+        body::before { display: none }
+        .card::after { display: none }
+
+        /* v2 polish: skills-guided cleanup (no eyebrow, no joined meta strings, no decorative glow/grid, no gradient text) */
+        .brandrow nav a { white-space: nowrap }
+        .hero::before { display: none }
+        .meta > span + span::before, .topline > span > span + span::before { content: ""; display: inline-block; width: 1px; height: .8em; background: currentColor; opacity: .35; margin-inline: .7em; vertical-align: -.05em }
+        .foot-lib a + a { margin-inline-start: 20px }
+</style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Article","headline":"Photopea — فوتوشوب كامل مجاناً من المتصفح","description":"Photopea بديل الفوتوشوب المجاني: يعمل محلياً 100%، يفتح ملفات PSD وSketch وXD، يدعم أدوات الذكاء الاصطناعي، وبدون تسجيل أو رفع ملفاتك لسيرفرات خارجية.","image":"https://freekit.me/og-cover-photopea.png","datePublished":"2026-08-31T19:41:06Z","dateModified":"2026-09-13T04:00:00Z","inLanguage":"ar","mainEntityOfPage":"https://freekit.me/photopea.html","author":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"},"publisher":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"}}
     </script>
@@ -531,7 +540,6 @@
     </header>
 
     <section class="hero">
-        <div class="pill">أداة الأسبوع — مجانية 100%</div>
         <h1>فوتوشوب مجاني…<br>وصورك <span class="hl">ما تطلع من جهازك</span></h1>
         <p>بدون تسجيل · بدون تحميل · يعمل محلياً بالكامل — نفس واجهة الفوتوشوب من متصفحك مباشرة</p>
         <div class="cta-row">
@@ -542,7 +550,7 @@
     </section>
 
     <section class="sec" id="features">
-        <h2 class="sec-title reveal">لماذا Photopea؟</h2>
+        <h2 class="sec-title reveal">لماذا <bdi>Photopea</bdi>؟</h2>
         <p class="sec-sub reveal">بديل مجاني كامل للفوتوشوب — يعمل من المتصفح بدون أي تثبيت</p>
         <div class="grid">
             <div class="card reveal">
@@ -553,7 +561,7 @@
             <div class="card reveal">
                 <div class="icon">📁</div>
                 <h3>يفتح كل الصيغ</h3>
-                <p>PSD وSketch وXD وأكثر من 30 صيغة — بدون الحاجة لأي برنامج آخر.</p>
+                <p>PSD و<bdi>Sketch</bdi> و<bdi>XD</bdi> وأكثر من 30 صيغة — بدون الحاجة لأي برنامج آخر.</p>
             </div>
             <div class="card reveal">
                 <div class="icon">🤖</div>
@@ -620,7 +628,7 @@
                 <div class="num">3</div>
                 <div>
                     <h4>عدّل بحرية</h4>
-                    <p>قص، فلاتر، طبقات، إزالة خلفية بالـ AI، ونص عربي كامل</p>
+                    <p>قص، فلاتر، طبقات، إزالة خلفية بالـ <bdi>AI</bdi>، ونص عربي كامل</p>
                 </div>
             </div>
             <div class="step reveal">
