@@ -35,7 +35,7 @@
         .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
         body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background-image:radial-gradient(circle,#1E293B 1.5px,transparent 1.5px);background-size:46px 46px;opacity:.5}
         section{position:relative;z-index:1}
-        #progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;background:linear-gradient(90deg,var(--lime),var(--cyan));z-index:60;box-shadow:0 0 12px rgba(var(--lime-rgb),.5)}
+        #progress{position:fixed;top:0;inset-inline-start:0;height:3px;width:0;background:var(--lime);z-index:60}
         header{position:sticky;top:0;z-index:50;background:rgba(11,15,28,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
         .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto}
         .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;color:var(--fg);text-decoration:none}
@@ -53,7 +53,7 @@
         .pill{display:inline-flex;align-items:center;gap:8px;background:rgba(var(--lime-rgb),.1);border:1px solid var(--line);color:var(--lime);font-size:14px;font-weight:700;padding:8px 18px;border-radius:999px;margin-bottom:24px}
         .pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:pulse 2.2s ease-in-out infinite}
         .hero h1{font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.2;margin-bottom:20px}
-        .hero h1 .hl{background:linear-gradient(120deg,var(--lime) 20%,#E8FFC4 40%,var(--lime) 60%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
+        .hero h1 .hl{color:var(--lime)}
         .hero p{font-size:clamp(16px,2.5vw,20px);color:var(--muted);max-width:660px;margin:0 auto 36px}
         .cta-row{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
         .sec{padding:76px 24px}
@@ -100,7 +100,7 @@
         .step p{color:var(--muted);font-size:15px}
         .note{max-width:820px;margin:0 auto;background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.25);border-radius:16px;padding:20px 24px;color:var(--muted);font-size:14.5px}
         .note b{color:var(--cyan)}
-        .cta-box{background:linear-gradient(135deg,rgba(var(--lime-rgb),.08),rgba(var(--lime-rgb),.02));border:1px solid var(--line);border-radius:24px;padding:56px 32px;text-align:center;max-width:800px;margin:0 auto}
+        .cta-box{background:rgba(var(--lime-rgb), .06);border:1px solid var(--line);border-radius:24px;padding:56px 32px;text-align:center;max-width:800px;margin:0 auto}
         .cta-box h2{font-size:clamp(26px,4vw,36px);font-weight:800;margin-bottom:16px}
         .cta-box p{color:var(--muted);font-size:17px;margin-bottom:30px}
         .cta-box .handle{color:var(--lime);font-weight:700}
@@ -113,7 +113,16 @@
         @media(prefers-reduced-motion:reduce){.reveal{transition:none;opacity:1;transform:none}.hero h1 .hl,.pill::before{animation:none}html{scroll-behavior:auto}}
         @media print{.reveal{opacity:1!important;transform:none!important}}
         @media(max-width:640px){.nav-links{display:none}.hero{padding:60px 20px 50px}.sec{padding:60px 20px}.pgrid{grid-template-columns:1fr}}
-    </style>
+    
+        body::before { display: none }
+        .card::after { display: none }
+
+        /* v2 polish: skills-guided cleanup (no eyebrow, no joined meta strings, no decorative glow/grid, no gradient text) */
+        .brandrow nav a { white-space: nowrap }
+        .hero::before { display: none }
+        .meta > span + span::before, .topline > span > span + span::before { content: ""; display: inline-block; width: 1px; height: .8em; background: currentColor; opacity: .35; margin-inline: .7em; vertical-align: -.05em }
+        .foot-lib a + a { margin-inline-start: 20px }
+</style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Article","headline":"Google Opal — ابنِ تطبيقات ذكاء اصطناعي بالكلام بدون كود","description":"Google Opal من Google Labs: تكتب فكرة تطبيقك بالكلام العادي — بالعربي أو الإنجليزي — وهو يبنيها خطوة بخطوة وينشرها برابط واحد، بدون سطر كود واحد. + 4 برومبتات جاهزة للنسخ.","image":"https://freekit.me/og-cover-opal.png","datePublished":"2026-09-04T02:00:41Z","dateModified":"2026-09-13T03:00:00Z","inLanguage":"ar","mainEntityOfPage":"https://freekit.me/opal.html","author":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"},"publisher":{"@type":"Organization","name":"FreeKit","url":"https://freekit.me/"}}
     </script>
@@ -136,7 +145,6 @@
     </header>
 
     <section class="hero">
-        <div class="pill">أداة الأسبوع · Google Labs · مجانية</div>
         <h1>ابنِ تطبيق ذكاء اصطناعي…<br><span class="hl">بالكلام فقط</span></h1>
         <p>Google Opal من Google Labs: تكتب فكرة تطبيقك بالكلام العادي — بالعربي أو الإنجليزي — وهو يبنيه لك خطوة
             بخطوة، بدون ما تكتب سطر كود واحد، ومجاناً.</p>
@@ -147,7 +155,7 @@
     </section>
 
     <section class="sec" id="features">
-        <h2 class="sec-title reveal">لماذا Opal؟</h2>
+        <h2 class="sec-title reveal">لماذا <bdi>Opal</bdi>؟</h2>
         <p class="sec-sub reveal">تكتب بالكلام… ويطلع تطبيق ذكاء اصطناعي كامل تشتغل منه وتشاركه</p>
         <div class="grid">
             <div class="card reveal">
