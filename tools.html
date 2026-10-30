@@ -432,7 +432,7 @@
 
         .featured {
             border-color: var(--line);
-            background: linear-gradient(135deg, rgba(var(--lime-rgb), .08), rgba(var(--lime-rgb), .02))
+            background: rgba(var(--lime-rgb), .06)
         }
 
         .featured .t-cat {
@@ -440,7 +440,7 @@
         }
 
         .gh-banner {
-            background: linear-gradient(135deg, rgba(99, 102, 241, .12), rgba(99, 102, 241, .03));
+            background: rgba(99, 102, 241, .08);
             border: 1px solid rgba(99, 102, 241, .4);
             border-radius: 24px;
             padding: 44px 32px;
@@ -464,7 +464,7 @@
         }
 
         .cta-box {
-            background: linear-gradient(135deg, rgba(var(--lime-rgb), .09), rgba(var(--lime-rgb), .02));
+            background: rgba(var(--lime-rgb), .06);
             border: 1px solid var(--line);
             border-radius: 24px;
             padding: 48px 32px;
@@ -523,7 +523,16 @@
                 padding: 48px 20px
             }
         }
-    </style>
+    
+        body::before { display: none }
+        .card::after { display: none }
+
+        /* v2 polish: skills-guided cleanup (no eyebrow, no joined meta strings, no decorative glow/grid, no gradient text) */
+        .brandrow nav a { white-space: nowrap }
+        .hero::before { display: none }
+        .meta > span + span::before, .topline > span > span + span::before { content: ""; display: inline-block; width: 1px; height: .8em; background: currentColor; opacity: .35; margin-inline: .7em; vertical-align: -.05em }
+        .foot-lib a + a { margin-inline-start: 20px }
+</style>
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"CollectionPage","name":"FreeKit — مكتبة الأدوات المجانية المختبرة","url":"https://freekit.me/tools.html","description":"36 أداة مجانية مختبرة عملياً: ذكاء اصطناعي، خصوصية وأمان، سيرفرات وتطوير، إنتاجية، وكنوز GitHub.","inLanguage":"ar","isPartOf":{"@type":"WebSite","name":"FreeKit","url":"https://freekit.me/"}}
     </script>
@@ -550,7 +559,6 @@
 
     <main>
         <section class="hero">
-            <div class="pill mono">TOOLS LIBRARY • v1.0</div>
             <h1>مكتبة <span class="hl">الأدوات المجانية</span><br>المختبرة عملياً</h1>
             <p class="sub">كل أداة مرّت علينا بالكاروسيلات — مجمّعة هنا بروابط رسمية مباشرة، مصنفة حسب الاستخدام، وبدون
                 تسجيل أو دفع.</p>
@@ -565,7 +573,7 @@
                 <article class="tool featured">
                     <div class="t-top"><span class="t-cat mono">دليل كامل · WEEK 04</span></div>
                     <h3>Photopea — فوتوشوب كامل من المتصفح</h3>
-                    <p class="desc">يفتح PSD وSketch وXD، يعمل محلياً 100% وصورك ما تترك جهازك أبداً — بديل مجاني كامل
+                    <p class="desc">يفتح PSD و<bdi>Sketch</bdi> و<bdi>XD</bdi>، يعمل محلياً 100% وصورك ما تترك جهازك أبداً — بديل مجاني كامل
                         لاشتراك الـ 240$ سنوياً.</p>
                     <div class="t-foot">
                         <span class="t-meta mono">8 SLIDES</span>
@@ -580,7 +588,7 @@
                 <article class="tool featured">
                     <div class="t-top"><span class="t-cat mono">دليل كامل · GOOGLE LABS</span></div>
                     <h3>Google Opal — تطبيقات AI بالكلام</h3>
-                    <p class="desc">توصف شنو تريد بالكلام الطبيعي ويركبلك تطبيق AI بـ workflow قابل للتعديل وhosting
+                    <p class="desc">توصف شنو تريد بالكلام الطبيعي ويركبلك تطبيق AI بـ workflow قابل للتعديل و<bdi>hosting</bdi>
                         جاهز — بلا كود وبلا اشتراك، مع برومبتات جاهزة.</p>
                     <div class="t-foot">
                         <span class="t-meta mono">8 SLIDES</span>
@@ -735,7 +743,7 @@
                     <div class="t-top"><span class="t-cat mono">سيرفرات وتطوير</span></div>
                     <h3>Coolify</h3>
                     <p class="desc">لوحة استضافة ذاتية على سيرفرك — انشر تطبيقات وقواعد بيانات وشهادات SSL بدون فواتير
-                        AWS وVercel.</p>
+                        AWS و<bdi>Vercel.</bdi></p>
                     <div class="t-foot"><span class="t-meta mono">SELF-HOSTED PaaS</span><a class="t-link"
                             href="https://coolify.io" target="_blank" rel="noopener">الموقع الرسمي</a></div>
                 </article>
@@ -743,7 +751,7 @@
                 <article class="tool" data-cat="dev" data-gh="1">
                     <div class="t-top"><span class="t-cat mono">سيرفرات وتطوير</span><span class="t-gh mono">GITHUB</span></div>
                     <h3>Dokploy</h3>
-                    <p class="desc">بديل Vercel وHeroku مفتوح المصدر: نشر مشاريع Docker وقواعد بيانات بضغطة زر على
+                    <p class="desc">بديل Vercel و<bdi>Heroku</bdi> مفتوح المصدر: نشر مشاريع Docker وقواعد بيانات بضغطة زر على
                         سيرفرك الخاص.</p>
                     <div class="t-foot"><span class="t-meta mono">OPEN SOURCE</span><a class="t-link"
                             href="https://dokploy.com" target="_blank" rel="noopener">الموقع الرسمي</a></div>
@@ -760,7 +768,7 @@
                 <article class="tool" data-cat="dev" data-gh="1">
                     <div class="t-top"><span class="t-cat mono">سيرفرات وتطوير</span><span class="t-gh mono">GITHUB</span></div>
                     <h3>Activepieces</h3>
-                    <p class="desc">بديل Zapier وMake مفتوح المصدر: أتمتة وربط مئات التطبيقات بعمليات غير محدودة على
+                    <p class="desc">بديل Zapier و<bdi>Make</bdi> مفتوح المصدر: أتمتة وربط مئات التطبيقات بعمليات غير محدودة على
                         خادمك.</p>
                     <div class="t-foot"><span class="t-meta mono">AUTOMATION</span><a class="t-link"
                             href="https://www.activepieces.com" target="_blank" rel="noopener">الموقع الرسمي</a></div>
@@ -922,7 +930,7 @@
                 <article class="tool" data-cat="prod">
                     <div class="t-top"><span class="t-cat mono">إنتاجية وبيانات</span></div>
                     <h3>MagicUI</h3>
-                    <p class="desc">مكتبة مكونات React وTailwind جاهزة بحركات بصرية حديثة — اختصار عشرات ساعات عمل
+                    <p class="desc">مكتبة مكونات React و<bdi>Tailwind</bdi> جاهزة بحركات بصرية حديثة — اختصار عشرات ساعات عمل
                         الواجهات.</p>
                     <div class="t-foot"><span class="t-meta mono">UI COMPONENTS</span><a class="t-link"
                             href="https://magicui.design" target="_blank" rel="noopener">الموقع الرسمي</a></div>
@@ -942,7 +950,7 @@
         <section class="sec" id="github">
             <div class="gh-banner">
                 <h2>كنوز <span style="color:#A5B4FC">GitHub</span> تعوض اشتراكاتك</h2>
-                <p>أغلب الأدوات فوق مفتوحة المصدر ومستضافة على GitHub — مستودعات مثل Dokploy وDify وActivepieces تنطيك
+                <p>أغلب الأدوات فوق مفتوحة المصدر ومستضافة على GitHub — مستودعات مثل Dokploy و<bdi>Dify</bdi> و<bdi>Activepieces</bdi> تنطيك
                     نفس كفاءة المنصات الاحتكارية ببلاش وبدون فواتير شهرية.</p>
                 <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
                     <a class="btn btn-lime" href="https://github.com" target="_blank" rel="noopener">افتح GitHub</a>
