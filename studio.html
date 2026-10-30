@@ -250,7 +250,7 @@
                 navigator.clipboard.writeText(text).then(() => {
                     const original = btn.innerText;
                     btn.innerText = 'تم النسخ ✓';
-                    btn.style.color = '#B4F461';
+                    btn.style.color = 'var(--accent)';
                     setTimeout(() => {
                         btn.innerText = original;
                         btn.style.color = '';
