@@ -34,9 +34,9 @@
             --bg-lift: #141E33;
             --text: #EAF0FA;
             --muted: #8B96AD;
-            --accent: #67E8F9;
-            --accent-strong: #22D3EE;
-            --accent-ink: #06202A;
+            --accent: #B4F461;
+            --accent-strong: #9EE84A;
+            --accent-ink: #0B0F1C;
             --hair: 1px solid rgba(234, 240, 250, .09);
             --max-w: 1100px;
         }
@@ -62,7 +62,7 @@
         }
 
         ::selection {
-            background: rgba(103, 232, 249, .25)
+            background: rgba(180, 244, 97, .25)
         }
 
         .mono {
@@ -146,7 +146,7 @@
             inset-inline: 0;
             top: -100px;
             height: 420px;
-            background: radial-gradient(560px 260px at 50% 30%, rgba(34, 211, 238, .10), transparent 70%);
+            background: radial-gradient(560px 260px at 50% 30%, rgba(180, 244, 97, .10), transparent 70%);
             pointer-events: none
         }
 
@@ -216,9 +216,7 @@
 
         h1 em {
             font-style: normal;
-            background: linear-gradient(120deg, #67E8F9, #5EEAD4);
-            -webkit-background-clip: text;
-            background-clip: text;
+            color: #B4F461;
             color: transparent
         }
 
@@ -400,14 +398,23 @@
                 animation: none
             }
         }
-    </style>
+    
+        body::before { display: none }
+        .card::after { display: none }
+
+        /* v2 polish: skills-guided cleanup (no eyebrow, no joined meta strings, no decorative glow/grid, no gradient text) */
+        .brandrow nav a { white-space: nowrap }
+        .hero::before { display: none }
+        .meta > span + span::before, .topline > span > span + span::before { content: ""; display: inline-block; width: 1px; height: .8em; background: currentColor; opacity: .35; margin-inline: .7em; vertical-align: -.05em }
+        .foot-lib a + a { margin-inline-start: 20px }
+</style>
 </head>
 
 <body>
     <header>
         <div class="topline">
             <span class="mono">FREEKIT.ME / GIFT</span>
-            <span class="mono">$0 · NO SIGNUP</span>
+            <span class="mono"><span>$0</span><span>NO SIGNUP</span></span>
             <a href="/">← الرئيسية</a>
         </div>
         <div class="wrap brandrow">
@@ -417,7 +424,6 @@
 
     <main>
         <section class="hero wrap">
-            <p class="kicker">هدية · جاهزة الآن</p>
             <h1>حزمة برومبتات <em>FreeKit</em> — انسخ واستخدم فوراً.</h1>
             <p class="sub">جيت من إنستغرام؟ هاي هديتك: ملف PDF فيه برومبتات مجرّبة جاهزة للنسخ واللصق مع أدوات الذكاء
                 الاصطناعي — نفس الأسلوب اللي نشرحه بمواضيعنا الأسبوعية. بدون تسجيل، بدون دفع.</p>
@@ -443,7 +449,7 @@
                 <li><span class="snum mono">03</span>
                     <div>
                         <h3>الصقه بأي أداة AI</h3>
-                        <p>جمناي، ChatGPT، AI Studio — البرومبتات تشتغل مع الكل.</p>
+                        <p>جمناي، <bdi>ChatGPT</bdi>، AI Studio — البرومبتات تشتغل مع الكل.</p>
                     </div>
                 </li>
             </ol>
