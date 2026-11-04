@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FreeKit | ٣ أدوات تخلي كلود يمنتج لك فيديو</title>
-    <meta name="description" content="٣ أدوات مفتوحة على GitHub تشتغل مع كلود كود: HyperFrames وRemotion وOpenMontage. لكل أداة الأمر الجاهز للنسخ وشنو تحتاج على جهازك.">
+    <title>FreeKit | شلون تخلي كلود يمنتج لك فيديو: دليل المبتدئ</title>
+    <meta name="description" content="دليل خطوة بخطوة للمبتدئ: شنو تحتاج، أي أداة تختار (HyperFrames أو Remotion أو OpenMontage)، والأوامر الجاهزة للنسخ وشنو تكتب لكلود.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://freekit.me/video-tools.html">
-    <meta property="og:title" content="FreeKit | ٣ أدوات تخلي كلود يمنتج لك فيديو">
-    <meta property="og:description" content="٣ أدوات مفتوحة على GitHub تشتغل مع كلود كود: HyperFrames وRemotion وOpenMontage. لكل أداة الأمر الجاهز للنسخ وشنو تحتاج على جهازك.">
+    <meta property="og:title" content="FreeKit | شلون تخلي كلود يمنتج لك فيديو: دليل المبتدئ">
+    <meta property="og:description" content="دليل خطوة بخطوة للمبتدئ: شنو تحتاج، أي أداة تختار (HyperFrames أو Remotion أو OpenMontage)، والأوامر الجاهزة للنسخ وشنو تكتب لكلود.">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="FreeKit | ٣ أدوات تخلي كلود يمنتج لك فيديو">
-    <meta name="twitter:description" content="٣ أدوات مفتوحة على GitHub تشتغل مع كلود كود: HyperFrames وRemotion وOpenMontage. لكل أداة الأمر الجاهز للنسخ وشنو تحتاج على جهازك.">
+    <meta name="twitter:title" content="FreeKit | شلون تخلي كلود يمنتج لك فيديو: دليل المبتدئ">
+    <meta name="twitter:description" content="دليل خطوة بخطوة للمبتدئ: شنو تحتاج، أي أداة تختار (HyperFrames أو Remotion أو OpenMontage)، والأوامر الجاهزة للنسخ وشنو تكتب لكلود.">
     <link rel="canonical" href="https://freekit.me/video-tools.html">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,16 +21,41 @@
     <link rel="stylesheet" href="/assets/v3.css?v=3">
         <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%23060A14"/><text x="50" y="68" font-size="52" font-family="monospace" font-weight="bold" fill="%2335D6E8" text-anchor="middle">F</text></svg>'>
 
+<style>
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chips a{border:var(--hair);border-radius:999px;padding:6px 16px;font-size:14.5px;color:var(--muted);background:var(--bg-soft)}
+.chips a:hover{color:var(--accent);border-color:rgba(53,214,232,.4)}
+.gsteps{grid-template-columns:minmax(0,1fr);list-style:none;counter-reset:s;display:grid;gap:14px;margin-top:20px}
+.gsteps>li{min-width:0;overflow-wrap:anywhere;counter-increment:s;position:relative;padding:16px 62px 18px 16px;border:var(--hair);border-radius:var(--radius);background:var(--bg-soft)}
+.gsteps>li::before{content:counter(s);position:absolute;right:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-family:var(--font-mono);font-weight:700;display:grid;place-items:center}
+.gsteps h4{font-size:17.5px;font-weight:600;margin-bottom:4px}
+.gsteps p{color:var(--muted);font-size:15.5px}
+.gsteps .cmd{margin-top:10px}
+.glbl{margin-top:12px;font-size:13.5px;color:var(--accent);font-family:var(--font-mono);letter-spacing:.02em}
+.pick{display:grid;grid-template-columns:minmax(0,1fr);gap:12px;margin-top:20px}
+.pick>div{min-width:0;overflow-wrap:anywhere;border:var(--hair);border-radius:var(--radius);background:var(--bg-soft);padding:16px 18px}
+.pick h3{font-size:18px;margin-bottom:2px;color:var(--accent)}
+.pick .for{color:var(--text);font-size:15.5px}
+.pick .meta{color:var(--muted);font-size:14.5px;margin-top:4px}
+.pick .rec{display:inline-block;margin-inline-start:8px;font-size:12.5px;border:1px solid rgba(53,214,232,.45);border-radius:999px;padding:0 10px;color:var(--accent)}
+.tool-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.tool-h a{font-family:var(--font-mono);font-size:13.5px;color:var(--accent)}
+.gloss dt{color:var(--accent);font-weight:600;margin-top:14px}
+.gloss dd{color:var(--muted);font-size:15.5px}
+.notes{list-style:none;display:grid;gap:10px;margin-top:18px}
+.notes li{border-inline-start:3px solid rgba(53,214,232,.5);padding:4px 14px;color:var(--muted);font-size:15.5px}
+.notes b{color:var(--text)}
+.result{margin-top:10px;font-size:14.5px;color:var(--text);background:rgba(53,214,232,.07);border-radius:var(--radius-sm);padding:8px 12px}
+</style>
 </head>
 
 <body>
-    <a class="skip" href="#tools">تخطى للأدوات</a>
-
+    <a class="skip" href="#prep">تخطى للشرح</a>
     <header>
         <div class="topline">
-            <span class="mono"><span>VIDEO TOOLS</span><span>v1.0</span></span>
+            <span class="mono"><span>VIDEO TOOLS</span><span>v2.0</span></span>
             <span class="mono">3 TOOLS</span>
-            <span class="mono"><span>GITHUB</span><span>NO SIGNUP</span></span>
+            <span class="mono"><span>BEGINNER</span><span>GUIDE</span></span>
         </div>
         <div class="wrap brandrow">
             <a class="wordmark" href="/">FreeKit<span class="sq" aria-hidden="true"></span></a>
@@ -39,75 +64,69 @@
                 <a href="tools.html">الأدوات</a>
                 <a href="skills.html">دليل السكلات</a>
                 <a href="video-tools.html" class="active">أدوات الفيديو</a>
-                <a href="https://www.instagram.com/freekit2?igsi=MTd0MGFwcDRiYTl2cQ==" target="_blank"
-                    rel="noopener">تابعنا ↗</a>
+                <a href="https://www.instagram.com/freekit2?igsi=MTd0MGFwcDRiYTl2cQ==" target="_blank" rel="noopener">تابعنا ↗</a>
             </nav>
         </div>
     </header>
-
     <main>
         <section class="hero wrap">
-            <h1>٣ أدوات <em>تخلي كلود يمنتج لك فيديو</em></h1>
-            <p class="sub">وصلت من الريل؟ هذي الأوامر والروابط كلها. HyperFrames وRemotion وOpenMontage: ثلاث مشاريع على GitHub تشتغل مع كلود كود. تحت كل أداة: شنو تسوي، الأمر الجاهز للنسخ، وشنو تحتاج على جهازك.</p>
+            <h1>شلون تخلي <em>كلود يمنتج لك فيديو</em></h1>
+            <p class="sub">بدل ما تفتح برنامج مونتاج، تكتب لكلود شنو تريد وهو يبني الفيديو. هذا دليل من الصفر: شنو تجهّز، أي أداة تختار، وشنو تلصق وتكتب بالضبط. ما تحتاج خبرة برمجة، بس تتبع الخطوات بالترتيب.</p>
+            <nav class="chips" aria-label="أقسام الصفحة">
+                <a href="#prep">١ جهّز جهازك</a><a href="#choose">٢ اختار أداة</a><a href="#hyperframes">٣ الخطوات</a><a href="#gloss">مصطلحات</a><a href="#notes">ملاحظات</a>
+            </nav>
         </section>
 
-        <section class="wrap sec" id="how">
-            <div class="sec-head">
-                <h2>شلون تبدأ؟</h2>
-                <p class="sec-sub">ثلاث خطوات.</p>
-            </div>
-            <div class="how">
-                <div><span class="n mono">01</span>
-                    <h3>جهّز المتطلبات</h3>
-                    <p>Node.js وFFmpeg على جهازك (التفاصيل تحت كل أداة).</p>
-                </div>
-                <div><span class="n mono">02</span>
-                    <h3>انسخ أمر الأداة</h3>
-                    <p>كل أمر تحته زر COPY. الصقه بالطرفية أو بكلود كود حسب الأداة.</p>
-                </div>
-                <div><span class="n mono">03</span>
-                    <h3>اكتب طلبك بكلامك</h3>
-                    <p>مثل «سوّي لي إعلان ريل لمطعم برجر» وكلود يسوي الباقي.</p>
-                </div>
-            </div>
+        <section class="wrap sec" id="prep">
+            <div class="sec-head"><h2>١. جهّز جهازك (مرة وحدة)</h2><p class="sec-sub">أربع أشياء، بالترتيب. إذا عندك شي منها جاهز تخطاه. الأوامر تنلصق بالطرفية.</p></div>
+            <ol class="gsteps"><li><h4>اشتراك Claude</h4><p>Claude Code يحتاج حساب Claude: اشتراك (Pro أو Max أو Ultra أو Team أو Enterprise) أو حساب Claude Console. بدون حساب ما يشتغل.</p></li>
+<li><h4>نصّب Claude Code</h4><p>هذا البرنامج اللي تكتب له طلبك وهو ينفّذ. تفتح الطرفية (شرحها بالمصطلحات تحت) وتلصق الأمر حسب نظامك:</p><p class="glbl">macOS / Linux</p><button class="cmd" data-cmd="curl -fsSL https://claude.ai/install.sh | bash"><span class="txt"><bdi>curl -fsSL https://claude.ai/install.sh | bash</bdi></span><span class="cp">COPY</span></button><p class="glbl">Windows (PowerShell)</p><button class="cmd" data-cmd="irm https://claude.ai/install.ps1 | iex"><span class="txt"><bdi>irm https://claude.ai/install.ps1 | iex</bdi></span><span class="cp">COPY</span></button><p class="glbl">Windows (بديل)</p><button class="cmd" data-cmd="winget install Anthropic.ClaudeCode"><span class="txt"><bdi>winget install Anthropic.ClaudeCode</bdi></span><span class="cp">COPY</span></button><p>بعدها افتح نافذة طرفية جديدة واكتب الأمر التالي. إذا طلع رقم إصدار، التنصيب نجح:</p><button class="cmd" data-cmd="claude --version"><span class="txt"><bdi>claude --version</bdi></span><span class="cp">COPY</span></button><p class="result">أول مرة تشغّل <bdi>claude</bdi> يطلب منك تسجيل الدخول بالمتصفح. <a href="https://code.claude.com/docs/en/terminal-guide" target="_blank" rel="noopener">أول مرة تستعمل الطرفية؟ هذا الدليل الرسمي ↗</a></p></li>
+<li><h4>نصّب Node.js</h4><p>بيئة تشغّل أدوات الفيديو. حمّل نسخة LTS من الموقع الرسمي. HyperFrames تحتاج الإصدار 22 أو أحدث، وOpenMontage تحتاج 18 أو أحدث.</p><p class="result"><a href="https://nodejs.org/en/download" target="_blank" rel="noopener">nodejs.org/en/download ↗</a></p></li>
+<li><h4>نصّب FFmpeg</h4><p>برنامج مجاني يركّب الفيديو ويحوّله لملف MP4. HyperFrames وOpenMontage يحتاجونه.</p><p class="glbl">macOS</p><button class="cmd" data-cmd="brew install ffmpeg"><span class="txt"><bdi>brew install ffmpeg</bdi></span><span class="cp">COPY</span></button><p class="glbl">Linux (Ubuntu / Debian)</p><button class="cmd" data-cmd="sudo apt install ffmpeg"><span class="txt"><bdi>sudo apt install ffmpeg</bdi></span><span class="cp">COPY</span></button><p class="glbl">Windows</p><p class="result">حمّل نسخة جاهزة من <a href="https://www.gyan.dev/ffmpeg/builds/" target="_blank" rel="noopener">gyan.dev/ffmpeg/builds ↗</a> (مدرجة بصفحة FFmpeg الرسمية) وأضفها لمسار النظام PATH.</p></li></ol>
         </section>
 
-        <section class="wrap sec" id="tools">
-            <div class="sec-head">
-                <h2>الأدوات الثلاث</h2>
-                <p class="sec-sub">عدد النجوم حسب GitHub بتاريخ 2026-11-04. الأوامر من التوثيق الرسمي لكل مشروع.</p>
-            </div>
-            <div class="grid" id="skillGrid">
+        <section class="wrap sec" id="choose">
+            <div class="sec-head"><h2>٢. أي أداة أختار؟</h2><p class="sec-sub">كلها تشتغل مع كلود كود. إذا هذي أول مرة، ابدأ بـHyperFrames.</p></div>
+            <div class="pick">
+<div><h3>HyperFrames <span class="rec">نبدأ بيها</span></h3><p class="for">تكتب الفكرة ويطلع فيديو جاهز: إعلان، شرح، عنوان متحرك. أبسط تنصيب من الثلاثة.</p><p class="meta">تحتاج: Claude Code + Node.js 22+ + FFmpeg</p></div>
+<div><h3>Remotion</h3><p class="for">للفيديوهات المبنية على أرقام وجداول ورسوم بيانية (مثلاً فيديو من جدول مبيعاتك). تبنيه بكود React، وكلود يكتب الكود.</p><p class="meta">تحتاج: Claude Code + Node.js · ترخيص خاص (التفاصيل بالملاحظات)</p></div>
+<div><h3>OpenMontage</h3><p class="for">استوديو إنتاج كامل بـ12 مسار جاهز. الأقوى والأثقل: تنصيب أطول، وبعض أدواته تحتاج مفاتيح خدمات خارجية.</p><p class="meta">تحتاج: Claude Code + Python 3.10+ + Node.js 18+ + FFmpeg + Git</p></div></div>
+        </section>
 
-                <article class="sk new" id="t-hyperframes">
-                    <div class="sk-top"><span class="cat mono">HYPERFRAMES</span><span class="num mono">★ 78K</span></div>
-                    <h3>HyperFrames</h3>
-                    <p class="desc">تكتبله الفكرة بكلامك، وكلود يكتب الفيديو بـHTML وينفّذه فيديو MP4 جاهز.</p>
-                    <p class="usebar"><b>الاستعمال:</b> ثبّت الإضافة بكلود كود، وبعدها اكتب طلبك بعد الأمر <bdi>/hyperframes:hyperframes</bdi>.</p>
-                    <button class="cmd" data-cmd="claude plugin marketplace add heygen-com/hyperframes"><span class="txt"><bdi>claude plugin marketplace add heygen-com/hyperframes</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="claude plugin install hyperframes@hyperframes"><span class="txt"><bdi>claude plugin install hyperframes@hyperframes</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="/hyperframes:hyperframes سوّي لي إعلان ريل لمطعم برجر"><span class="txt"><bdi>/hyperframes:hyperframes سوّي لي إعلان ريل لمطعم برجر</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="npx hyperframes skills update"><span class="txt"><bdi>npx hyperframes skills update</bdi></span><span class="cp">COPY</span></button>
-                    <p class="usebar"><b>تحتاج:</b> Node.js 22 أو أحدث وFFmpeg. السطر الأخير طريقة بديلة (مهارات لأي وكيل) إذا ما تستعمل إضافات كلود كود.</p>
-                    <p class="usebar"><a href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener">github.com/heygen-com/hyperframes ↗</a></p>
-                </article>
-                <article class="sk new" id="t-remotion">
-                    <div class="sk-top"><span class="cat mono">REMOTION</span><span class="num mono">★ 71K</span></div>
-                    <h3>Remotion</h3>
-                    <p class="desc">تبني الفيديو بكود React، ومناسبة للأرقام والجداول والرسوم. تنصّب مهاراتها بسطر واحد وكلود يتعلّم أفضل طريقة للعمل بيها.</p>
-                    <p class="usebar"><b>الاستعمال:</b> بعد التنصيب تظهر أوامر مثل <bdi>/remotion-create</bdi> و<bdi>/remotion-best-practices</bdi>.</p>
-                    <button class="cmd" data-cmd="npx skills add remotion-dev/skills"><span class="txt"><bdi>npx skills add remotion-dev/skills</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="/remotion-create سوّي لي فيديو من جدول مبيعاتي"><span class="txt"><bdi>/remotion-create سوّي لي فيديو من جدول مبيعاتي</bdi></span><span class="cp">COPY</span></button>
-                    <p class="usebar"><b>تحتاج:</b> مشروع Remotion (Node.js). لـRemotion شروط ترخيص خاصة: راجع remotion.dev/docs/license قبل أي استعمال تجاري.</p>
-                    <p class="usebar"><a href="https://github.com/remotion-dev/remotion" target="_blank" rel="noopener">github.com/remotion-dev/remotion ↗</a></p>
-                </article>
-                <article class="sk new" id="t-openmontage">
-                    <div class="sk-top"><span class="cat mono">OPENMONTAGE</span><span class="num mono">★ 76K</span></div>
-                    <h3>OpenMontage</h3>
-                    <p class="desc">استوديو إنتاج فيديو كامل يشغّله كلود: 12 مسار إنتاج جاهز. تنزّله وتكتب طلبك بكلامك.</p>
-                    <p class="usebar"><b>الاستعمال:</b> نزّل المشروع، شغّل <bdi>make setup</bdi>، وافتح كلود كود داخل مجلده واكتب طلبك.</p>
-                    <button class="cmd" data-cmd="git clone https://github.com/calesthio/OpenMontage.git"><span class="txt"><bdi>git clone https://github.com/calesthio/OpenMontage.git</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="cd OpenMontage"><span class="txt"><bdi>cd OpenMontage</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="make setup"><span class="txt"><bdi>make setup</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="سوّي لي فيديو توضيحي عن الموضوع"><span class="txt"><bdi>سوّي لي فيديو توضيحي عن الموضوع</bdi></span><span class="cp">COPY</span></button>
-                    <p class="usebar"><b>تحتاج:</b> Python 3.10+ وFFmpeg وNode.js 18+. بعض الأدوات داخله محلية وبعضها يحتاج مفاتيح خدمات خارجية. الترخيص AGPLv3.</p>
-                    <p class="usebar"><a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">github.com/calesthio/OpenMontage ↗</a></p>
-                </article>
-            </div>
+        <div class="wrap"><div class="sec-head"><h2>٣. الخطوات لكل أداة</h2><p class="sec-sub">اتبع قسم الأداة اللي اخترتها فقط. كل أمر تحته زر COPY. شارة «بالطرفية» يعني تلصقه بالطرفية، و«داخل Claude Code» يعني تكتبه بعد ما تشغّل <bdi>claude</bdi>.</p></div></div>
+        
+        <section class="wrap sec" id="hyperframes">
+            <div class="sec-head tool-h"><h2>HyperFrames</h2><a href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noopener">★ 78K · GitHub ↗</a></div>
+            <ol class="gsteps"><li><h4>افتح الطرفية بأي مجلد</h4><p>هذا المجلد اللي راح تنحفظ فيه شغلك. مثلاً مجلد جديد اسمه <bdi>my-video</bdi>.</p></li>
+<li><h4>نصّب إضافة HyperFrames</h4><p>سطرين، تلصقهم واحد ورا الثاني وتنتظر كل واحد يخلص.</p><p class="glbl">بالطرفية</p><button class="cmd" data-cmd="claude plugin marketplace add heygen-com/hyperframes"><span class="txt"><bdi>claude plugin marketplace add heygen-com/hyperframes</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="claude plugin install hyperframes@hyperframes"><span class="txt"><bdi>claude plugin install hyperframes@hyperframes</bdi></span><span class="cp">COPY</span></button></li>
+<li><h4>شغّل Claude Code</h4><p>اكتب <bdi>claude</bdi> وانتظر يفتح.</p><p class="glbl">بالطرفية</p><button class="cmd" data-cmd="claude"><span class="txt"><bdi>claude</bdi></span><span class="cp">COPY</span></button></li>
+<li><h4>اكتب طلبك</h4><p>ابدأ الطلب بالأمر <bdi>/hyperframes:hyperframes</bdi> ثم اوصف الفيديو بكلامك العادي.</p><p class="glbl">داخل Claude Code</p><button class="cmd" data-cmd="/hyperframes:hyperframes سوّي لي إعلان ريل لمطعم برجر"><span class="txt"><bdi>/hyperframes:hyperframes سوّي لي إعلان ريل لمطعم برجر</bdi></span><span class="cp">COPY</span></button><p class="result">النتيجة: كلود يكتب الفيديو بـHTML ويحوّله لملف MP4.</p></li></ol>
+        </section>
+        
+        <section class="wrap sec" id="remotion">
+            <div class="sec-head tool-h"><h2>Remotion</h2><a href="https://github.com/remotion-dev/remotion" target="_blank" rel="noopener">★ 71K · GitHub ↗</a></div>
+            <ol class="gsteps"><li><h4>افتح الطرفية بمجلد المشروع</h4><p>أي مجلد تريد تشتغل بيه.</p></li>
+<li><h4>نصّب مهارات Remotion</h4><p>هذا الأمر يعلّم كلود أفضل طريقة للعمل بـRemotion.</p><p class="glbl">بالطرفية</p><button class="cmd" data-cmd="npx skills add remotion-dev/skills"><span class="txt"><bdi>npx skills add remotion-dev/skills</bdi></span><span class="cp">COPY</span></button></li>
+<li><h4>شغّل Claude Code</h4><p>اكتب <bdi>claude</bdi>.</p><p class="glbl">بالطرفية</p><button class="cmd" data-cmd="claude"><span class="txt"><bdi>claude</bdi></span><span class="cp">COPY</span></button></li>
+<li><h4>اكتب طلبك</h4><p>بعد التنصيب تظهر أوامر مثل <bdi>/remotion-create</bdi>. اكتب طلبك بعدها.</p><p class="glbl">داخل Claude Code</p><button class="cmd" data-cmd="/remotion-create سوّي لي فيديو من جدول مبيعاتي"><span class="txt"><bdi>/remotion-create سوّي لي فيديو من جدول مبيعاتي</bdi></span><span class="cp">COPY</span></button><p class="result">النتيجة: مشروع Remotion يبني الفيديو من بياناتك.</p></li></ol>
+        </section>
+        
+        <section class="wrap sec" id="openmontage">
+            <div class="sec-head tool-h"><h2>OpenMontage</h2><a href="https://github.com/calesthio/OpenMontage" target="_blank" rel="noopener">★ 76K · GitHub ↗</a></div>
+            <ol class="gsteps"><li><h4>نزّل المشروع</h4><p>تحتاج Git. السطر الأول ينسخ المشروع لجهازك والثاني يدخل مجلده.</p><p class="glbl">بالطرفية</p><button class="cmd" data-cmd="git clone https://github.com/calesthio/OpenMontage.git"><span class="txt"><bdi>git clone https://github.com/calesthio/OpenMontage.git</bdi></span><span class="cp">COPY</span></button><button class="cmd" data-cmd="cd OpenMontage"><span class="txt"><bdi>cd OpenMontage</bdi></span><span class="cp">COPY</span></button></li>
+<li><h4>جهّز المشروع</h4><p>هذا الأمر يركّب كل شي يحتاجه. إذا ما عندك <bdi>make</bdi> (غالباً بويندوز) فيه طريقة يدوية بصفحة المشروع.</p><p class="glbl">بالطرفية</p><button class="cmd" data-cmd="make setup"><span class="txt"><bdi>make setup</bdi></span><span class="cp">COPY</span></button></li>
+<li><h4>شغّل Claude Code داخل المجلد</h4><p>لازم تكون داخل مجلد <bdi>OpenMontage</bdi> حتى يشوف ملفاته.</p><p class="glbl">بالطرفية</p><button class="cmd" data-cmd="claude"><span class="txt"><bdi>claude</bdi></span><span class="cp">COPY</span></button></li>
+<li><h4>اكتب طلبك</h4><p>اوصف الفيديو بكلامك.</p><p class="glbl">داخل Claude Code</p><button class="cmd" data-cmd="سوّي لي فيديو توضيحي عن الموضوع"><span class="txt"><bdi>سوّي لي فيديو توضيحي عن الموضوع</bdi></span><span class="cp">COPY</span></button><p class="result">النتيجة: كلود يختار مسار إنتاج من الـ12 وينفّذه خطوة بخطوة.</p></li></ol>
+        </section>
 
+        <section class="wrap sec" id="gloss">
+            <div class="sec-head"><h2>مصطلحات بكلام بسيط</h2></div>
+            <dl class="gloss"><dt>الطرفية (Terminal)</dt><dd>نافذة تكتب بيها أوامر بدل ما تضغط أزرار. بويندوز ابحث عن PowerShell من قائمة ابدأ. بماك افتح تطبيق Terminal. تلصق الأمر وتضغط Enter.</dd><dt>Claude Code</dt><dd>أداة من Anthropic تشتغل بالطرفية: تكتب لها طلبك بالكلام وهي تنفّذه على ملفاتك.</dd><dt>Node.js</dt><dd>برنامج يشغّل أدوات مكتوبة بـJavaScript. HyperFrames وRemotion وOpenMontage تحتاجه.</dd><dt>FFmpeg</dt><dd>برنامج مجاني يقرأ الفيديو والصوت ويركّبهم ويصدّرهم بملف MP4.</dd><dt>Git وGitHub</dt><dd>GitHub موقع تنحفظ عليه مشاريع البرمجة، وGit أداة تنزّل منه المشروع لجهازك (<bdi>git clone</bdi>).</dd><dt>مهارة (Skill) وإضافة (Plugin)</dt><dd>تعليمات جاهزة تعلّم كلود يشتغل بأداة معيّنة. تنصيبها بسطر واحد وتبين لك كأوامر تبدأ بـ<bdi>/</bdi>.</dd><dt>MP4</dt><dd>صيغة ملف الفيديو العادية، تنفتح بكل جهاز وتنرفع على إنستغرام.</dd></dl>
+        </section>
+
+        <section class="wrap sec" id="notes">
+            <div class="sec-head"><h2>ملاحظات صادقة</h2><p class="sec-sub">عدد النجوم حسب GitHub بتاريخ 2026-11-04. الأوامر من التوثيق الرسمي لكل مشروع.</p></div>
+            <ul class="notes"><li><b>الاشتراك:</b> Claude Code يحتاج حساب Claude (اشتراك أو Console)، وهذا مو مجاني.</li><li><b>الوقت:</b> الرندر يشتغل على جهازك، فياخذ وقت حسب طول الفيديو وقوة الجهاز.</li><li><b>النتيجة:</b> جودة الفيديو تعتمد على وضوح طلبك. جرّب طلب صغير أول.</li><li><b>Remotion:</b> له شروط ترخيص خاصة. راجع <a href="https://www.remotion.dev/docs/license" target="_blank" rel="noopener">remotion.dev/docs/license ↗</a> قبل أي استعمال تجاري.</li><li><b>OpenMontage:</b> ترخيصه AGPLv3، وبعض أدواته تحتاج مفاتيح خدمات خارجية (مدفوعة غالباً) وبعضها يشتغل محلياً بدونها.</li><li><b>إذا علقت:</b> <a href="https://code.claude.com/docs/en/troubleshoot-install.md" target="_blank" rel="noopener">دليل حل مشاكل التنصيب الرسمي ↗</a> أو اسأل كلود نفسه عن الخطأ اللي طلع.</li></ul>
             <div class="cta">
                 <h2>جرّبت وحدة منها؟</h2>
                 <p>خبّرنا شنو طلع معاك على إنستغرام، وتابعنا حتى توصلك الأدوات الجاية.</p>
@@ -118,20 +137,13 @@
             </div>
         </section>
     </main>
-
     <footer>
         <div class="wrap">
-            <div class="foot-row">
-                <span class="mono">@freekit2</span>
-                <span class="mono">freekit.me</span>
-                <span>أدوات الفيديو، محدّث باستمرار</span>
-            </div>
+            <div class="foot-row"><span class="mono">@freekit2</span><span class="mono">freekit.me</span><span>دليل أدوات الفيديو، محدّث باستمرار</span></div>
             <p class="foot-lib"><a href="index.html">الرئيسية</a><a href="tools.html">مكتبة الأدوات</a><a href="skills.html">دليل السكلات</a></p>
         </div>
     </footer>
-
     <div class="toast" id="toast" role="status" aria-live="polite">تم النسخ</div>
-
     <script>
         (function () {
             "use strict";
