@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FreeKit | ورقة فلو: حساب الرصيد وقالب برومبت جاهز</title>
+    <meta name="description" content="حاسبة رصيد Google Flow من أرقام جوجل الرسمية، وقالب برومبت جاهز لفيديوهات الشخصيات الحيوانية، ونصائح من محاولاتنا الفاشلة.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freekit.me/flow-sheet.html">
+    <meta property="og:title" content="FreeKit | ورقة فلو: حساب الرصيد وقالب برومبت جاهز">
+    <meta property="og:description" content="حاسبة رصيد Google Flow من أرقام جوجل الرسمية وقالب برومبت جاهز.">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://freekit.me/flow-sheet.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/v3.css?v=3">
+
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%23060A14"/><text x="50" y="68" font-size="52" font-family="monospace" font-weight="700" text-anchor="middle" fill="%2335D6E8">fk</text></svg>'>
+
+<style>
+.brandrow{flex-wrap:wrap}.brandrow nav{flex-wrap:wrap;row-gap:0;max-width:100%}
+.fls-box{margin-top:18px;border:var(--hair);border-radius:var(--radius);background:var(--bg-soft);padding:18px 18px;min-width:0}
+.fls-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:14px}
+.fls-f label{display:block;font-size:14.5px;color:var(--muted);margin-bottom:6px}
+.fls-f select{width:100%;min-height:48px;font-family:inherit;font-size:16px;color:var(--text);background:var(--bg);border:var(--hair);border-radius:var(--radius);padding:8px 12px}
+.fls-out{margin-top:18px;display:grid;grid-template-columns:minmax(0,1fr);gap:10px}
+.fls-out>div{border:var(--hair);border-radius:var(--radius);padding:12px 16px;min-width:0}
+.fls-out b{display:block;font-family:var(--font-mono);font-size:30px;color:var(--accent);direction:ltr;text-align:right}
+.fls-out span{color:var(--muted);font-size:14.5px}
+.fls-src{color:var(--muted);font-size:14px;margin-top:14px;line-height:1.8}
+.fls-pre{white-space:pre-wrap;overflow-wrap:anywhere;direction:ltr;text-align:left;font-family:var(--font-mono);font-size:13px;line-height:1.75;color:var(--text);margin:0;unicode-bidi:isolate}
+.fls-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.fls-tips{list-style:none;display:grid;gap:10px;margin-top:18px;counter-reset:fls}
+.fls-tips li{counter-increment:fls;border:var(--hair);border-radius:var(--radius);background:var(--bg-soft);padding:14px 16px;min-width:0;overflow-wrap:anywhere;font-size:15.5px;line-height:1.85}
+.fls-tips li::before{content:counter(fls);font-family:var(--font-mono);font-weight:700;color:var(--accent);margin-inline-end:10px}
+.fls-tips b{color:var(--text)}
+.notes{list-style:none;display:grid;gap:10px;margin-top:18px}
+.notes li{border-inline-start:3px solid rgba(53,214,232,.5);padding:4px 14px;color:var(--muted);font-size:15.5px}
+.notes b{color:var(--text)}
+#notes .cta{margin-top:44px}
+.fls-warn{margin-top:14px;border:1px solid #F87171;border-radius:var(--radius);padding:12px 16px;background:rgba(248,113,113,.07);font-size:15.5px;line-height:1.85}.fls-warn b{color:#F87171}
+.fls-pre.ar{direction:rtl;text-align:right;font-family:inherit;font-size:15px;line-height:1.95}
+.fls-links{list-style:none;display:grid;gap:10px;margin-top:18px}.fls-links li{border:var(--hair);border-radius:var(--radius);background:var(--bg-soft);padding:12px 16px;min-width:0;overflow-wrap:anywhere;font-size:15.5px;line-height:1.8}.fls-links a{color:var(--accent)}.fls-links span{display:block;color:var(--muted);font-size:14px}
+@media(min-width:720px){.fls-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.fls-out{grid-template-columns:repeat(3,minmax(0,1fr))}}
+</style>
+</head>
+
+<body>
+    <a class="skip" href="#calc">تخطى للحاسبة</a>
+    <header>
+        <div class="topline">
+            <span class="mono"><span>FLOW SHEET</span><span>CREDITS</span></span>
+            <span class="mono">OFFICIAL NUMBERS</span>
+            <span class="mono"><span>09.11</span><span>2026</span></span>
+        </div>
+        <div class="wrap brandrow">
+            <a class="wordmark" href="/">FreeKit<span class="sq" aria-hidden="true"></span></a>
+            <nav aria-label="التنقل الرئيسي">
+                <a href="index.html">الرئيسية</a>
+                <a href="tools.html">الأدوات</a>
+                <a href="skills.html">دليل السكلات</a>
+                <a href="video-tools.html">أدوات الفيديو</a>
+                <a href="flow-sheet.html" class="active">ورقة فلو</a>
+                <a href="https://www.instagram.com/freekit2?igsi=MTd0MGFwcDRiYTl2cQ==" target="_blank" rel="noopener">تابعنا ↗</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero wrap">
+            <h1>فيديوهات الشخصيات بـ<em>Google Flow</em>: كم تطلع لك بالمجان؟</h1>
+            <p class="sub">حاسبة من أرقام جوجل وقياساتنا، و«الكليشة» اللي تلصقها بكلود، وقالب برومبت جاهز، ونصائح من محاولاتنا الفاشلة. الأرقام فُحصت يوم ٩ نوفمبر ٢٠٢٦، وجوجل تقول إنها تتغيّر.</p>
+        </section>
+
+        <section class="wrap sec" id="calc">
+            <div class="sec-head"><h2>حاسبة الرصيد</h2></div>
+            <div class="fls-box">
+                <div class="fls-grid">
+                    <div class="fls-f"><label for="model">الموديل والدقة</label>
+                        <select id="model">
+                            <option value="omni11_360" selected>Omni Flash 1.1 · 360p</option>
+                            <option value="omni11_720">Omni Flash 1.1 · 720p</option>
+                            <option value="omni12_360">Omni Flash 1.2 · 360p</option>
+                            <option value="omni12_720">Omni Flash 1.2 · 720p</option>
+                            <option value="lite">Veo 3.1 Lite · 720p</option>
+                        </select></div>
+                    <div class="fls-f"><label for="secs">طول المقطع (ثانية)</label>
+                        <select id="secs"></select></div>
+                    <div class="fls-f"><label for="plan">حسابك</label>
+                        <select id="plan">
+                            <option value="0">مجاني (بدون اشتراك)</option>
+                            <option value="200">Google AI Plus (+٢٠٠ شهرياً)</option>
+                            <option value="1000">Google AI Pro (+١٬٠٠٠ شهرياً)</option>
+                        </select></div>
+                </div>
+                <div class="fls-out" aria-live="polite">
+                    <div><b id="oCost">6</b><span>رصيد للمقطع الواحد</span></div>
+                    <div><b id="oDay">عدة</b><span id="oDayT">مقاطع باليوم من الـ٥٠ رصيد اليومية</span></div>
+                    <div><b id="oMonth">—</b><span id="oMonthT">المجاني: لا يوجد رصيد شهري</span></div>
+                </div>
+                <p class="fls-src">التكلفة: <bdi>Omni Flash 1.1</bdi> قسناها من واجهة <bdi>Flow</bdi> نفسها قبل التوليد (وضع <bdi>Ingredients</bdi>، ×١) يوم ٩ نوفمبر ٢٠٢٦: دقة 360p = ٤ و٥ و٦ رصيد لمقطع ٤ و٦ و٨ ثواني، ودقة 720p = ٧ و١٠ و١٢. <bdi>Omni Flash 1.2</bdi> حسب جوجل: 720p = ٣ رصيد بالثانية، 360p = ١ رصيد بالثانية (لحد ١٠ ثواني)، و<bdi>Veo 3.1 Lite</bdi> = ١٠ رصيد للمقطع (٤ أو ٦ أو ٨ ث).<br>المصدر: صفحة <bdi>Google Flow Help</bdi> «Manage your Google Flow credits» (<bdi>support.google.com/flow/answer/16526234</bdi>): بدون اشتراك ٥٠ رصيد باليوم تتجدد بأول توليد ولا تتراكم، والمشتركون يستلمون زيادة شهرية. الحساب (القسمة) مني من هالأرقام.</p>
+                <div class="fls-warn"><b>تنبيه ساعات الذروة:</b> تقريباً من ٢ إلى ٥ م بتوقيت <bdi>UTC</bdi> (= ٥ إلى ٨ مساءً ببغداد) قد لا يشتغل الفيديو بدون اشتراك حسب صفحة جوجل. ولّد خارج هالوقت.</div>
+            </div>
+        </section>
+
+        <section class="wrap sec" id="master">
+            <div class="sec-head"><h2>الكليشة: برومبت المعلّم</h2></div>
+            <p class="sub" style="margin-top:8px">الصق هذا بـ<bdi>Claude</bdi> أو <bdi>Gemini</bdi>، وبعده اكتب فكرتك بسطر أو سطرين (الشخصية والمكان والحوار). يرجعلك برومبت جاهز للصق بفلو.</p>
+            <div class="fls-box">
+<pre class="fls-pre ar" id="masterText">أنت كاتب برومبتات لـGoogle Flow (توليد فيديو). مهمتك: تحوّل فكرتي إلى برومبت واحد جاهز للصق في فلو، وأنا راح أضيف الشخصية بالمنشن @ داخل فلو.
+
+القواعد:
+1. اكتب البرومبت بالإنجليزية، والحوار فقط بالعربي العراقي حرفياً بين علامتي « ».
+2. ابدأ بالصيغة: Vertical 9:16 photorealistic video, 8 seconds, handheld smartphone realism، ثم المكان والإضاءة.
+3. لا تزيد على ثلاث شخصيات. لكل شخصية صِف ملامحها بالكلمات (الرأس، اللون، الملابس) وأضف: keeps face, head, fur colour and clothes exactly as in the reference image. لا تترك الموديل يخترع شعراً أو ملامح جديدة.
+4. متحدث واحد بكل لحظة، والجملة تنتهي قبل أن يتكلم غيره، وكل جملة كتلة واحدة متصلة بدون «...» في النص. حدّد صوت كل متحدث (مثلاً: deep calm adult male).
+5. لا أحد ينظر إلى الكاميرا: الشخصيات تنظر لبعضها أو لشيء في المشهد، والأفضل كاميرا جانبية.
+6. للشخصيات الصامتة اكتب بالضبط ماذا تفعل.
+7. اختم بـ: No subtitles, no on-screen text, no logos, no laughter, no background voices, no other people besides those listed.
+8. اكتب الحوار بالتشكيل الكامل على كل كلمة، والأرقام بنطق عراقي حرفياً، واطلب أن يُنطق كل حرف بوضوح وببطء بدون ابتلاع كلمات.
+9. الطول بين 600 و1000 حرف.
+
+اطبع البرومبت فقط، بدون شرح ولا عناوين ولا علامات كود.</pre>
+                <div class="fls-btns"><button class="btn btn-lime" type="button" id="copymaster">انسخ الكليشة</button></div>
+                <p class="fls-src">مثال فكرة تكتبها بعد الكليشة: «أبو صبرية بائع طماطم بسوق عراقي، وحجّية تسأله عن السعر. اكتب لي برومبت لفلو». الشخصية تدخلها بفلو بكتابة <bdi>@</bdi> ثم اختيارها.</p>
+            </div>
+        </section>
+
+        <section class="wrap sec" id="prompt">
+            <div class="sec-head"><h2>قالب برومبت جاهز</h2></div>
+            <p class="sub" style="margin-top:8px">بنفس شكل برومبتاتنا الحقيقية، بس بفراغات. اختر وضع <bdi>Ingredients</bdi>، واكتب <bdi>@</bdi> واختر الشخصية (تضيفها قبل من صفحة الشخصيات)، والصق هذا واملأ الفراغات.</p>
+            <div class="fls-box">
+<pre class="fls-pre" id="promptText">Settings: Video | INGREDIENTS (type @ and pick your character) | Omni Flash | 9:16 | 8s | x1
+
+Vertical 9:16 photorealistic comedy video, 8 seconds, ONE continuous take with no cuts.
+Location: [one simple empty place], plain walls, no windows, no posters, no signs, no writing of any kind anywhere, no money, no other people.
+Framing: a MEDIUM shot, waist-up, two characters with a clear gap between them, facing each other in three-quarter view. Each head is large, sharp and clearly visible; never a full-body shot, never a close-up. NOBODY EVER LOOKS INTO THE CAMERA, every character's eyes stay on the other character.
+Characters (describe each look in words even if mentioned with @): (a) on the left, [role], head = a COMPLETE [animal] head, wearing [plain clothes, no writing]; (b) on the right, [role], head = a COMPLETE [animal] head, [clothes, hands].
+Action: [what A does], then [what B does], in order.
+Natural lip sync, loud [dialect] Arabic, ONE character speaks at a time in this order, the other's mouth stays closed:
+Character A ([tone]): "[line 1]"
+Character B ([tone]): "[line 2]"
+Faint ambience only, no music, no laughter.</pre>
+                <div class="fls-btns"><button class="btn btn-lime" type="button" id="copybtn">انسخ القالب</button></div>
+                <p class="fls-src">القالب مأخوذ من بنية برومبتاتنا اللي نجحت. الفراغات بين <bdi>[ ]</bdi>. فكرة المشهد والنكتة عليك.</p>
+            </div>
+        </section>
+
+        <section class="wrap sec" id="tips">
+            <div class="sec-head"><h2>نصائح من محاولاتنا الفاشلة</h2></div>
+            <ol class="fls-tips">
+                <li><b>الشخصية تدخل بالمنشن <bdi>@</bdi> بوضع <bdi>Ingredients</bdi> مو <bdi>Frames</bdi>:</b> وضع الإطارات يسقط الشخصيات وترجع طفلاً بوجه بشري. اكتب <bdi>@</bdi> واختر الشخصية من القائمة.</li>
+                <li><b>لا تزيد على ٣ شخصيات</b> بالمشهد، وكل واحدة لازم تنوصف بالكلمات حتى لو مضافة بالـ@، لأن النموذج يخترع تفاصيل (شعر جديد، علامة على القميص).</li>
+                <li><b>متحدث واحد كل مرة</b> وبالترتيب، ولا تكتب ضحك أو «هاها»: صوت الضحك يطلع مستفزاً.</li>
+                <li><b>لا لقطات قريبة ولا نظر للعدسة:</b> لقطة متوسطة وحدة مستمرة، وشخصيات متباعدة. وقص آخر ثانية أو ثانيتين لأن الرؤوس تلتفت للكاميرا.</li>
+                <li><b>اسمع الصوت بنفسك:</b> التفريغ الآلي يغلط بالأصوات الحيوانية واللهجة. وتأكد إن كل سطر انقال مرة وحدة وبفم الشخصية الصحيحة.</li>
+                <li><b>ثلاث محاولات فاشلة = غيّر الفكرة</b> مو البرومبت. وكل محاولة تأكل رصيد.</li>
+            </ol>
+        </section>
+
+        <section class="wrap sec" id="links">
+            <div class="sec-head"><h2>كل الروابط</h2></div>
+            <ul class="fls-links">
+                <li><a href="https://flow.google.com" target="_blank" rel="noopener"><bdi>flow.google.com</bdi></a><span>فلو: ولّد الفيديو هنا</span></li>
+                <li><a href="https://claude.ai" target="_blank" rel="noopener"><bdi>claude.ai</bdi></a><span>الصق الكليشة وفكرتك</span></li>
+                <li><a href="https://gemini.google.com" target="_blank" rel="noopener"><bdi>gemini.google.com</bdi></a><span>بديل عن كلود للكليشة</span></li>
+                <li><a href="https://support.google.com/flow/answer/16526234" target="_blank" rel="noopener"><bdi>support.google.com/flow/answer/16526234</bdi></a><span>صفحة جوجل الرسمية عن الرصيد</span></li>
+            </ul>
+        </section>
+
+        <section class="wrap sec" id="notes">
+            <div class="sec-head"><h2>ملاحظات صادقة</h2></div>
+            <ul class="notes">
+                <li><b>غير موثّق للمجاني:</b> جوجل ما تذكر في صفحاتها العلامة المائية على الفيديوهات المجانية، ولا إتاحة الشخصيات المخصصة والتحكم بالحوار للمجاني. جرّب بحسابك وشوف.</li>
+                <li><b>العمر والبلد:</b> الخدمة لعمر ١٨ فما فوق، والعراق ضمن الدول المدعومة حسب صفحة جوجل. الـ<bdi>VPN</bdi> ما يفتحها للدول غير المدعومة.</li>
+                <li><b>النماذج تتغيّر:</b> <bdi>Omni Flash 1.1</bdi> يتقاعد ٥ ديسمبر ٢٠٢٦، والبديل <bdi>Omni Flash 1.2</bdi>: دقة 360p لمقطع ٨ ثواني تكلّف ٨ رصيد، يعني ٦ مقاطع باليوم بدل ٨. افتح إعدادات صندوق البرومبت لتشوف التكلفة الحالية قبل التوليد.</li>
+                <li><b>قياساتنا من حساب مشترك (<bdi>Pro</bdi>):</b> أرقام <bdi>Omni Flash 1.1</bdi> انقاست من حسابنا، وما جرّبنا حساب مجاني. جوجل تقول المجاني ٥٠ رصيد باليوم، وتكلفة الموديل نفسها ما تتغيّر حسب علمنا، بس تأكد من الرقم اللي يظهر لك.</li>
+            </ul>
+            <div class="cta">
+                <h2>تريد أمثلة مثل هاي؟</h2>
+                <p>تابعنا على إنستغرام حتى توصلك الأجزاء الجاية.</p>
+                <div class="btns">
+                    <a class="btn btn-lime" href="https://www.instagram.com/freekit2?igsi=MTd0MGFwcDRiYTl2cQ==" target="_blank" rel="noopener">تابع على إنستغرام</a>
+                    <a class="btn btn-ghost" href="skills.html">دليل السكلات</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">
+            <div class="foot-row"><span class="mono">@freekit2</span><span class="mono">freekit.me</span><span>ورقة فلو</span></div>
+            <p class="foot-lib"><a href="index.html">الرئيسية</a><a href="tools.html">مكتبة الأدوات</a><a href="skills.html">دليل السكلات</a></p>
+        </div>
+    </footer>
+    <script>
+        (function () {
+            var M = { omni11_360: { kind: 'table', t: { 4: 4, 6: 5, 8: 6 } }, omni11_720: { kind: 'table', t: { 4: 7, 6: 10, 8: 12 } }, omni12_360: { kind: 'sec', rate: 1 }, omni12_720: { kind: 'sec', rate: 3 }, lite: { kind: 'clip', rate: 10 } };
+            var model = document.getElementById('model'), secs = document.getElementById('secs'), plan = document.getElementById('plan');
+            var touched = false, oDayT = document.getElementById('oDayT');
+            var oCost = document.getElementById('oCost'), oDay = document.getElementById('oDay'), oMonth = document.getElementById('oMonth'), oMonthT = document.getElementById('oMonthT');
+            function optsOf(m) { return m.kind === 'table' ? Object.keys(m.t).map(Number) : m.kind === 'clip' ? [4, 6, 8] : [3, 4, 5, 6, 7, 8, 9, 10]; }
+            function costOf(m, s) { return m.kind === 'table' ? m.t[s] : m.kind === 'sec' ? m.rate * s : m.rate; }
+            function fill() {
+                var opts = optsOf(M[model.value]), keep = +secs.value;
+                secs.innerHTML = '';
+                opts.forEach(function (n) { var o = document.createElement('option'); o.value = n; o.textContent = n; secs.appendChild(o); });
+                secs.value = opts.indexOf(keep) >= 0 ? keep : 8;
+            }
+            function calc() {
+                var m = M[model.value], cost = costOf(m, +secs.value), pool = +plan.value;
+                oCost.textContent = cost;
+                if (touched) { oDay.textContent = Math.floor(50 / cost); oDayT.textContent = 'مقطع باليوم من الـ٥٠ رصيد اليومية'; } else { oDay.textContent = 'عدة'; oDayT.textContent = 'مقاطع باليوم من الـ٥٠ رصيد اليومية'; }
+                if (pool > 0) { oMonth.textContent = Math.floor(pool / cost); oMonthT.textContent = 'مقطع من الرصيد الشهري (زيادة على اليومي)'; }
+                else { oMonth.textContent = '—'; oMonthT.textContent = 'المجاني: لا يوجد رصيد شهري'; }
+            }
+            model.addEventListener('change', function () { touched = true; fill(); calc(); });
+            secs.addEventListener('change', function () { touched = true; calc(); }); plan.addEventListener('change', function () { touched = true; calc(); });
+            fill(); calc();
+            function wire(b, t) {
+            b.addEventListener('click', function () {
+                var txt = t.innerText;
+                function done() { var o = b.textContent; b.textContent = 'تم النسخ ✓'; setTimeout(function () { b.textContent = o; }, 2000); }
+                function legacy() {
+                    var a = document.createElement('textarea'); a.value = txt; a.setAttribute('readonly', ''); a.style.position = 'fixed'; a.style.opacity = '0';
+                    document.body.appendChild(a); a.select(); var ok = false;
+                    try { ok = document.execCommand('copy'); } catch (e) {}
+                    document.body.removeChild(a); return ok;
+                }
+                if (legacy()) { done(); }
+                else if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(txt).then(done, function () {}); }
+            });
+            }
+            wire(document.getElementById('copybtn'), document.getElementById('promptText'));
+            wire(document.getElementById('copymaster'), document.getElementById('masterText'));
+        })();
+    </script>
+</body>
+
+</html>
