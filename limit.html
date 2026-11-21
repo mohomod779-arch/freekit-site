@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+        (function () {
+            var L = 'en';
+            try {
+                var q = new URLSearchParams(location.search).get('lang');
+                var s = null; try { s = localStorage.getItem('fk_lang'); } catch (e) { }
+                var n = (navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en']);
+                if (q === 'ar' || q === 'en') L = q;
+                else if (s === 'ar' || s === 'en') L = s;
+                else if (String(n[0] || '').toLowerCase().indexOf('ar') === 0) L = 'ar';
+            } catch (e) { }
+            var h = document.documentElement;
+            h.lang = L; h.dir = (L === 'ar' ? 'rtl' : 'ltr'); h.setAttribute('data-lang', L);
+        })();
+    </script>
+    <title>FreeKit | Hit the Claude Code limit? 8 fixes</title>
+    <meta name="description" content="Claude Code says you hit your limit? 8 simple habits from Anthropic's own cost guide: /clear, name the file, /usage, /compact, a short CLAUDE.md, Sonnet, /effort, /mcp. English + العربية.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://freekit.me/limit.html">
+    <meta property="og:title" content="Hit the Claude Code limit? 8 fixes">
+    <meta property="og:description" content="8 simple habits from Anthropic's own cost guide that make your Claude Code limit last longer. English + العربية.">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Hit the Claude Code limit? 8 fixes">
+    <meta name="twitter:description" content="8 simple habits from Anthropic's own cost guide that make your Claude Code limit last longer.">
+    <link rel="canonical" href="https://freekit.me/limit.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/v3.css?v=3">
+    <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="20" fill="%23060A14"/><text x="50" y="68" font-size="52" font-family="monospace" font-weight="bold" fill="%2335D6E8" text-anchor="middle">F</text></svg>'>
+
+<style>
+html[data-lang="en"] [lang="ar"], html[data-lang="ar"] [lang="en"]{display:none !important}
+.brandrow{flex-wrap:wrap}.brandrow nav{flex-wrap:wrap;row-gap:0;max-width:100%;align-items:center}
+.lang-btn{font-family:var(--font-mono);font-size:13.5px;border:1px solid rgba(53,214,232,.45);border-radius:999px;padding:4px 14px;color:var(--accent);background:transparent;cursor:pointer}
+.lang-btn:hover{background:rgba(53,214,232,.08)}
+.tips{list-style:none;counter-reset:t;display:grid;grid-template-columns:minmax(0,1fr);gap:14px;margin-top:20px}
+.tips>li{min-width:0;overflow-wrap:anywhere;counter-increment:t;position:relative;padding:16px 18px 18px;padding-inline-start:64px;border:var(--hair);border-radius:var(--radius);background:var(--bg-soft)}
+.tips>li::before{content:counter(t);position:absolute;inset-inline-start:16px;top:16px;width:32px;height:32px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-family:var(--font-mono);font-weight:700;display:grid;place-items:center}
+.tips h3{font-size:18px;font-weight:600;margin-bottom:4px}
+.tips p{color:var(--muted);font-size:15.5px}
+.tips .cmd{margin-top:10px}
+.tips code,.notes code{font-family:var(--font-mono);color:var(--accent);font-size:.95em}
+.ex{margin-top:10px;display:grid;gap:6px;font-size:14.5px}
+.ex span{border-radius:var(--radius-sm);padding:6px 12px}
+.ex .bad{background:rgba(248,113,113,.08);color:var(--muted)}
+.ex .good{background:rgba(53,214,232,.07);color:var(--text)}
+.notes{list-style:none;display:grid;gap:10px;margin-top:18px}
+.notes li{border-inline-start:3px solid rgba(53,214,232,.5);padding:4px 14px;color:var(--muted);font-size:15.5px}
+.notes b{color:var(--text)}
+#notes .cta{margin-top:36px}
+.cmd .txt{text-align:start}.cmd .txt bdi{white-space:normal;display:block;text-align:left}
+html[dir="ltr"] body{font-family:var(--font-sans, 'IBM Plex Sans Arabic'),system-ui,sans-serif}
+</style>
+</head>
+<body>
+    <header>
+        <div class="topline">
+            <span class="mono"><span>CLAUDE CODE</span><span>LIMITS</span></span>
+            <span class="mono">8 FIXES</span>
+            <span class="mono"><span>EN</span><span>AR</span></span>
+        </div>
+        <div class="wrap brandrow">
+            <a class="wordmark" href="/">FreeKit<span class="sq" aria-hidden="true"></span></a>
+            <nav aria-label="Main">
+                <a href="https://www.instagram.com/mohammed.sadiq.ai/" target="_blank" rel="noopener"><span lang="en">Follow ↗</span><span lang="ar">تابعنا ↗</span></a>
+                <button class="lang-btn" id="langBtn" type="button"><span lang="en">العربية</span><span lang="ar">English</span></button>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero wrap">
+            <h1 lang="en">Hit your Claude Code limit? <em>8 fixes</em> that make it last</h1>
+            <h1 lang="ar">خلصت حصة كلود كود؟ <em>٨ عادات</em> تخلّيها تطوّل</h1>
+            <p class="sub" lang="en">Most of your limit goes to things you don't see: old chat history re-read on every message, Claude searching your whole project, tools you never use. These 8 habits come straight from Anthropic's own cost guide. No setup, no extra tools.</p>
+            <p class="sub" lang="ar">أغلب حصتك تروح على أشياء ما تشوفها: سوالف قديمة بالمحادثة تنقرا ويه كل رسالة، وكلود يفتّش مشروعك كله، وأدوات ما تستعملها. هاي ٨ عادات من دليل الكلفة الرسمي مال <bdi>Anthropic</bdi>. بلا تنصيب وبلا أدوات زايدة.</p>
+        </section>
+
+        <section class="wrap sec" id="tips">
+            <div class="sec-head">
+                <h2 lang="en">The list</h2><h2 lang="ar">القائمة</h2>
+                <p class="sec-sub" lang="en">Tap any command to copy it.</p><p class="sec-sub" lang="ar">اضغط على أي أمر حتى تنسخه.</p>
+            </div>
+            <ol class="tips">
+                <li>
+                    <h3 lang="en">/clear when you switch tasks</h3><h3 lang="ar"><bdi>/clear</bdi> لمن تبدّل الشغلة</h3>
+                    <p lang="en">Everything in the chat is sent again with every message. Old context from a finished task costs you on every reply. Tip: <code>/rename</code> the chat first, so you can <code>/resume</code> it later.</p>
+                    <p lang="ar">كل شي بالمحادثة يندز من جديد ويه كل رسالة، فالكلام القديم من شغلة خلصت ياكل من حصتك بكل رد. نصيحة: سوّي <bdi><code>/rename</code></bdi> للمحادثة أول، حتى ترجعلها بعدين بأمر <bdi><code>/resume</code></bdi>.</p>
+                    <button class="cmd" data-cmd="/clear"><span class="txt"><bdi>/clear</bdi></span><span class="cp">COPY</span></button>
+                </li>
+                <li>
+                    <h3 lang="en">Name the file</h3><h3 lang="ar">سمِّ الملف</h3>
+                    <p lang="en">Vague asks make Claude scan your whole project to find what you mean. Point it at the exact place.</p>
+                    <p lang="ar">الطلب العام يخلي كلود يفتّش مشروعك كله حتى يفهم شتقصد. دلّه على المكان بالضبط.</p>
+                    <div class="ex"><span class="bad"><bdi>✗ "fix my app"</bdi></span><span class="good"><bdi>✓ "fix the login check in auth.ts"</bdi></span></div>
+                </li>
+                <li>
+                    <h3 lang="en">/usage shows what's eating your limit</h3><h3 lang="ar"><bdi>/usage</bdi> يبيّنلك شنو ياكل حصتك</h3>
+                    <p lang="en">Check it before you guess. Then fix the biggest thing first.</p>
+                    <p lang="ar">شوفه قبل ما تخمّن، وبعدين صلّح أكبر شي أول.</p>
+                    <button class="cmd" data-cmd="/usage"><span class="txt"><bdi>/usage</bdi></span><span class="cp">COPY</span></button>
+                </li>
+                <li>
+                    <h3 lang="en">/compact with a focus</h3><h3 lang="ar"><bdi>/compact</bdi> ويه تركيز</h3>
+                    <p lang="en">Long chat you still need? Compact it, and tell Claude what to keep. It summarizes the rest.</p>
+                    <p lang="ar">محادثة طويلة بعدك محتاجها؟ اختصرها، وگول لكلود شنو يحتفظ. الباقي يلخّصه.</p>
+                    <button class="cmd" data-cmd="/compact keep the code changes"><span class="txt"><bdi>/compact keep the code changes</bdi></span><span class="cp">COPY</span></button>
+                </li>
+                <li>
+                    <h3 lang="en">Keep CLAUDE.md under 200 lines</h3><h3 lang="ar">خلي <bdi>CLAUDE.md</bdi> أقل من ٢٠٠ سطر</h3>
+                    <p lang="en">CLAUDE.md is loaded at the start of every session. Move long, task-specific instructions into skills. They only load when needed.</p>
+                    <p lang="ar">ملف <bdi>CLAUDE.md</bdi> ينقرا ببداية كل جلسة. التعليمات الطويلة الخاصة بشغلة معيّنة انقلها لمهارات (<bdi>skills</bdi>)، لأن المهارة ما تنقرا إلا وقت الحاجة.</p>
+                </li>
+                <li>
+                    <h3 lang="en">Sonnet for everyday coding</h3><h3 lang="ar"><bdi>Sonnet</bdi> للشغل اليومي</h3>
+                    <p lang="en">Sonnet handles most coding tasks well and costs less. Save Opus for hard design decisions and multi-step reasoning. Switch with <code>/model</code>.</p>
+                    <p lang="ar"><bdi>Sonnet</bdi> يمشّي أغلب شغل البرمجة زين وأرخص. خلّي <bdi>Opus</bdi> للقرارات الصعبة والتفكير الطويل. تبدّل بينهم بأمر <bdi><code>/model</code></bdi>.</p>
+                    <button class="cmd" data-cmd="/model"><span class="txt"><bdi>/model</bdi></span><span class="cp">COPY</span></button>
+                </li>
+                <li>
+                    <h3 lang="en">Simple question? Lower /effort</h3><h3 lang="ar">سؤال بسيط؟ نزّل <bdi>/effort</bdi></h3>
+                    <p lang="en">Thinking costs tokens too. For easy tasks, a lower effort level is enough.</p>
+                    <p lang="ar">التفكير هم ياكل من الحصة. للشغلات السهلة، مستوى تفكير أقل يكفي.</p>
+                    <button class="cmd" data-cmd="/effort"><span class="txt"><bdi>/effort</bdi></span><span class="cp">COPY</span></button>
+                </li>
+                <li>
+                    <h3 lang="en">Turn off MCP servers you don't use</h3><h3 lang="ar">طفّي سيرفرات <bdi>MCP</bdi> اللي ما تستعملها</h3>
+                    <p lang="en">Connected tools add to your context. Open <code>/mcp</code>, see what's on, and disable what you're not using.</p>
+                    <p lang="ar">الأدوات المربوطة تضيف على السياق. افتح <bdi><code>/mcp</code></bdi>، شوف شنو شغّال، وطفّي اللي ما تحتاجه.</p>
+                    <button class="cmd" data-cmd="/mcp"><span class="txt"><bdi>/mcp</bdi></span><span class="cp">COPY</span></button>
+                </li>
+            </ol>
+        </section>
+
+        <section class="wrap sec" id="notes">
+            <div class="sec-head"><h2 lang="en">Honest notes</h2><h2 lang="ar">ملاحظات صادقة</h2></div>
+            <ul class="notes">
+                <li lang="en"><b>Source:</b> Anthropic's official guide <a href="https://code.claude.com/docs/en/costs" target="_blank" rel="noopener">Manage costs effectively ↗</a>, checked on 2026-11-21.</li>
+                <li lang="ar"><b>المصدر:</b> <a href="https://code.claude.com/docs/en/costs" target="_blank" rel="noopener">دليل الكلفة الرسمي ↗</a> مال <bdi>Anthropic</bdi>، راجعناه بتاريخ <bdi>2026-11-21</bdi>.</li>
+                <li lang="en"><b>No magic:</b> these habits stretch your limit, they don't remove it. Your plan still decides how much you get.</li>
+                <li lang="ar"><b>مو سحر:</b> هاي العادات تطوّل حصتك، ما تلغيها. اشتراكك هو اللي يحدد شكد تاخذ.</li>
+                <li lang="en"><b>Independent:</b> FreeKit is not affiliated with Anthropic. Claude and Claude Code are Anthropic's products.</li>
+                <li lang="ar"><b>مستقلين:</b> <bdi>FreeKit</bdi> ما إله علاقة بـ<bdi>Anthropic</bdi>. كلود وكلود كود منتجات <bdi>Anthropic</bdi>.</li>
+            </ul>
+            <div class="cta">
+                <h2 lang="en">New sketch + fix every week</h2><h2 lang="ar">سكتش جديد وحل كل أسبوع</h2>
+                <p lang="en">Funny Claude Code problems and the fixes. Follow so the next one reaches you.</p>
+                <p lang="ar">مشاكل كلود كود المضحكة وحلولها. تابع حتى يوصلك الجاي.</p>
+                <div class="btns">
+                    <a class="btn btn-lime" href="https://www.instagram.com/mohammed.sadiq.ai/" target="_blank" rel="noopener"><span lang="en">Follow on Instagram</span><span lang="ar">تابع على إنستغرام</span></a>
+                    <a class="btn btn-ghost" lang="ar" href="https://www.instagram.com/freekit2/" target="_blank" rel="noopener">حسابنا العربي <bdi>@freekit2</bdi></a>
+                    <a class="btn btn-ghost" lang="ar" href="skills.html">دليل السكلات</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap">
+            <div class="foot-row"><span class="mono"><bdi>@mohammed.sadiq.ai</bdi></span><span class="mono">freekit.me</span><span lang="en">Claude Code limits, simply explained</span><span lang="ar">حصة كلود كود — شرح بسيط</span></div>
+            <p class="foot-lib" lang="ar"><a href="index.html">الرئيسية</a><a href="tools.html">مكتبة الأدوات</a><a href="skills.html">دليل السكلات</a></p>
+        </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+    <script>
+        (function () {
+            "use strict";
+            var h = document.documentElement;
+            function isAr() { return h.getAttribute('data-lang') === 'ar'; }
+            var toast = document.getElementById('toast');
+            function showToast(msg) { toast.textContent = msg; toast.classList.add('show'); setTimeout(function () { toast.classList.remove('show'); }, 1800); }
+            document.querySelectorAll('.cmd').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var text = btn.getAttribute('data-cmd') || '';
+                    var ok = isAr() ? 'تم النسخ' : 'Copied', no = isAr() ? 'انسخ يدوياً' : 'Copy it manually';
+                    if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(text).then(function () { showToast(ok); }).catch(function () { showToast(no); }); }
+                    else { showToast(no); }
+                });
+            });
+            document.getElementById('langBtn').addEventListener('click', function () {
+                var L = isAr() ? 'en' : 'ar';
+                h.lang = L; h.dir = (L === 'ar' ? 'rtl' : 'ltr'); h.setAttribute('data-lang', L);
+                try { localStorage.setItem('fk_lang', L); } catch (e) { }
+            });
+        })();
+    </script>
+</body>
+</html>
