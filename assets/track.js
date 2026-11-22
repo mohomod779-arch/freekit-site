@@ -23,5 +23,7 @@
         var id = b.getAttribute('data-target') || b.id || '';
         if (!id) { var all = document.querySelectorAll(SEL); for (var k = 0; k < all.length; k++) { if (all[k] === b) { id = 'b' + (k + 1); break; } } }
         send('copy', id);
+        if (window.fkSubSheet) window.fkSubSheet();
     }, true);
+    try { var sj = document.createElement('script'); sj.src = '/assets/sub.js?v=1'; sj.defer = true; document.head.appendChild(sj); } catch (e) {}
 })();
